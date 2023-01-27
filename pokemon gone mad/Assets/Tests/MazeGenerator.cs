@@ -29,7 +29,7 @@ public class MazeGenerator : MonoBehaviour
 
     private List<walker> walkers;
 
-
+    // Algorithm from Six Dot https://www.youtube.com/watch?v=I74I_MhZIK8
 
     // Start is called before the first frame update
     void Start()
@@ -205,6 +205,7 @@ public class MazeGenerator : MonoBehaviour
         }
     }
 
+    // My Code ==============================
     void ConnectExits()
     {
         List<walker> exitWalkers = new List<walker>();
@@ -243,7 +244,7 @@ public class MazeGenerator : MonoBehaviour
             Walk(exitWalkers);
         } while (exitWalkers.Count > 0);
     }
-
+    // End My Code ==========================
     void SpawnLevel()
     {
         for (int x = 0; x < roomWidth; x++)
@@ -270,6 +271,8 @@ public class MazeGenerator : MonoBehaviour
     {
         // find the position to spawn
         Vector2 offset = roomSizeWorld;
+        
+        // My Code ==========================
         Quaternion objRot;
         if (wallFlag)
         {
@@ -280,6 +283,7 @@ public class MazeGenerator : MonoBehaviour
             int rotationMult = Random.Range(0, 3);
             objRot = Quaternion.Euler(0f, 0f, 90f * rotationMult);
         }
+        // End My Code ======================
 
         for(int i = 0; i < 2; i++)
         {
