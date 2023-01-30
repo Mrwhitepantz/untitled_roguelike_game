@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - EnvironmentDecorations
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 45210393
+    locked: 0
+  - name: EnvironmentDecorations
+    uniqueID: 3846850839
     locked: 0

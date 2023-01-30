@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-    public GameObject wallObj, floorObj;
-    public static Vector2 roomSizeWorld = new Vector2(20, 20);
+    public GameObject wallObjBot, wallObjTop, floorObj;
+    public static Vector2 roomSizeWorld = new(20, 20);
     public float chanceWalkerChangeDir = .5f;
     public float chanceWalkerSpawn = .05f;
     public float chanceWalkerDestroy = .05f;
     public int maxWalkers = 10;
     public float percentToFill = .3f;
     public int maxIterations = 100000;
+    public float chanceToMiss = 0.05f;
 
     private enum GridSpace {empty, floor, wall};
     private GridSpace[,] grid;
-    private static float worldUnitsToGridCell = 1;
-    private static int roomHeight = Mathf.RoundToInt(roomSizeWorld.x / worldUnitsToGridCell);
-    private static int roomWidth = Mathf.RoundToInt(roomSizeWorld.y / worldUnitsToGridCell);
-    private static Vector2 roomCenter = new Vector2(Mathf.RoundToInt(roomWidth / 2), Mathf.RoundToInt(roomHeight / 2));
+    private static readonly float worldUnitsToGridCell = 1;
+    private static readonly int roomHeight = Mathf.RoundToInt(roomSizeWorld.x / worldUnitsToGridCell);
+    private static readonly int roomWidth = Mathf.RoundToInt(roomSizeWorld.y / worldUnitsToGridCell);
+    private static Vector2 roomCenter = new(Mathf.RoundToInt(roomWidth / 2), Mathf.RoundToInt(roomHeight / 2));
 
 
-    struct walker
+    struct Walker
     {
         public Vector2 dir;
         public Vector2 pos;
     }
 
-    private List<walker> walkers;
+    private List<Walker> walkers;
 
     // Algorithm from Six Dot https://www.youtube.com/watch?v=I74I_MhZIK8
 
@@ -56,15 +57,18 @@ public class MazeGenerator : MonoBehaviour
             }
         }
         // set first walker
-        walkers = new List<walker>();
-        addWalker(roomCenter, RandomDirection(), walkers);
+        walkers = new List<Walker>();
+        AddWalker(roomCenter, RandomDirection(), walkers);
+        AddWalker(roomCenter, RandomDirection(), walkers);
     }
 
-    void addWalker(Vector2 spawnPos, Vector2 dir, List<walker> walkers)
+    void AddWalker(Vector2 spawnPos, Vector2 dir, List<Walker> walkers)
     {
-        walker newWalker = new walker();
-        newWalker.dir = dir;
-        newWalker.pos = spawnPos;
+        Walker newWalker = new()
+        {
+            dir = dir,
+            pos = spawnPos
+        };
         walkers.Add(newWalker);
     }
 
@@ -73,17 +77,13 @@ public class MazeGenerator : MonoBehaviour
         // pick random int beween 0 and 3
         int choice = Random.Range(0,4);
         // choose a direction
-        switch (choice)
+        return choice switch
         {
-            case 0:
-                return Vector2.down;
-            case 1:
-                return Vector2.left;
-            case 2:
-                return Vector2.up;
-            default:
-                return Vector2.right;
-        }
+            0 => Vector2.down,
+            1 => Vector2.left,
+            2 => Vector2.up,
+            _ => Vector2.right,
+        };
     }
 
     void CreateFloors()
@@ -92,7 +92,7 @@ public class MazeGenerator : MonoBehaviour
         do
         {
             // create floor at position of every walker
-            foreach (walker myWalker in walkers)
+            foreach (Walker myWalker in walkers)
             {
                 grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = GridSpace.floor;
             }
@@ -113,7 +113,7 @@ public class MazeGenerator : MonoBehaviour
             {
                 if (Random.value < chanceWalkerChangeDir)
                 {
-                    walker thisWalker = walkers[i];
+                    Walker thisWalker = walkers[i];
                     thisWalker.dir = RandomDirection();
                     walkers[i] = thisWalker;
                 }
@@ -127,7 +127,7 @@ public class MazeGenerator : MonoBehaviour
                 if (Random.value < chanceWalkerSpawn && walkers.Count < maxWalkers)
                 {
                     // create a walker
-                    addWalker(walkers[i].pos, walkers[i].dir, walkers);
+                    AddWalker(walkers[i].pos, walkers[i].dir, walkers);
                 }
             }
 
@@ -137,7 +137,7 @@ public class MazeGenerator : MonoBehaviour
             // avoid border of the grid
             for (int i = 0; i < walkers.Count; i++)
             {
-                walker thisWalker = walkers[i];
+                Walker thisWalker = walkers[i];
                 // clamp x, y to leave a 1 space border and leave room for walls
                 thisWalker.pos.x = Mathf.Clamp(thisWalker.pos.x, 1, roomWidth - 2);
                 thisWalker.pos.y = Mathf.Clamp(thisWalker.pos.y, 1, roomHeight - 2);
@@ -153,11 +153,11 @@ public class MazeGenerator : MonoBehaviour
         } while (iterations < maxIterations);
     }
 
-    void Walk(List<walker> walkers)
+    void Walk(List<Walker> walkers)
     {
         for (int i = 0; i < walkers.Count; i++)
         {
-            walker thisWalker = walkers[i];
+            Walker thisWalker = walkers[i];
             thisWalker.pos += thisWalker.dir;
             walkers[i] = thisWalker;
         }
@@ -208,22 +208,19 @@ public class MazeGenerator : MonoBehaviour
     // My Code ==============================
     void ConnectExits()
     {
-        List<walker> exitWalkers = new List<walker>();
-
-        Debug.Log(roomCenter.x);
-        Debug.Log(roomCenter.y);
+        List<Walker> exitWalkers = new();
 
         // Add exit walkers
         for (int offset = -2; offset < 2; offset++)
         {
             // top
-            addWalker(new Vector2(roomCenter.x + offset, 0), Vector2.up, exitWalkers);
+            AddWalker(new Vector2(roomCenter.x + offset, 0), Vector2.up, exitWalkers);
             // bottom
-            addWalker(new Vector2(roomCenter.x + offset, roomHeight - 1), Vector2.down, exitWalkers);
+            AddWalker(new Vector2(roomCenter.x + offset, roomHeight - 1), Vector2.down, exitWalkers);
             // left
-            addWalker(new Vector2(0, roomCenter.y + offset), Vector2.right, exitWalkers);
+            AddWalker(new Vector2(0, roomCenter.y + offset), Vector2.right, exitWalkers);
             // right
-            addWalker(new Vector2(roomWidth - 1, roomCenter.y + offset), Vector2.left, exitWalkers);
+            AddWalker(new Vector2(roomWidth - 1, roomCenter.y + offset), Vector2.left, exitWalkers);
         }
 
         do
@@ -251,49 +248,57 @@ public class MazeGenerator : MonoBehaviour
         {
             for (int y = 0; y < roomHeight; y++)
             {
-                Spawn(x, y, floorObj, false);
+                Spawn(x, y, false);
                 switch (grid[x, y])
                 {
                     case GridSpace.empty:
-                        Spawn(x, y, wallObj, true);
+                        Spawn(x, y, true);
                         break;
                     case GridSpace.floor:
                         break;
                     case GridSpace.wall:
-                        Spawn(x, y, wallObj, true);
+                        Spawn(x, y, true);
                         break;
                 }
             }
         }
     }
 
-    void Spawn(float x, float y, GameObject toSpawn, bool wallFlag)
+    void Spawn(float x, float y, bool wall)
     {
         // find the position to spawn
         Vector2 offset = roomSizeWorld;
-        
-        // My Code ==========================
         Quaternion objRot;
-        if (wallFlag)
-        {
-            objRot = Quaternion.identity;
-        }
-        else
-        {
-            int rotationMult = Random.Range(0, 3);
-            objRot = Quaternion.Euler(0f, 0f, 90f * rotationMult);
-        }
-        // End My Code ======================
 
-        for(int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
             {
                 Vector2 spawnPos = new Vector2(x * 2 + i, y * 2 + j) * worldUnitsToGridCell - offset;
                 // spawn the object
-                Instantiate(toSpawn, spawnPos, objRot);
+
+                // My Code ==========================
+                if (wall)
+                {
+                    objRot = Quaternion.identity;
+                    spawnPos.x += Random.Range(-1, 1) / 4.0f;
+                    spawnPos.y += Random.Range(-1, 1) / 4.0f;
+                    if (Random.value > chanceToMiss)
+                    {
+                        Instantiate(wallObjBot, spawnPos, objRot);
+                        spawnPos.y += 1;
+                        Instantiate(wallObjTop, spawnPos, objRot);
+                    }
+                }
+                else
+                {
+                    float rotationMult = Mathf.Floor(Random.value * 4);
+                    objRot = Quaternion.Euler(0f, 0f, 90f * rotationMult);
+                    Instantiate(floorObj, spawnPos, objRot);
+                }
+                // End My Code ======================
             }
-            
+
         }
     }
 }
