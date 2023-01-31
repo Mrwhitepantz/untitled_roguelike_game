@@ -19,11 +19,15 @@ public class TileRotationManager : MonoBehaviour
 
         foreach (Vector3Int pos in tileMap.cellBounds.allPositionsWithin)
         {
-            TileBase tile = tileMap.GetTile(pos);
-            rotationMult = Random.Range(0, 3);
+            rotationMult = Random.Range(0, 4);
             Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, 90f * rotationMult), Vector3.one);
 
-            tileMap.SetTransformMatrix(pos, matrix);
+            string tileName = tileMap.GetTile(pos).ToString();
+
+            if (tileName.StartsWith("grass")){
+                tileMap.SetTransformMatrix(pos, matrix);
+            }
+                
         }
     }
 
