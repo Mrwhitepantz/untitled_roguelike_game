@@ -12443,10 +12443,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4eace7d0772f24aac179ec1f9c9a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 2132341231}
   spriteRenderer: {fileID: 2132341232}
   animator: {fileID: 2132341234}
-  moveSpeed: 4
+  body: {fileID: 2132341231}
+  moveSpeed: 10
+  maxSpeed: 0
+  linearDrag: 0
 --- !u!50 &2132341231
 Rigidbody2D:
   serializedVersion: 4
