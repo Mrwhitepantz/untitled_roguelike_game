@@ -7,6 +7,7 @@ public class TopDownController : MonoBehaviour
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
+    public bool pauseState;
 
     public float moveSpeed = 4f;
     private Vector2 direction;
@@ -21,10 +22,12 @@ public class TopDownController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        body.velocity = direction * moveSpeed;
-        if(direction.x != 0 || direction.y != 0)
+        if(!pauseState)
+        {
+            direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            body.velocity = direction * moveSpeed;
+        }
+        if (direction.x != 0 || direction.y != 0)
         {
             animator.SetFloat("speed", 1);
         }
