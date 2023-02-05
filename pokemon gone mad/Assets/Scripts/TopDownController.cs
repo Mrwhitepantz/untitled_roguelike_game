@@ -8,23 +8,19 @@ public class TopDownController : MonoBehaviour
     public Animator animator;
     public Rigidbody2D body;
 
+    //Make these public if we want to adjust any fields while in playground mode
     //Variables related to movement
-    public float maxSpeed;
-    public float linearDrag;
-    public float acceleration;
-
-    //private Vector2 direction;
-    private float X;
-    private float Y;
+    public float maxSpeed = 4f;
+    public float maxAccel = 35f;
+    public float friction = 1f;
+    private Vector2 direction, desiredVelocity, currVelocity;
+    private float maxSpeedChange, acceleration;
     private bool debug;
 
     // Start is called before the first frame update
-    // Initialize starting values here (ex. character speed, character direction)
+    // Place fields here if you want to edit them while in playground mode
     void Start()
     {
-        linearDrag = 10f;
-        acceleration = 9.81f;
-        maxSpeed = 5f;
         debug = true;
     }
 
@@ -33,45 +29,76 @@ public class TopDownController : MonoBehaviour
     void Update()
     {
         // X & Y is 0 when nothing is pressed
-        // X is 1 when moving right, -1 when moving left
-        // Y is 1 when moving up, -1 when moving down
-        X = getInput().x;
-        Y = getInput().y;
+        // direction.x is 1 when moving right, -1 when moving left
+        // direction.y is 1 when moving up, -1 when moving down
+        direction.x = getInput().x;
+        direction.y = getInput().y;
+        desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
         if (debug)
         {
-            Debug.Log("X: " + X + ", " + "Y: " + Y);
+            Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
         }
         //Jame's code
         //direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized; //responsible for player movement
         //body.velocity = direction * moveSpeed;
-        /*if(direction.x != 0 || direction.y != 0)
+       if(direction.x != 0 || direction.y != 0)
         {
             animator.SetFloat("speed", 1);
         }
         else
         {
             animator.SetFloat("speed", 0);
-        }*/
+        }
     }
 
     // Code that affects rigid body physics
     void FixedUpdate()
     {
-        movePlayerIcePhysics();
+        movePlayer();
+        //movePlayerBasic();
+        //movePlayerIcePhysics();
     }
 
+    // Barebones version of player movement
+    private void movePlayerBasic()
+    {
+        //X * maxSpeed = 1 * maxSpeed
+        body.velocity = new Vector2(direction.x * maxSpeed, direction.y * maxSpeed);
+    }
+
+    // Ideal implementation of player movement
+    /*  Higher maxSpeed + lower maxAccel makes character feel more weighty
+     *  Lower maxSpeed + higher maxAccel makes character feel closer to basic movement
+     *  Friction represents the type of ground character is moving in. Higher friction = generally slower movement speed
+     */
     private void movePlayer()
     {
-
+        /*  What's happening:
+         *  - body.velocity is the speed of the rigidbody, which is the character's movement speed
+         *  - first need to calculate the acceleration (or in physics, the change in speed)
+         *  - Mathf.MoveTowards() is the magic that allows the accelerated movement to happen. 
+         *    First parameter is current speed, second is the maximum speed, third is the rate of change
+         *    We are doing that for both the x and y velocities
+         *  - then we update the rigidbody's velocity to the newly calculated speed
+         */
+        currVelocity = body.velocity;
+        maxSpeedChange = maxAccel * Time.deltaTime;
+        currVelocity.x = Mathf.MoveTowards(currVelocity.x, desiredVelocity.x, maxSpeedChange);
+        currVelocity.y = Mathf.MoveTowards(currVelocity.y, desiredVelocity.y, maxSpeedChange);
+        body.velocity = currVelocity;
+        /* Next thing to implement:
+         * - Separate acceleration and deceleration curves. Currently acceleration and deceleration
+         *   have the same rate of change, but good games allow both to be different. (Refer
+         *   to acceleration curves shown in https://www.youtube.com/watch?v=yorTG9at90g)
+         */
     }
-    // Moves the player
+    // Ice physics
     private void movePlayerIcePhysics()
     {
-        float targetSpeed = Mathf.Lerp(X, maxSpeed, 2f);
-        float speedDif = targetSpeed - X;
+        float targetSpeed = Mathf.Lerp(direction.x, maxSpeed, 2f);
+        float speedDif = targetSpeed - direction.x;
         float movement = speedDif * acceleration;
-        body.AddForce(movement * new Vector2(X, Y), ForceMode2D.Force);
-        //body.velocity = new Vector2(X * moveSpeed, Y * moveSpeed);
+        body.AddForce(movement * new Vector2(direction.x, direction.y), ForceMode2D.Force);
     }
 
     // Get's x and y values
