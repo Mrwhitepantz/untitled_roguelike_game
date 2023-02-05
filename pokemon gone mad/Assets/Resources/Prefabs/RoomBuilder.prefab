@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 2201743763518125946}
   - component: {fileID: 2201743763518125948}
   - component: {fileID: 2201743763518125947}
+  - component: {fileID: 3563779729288313108}
   m_Layer: 0
   m_Name: EnvironmentObjects
   m_TagString: Untagged
@@ -240,6 +241,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!19719996 &3563779729288313108
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201743763518125945}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!1 &2201743763688191612
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,8 +267,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2201743763688191613}
   - component: {fileID: 2201743763688191614}
+  - component: {fileID: 5505287262272467406}
   m_Layer: 0
-  m_Name: RoomContainer
+  m_Name: RoomBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,6 +316,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5505287262272467406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201743763688191612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bed2e81ae7b824f8fe67eee0d36924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2201743764541707542
 GameObject:
   m_ObjectHideFlags: 0
