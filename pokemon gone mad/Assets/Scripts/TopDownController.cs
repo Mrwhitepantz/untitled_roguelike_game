@@ -10,8 +10,9 @@ public class TopDownController : MonoBehaviour
 
     //Make these public if we want to adjust any fields while in playground mode
     //Variables related to movement
-    public float maxSpeed = 4f;
-    public float maxAccel = 35f;
+    public float maxSpeed;
+    public float maxAccel;
+    //public float maxDecel = 50f;
     public float friction = 1f;
     private Vector2 direction, desiredVelocity, currVelocity;
     private float maxSpeedChange, acceleration;
@@ -22,6 +23,8 @@ public class TopDownController : MonoBehaviour
     void Start()
     {
         debug = true;
+        maxSpeed = 8f;
+        maxAccel = 95f;
     }
 
     // Update is called once per frame
@@ -34,14 +37,14 @@ public class TopDownController : MonoBehaviour
         direction.x = getInput().x;
         direction.y = getInput().y;
         desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
+        float timer = Time.time;
         if (debug)
         {
-            Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
+            //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
+            //Debug.Log("timer: " + timer);
         }
         //Jame's code
-        //direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized; //responsible for player movement
-        //body.velocity = direction * moveSpeed;
-       if(direction.x != 0 || direction.y != 0)
+        if (direction.x != 0 || direction.y != 0)
         {
             animator.SetFloat("speed", 1);
         }
@@ -54,16 +57,29 @@ public class TopDownController : MonoBehaviour
     // Code that affects rigid body physics
     void FixedUpdate()
     {
+        if (Input.GetKey("mouse 1")) //left click
+        {
+            Debug.Log("Dash!");
+            dash();
+        }
         movePlayer();
         //movePlayerBasic();
         //movePlayerIcePhysics();
     }
 
-    // Barebones version of player movement
-    private void movePlayerBasic()
+    private void dash()
     {
-        //X * maxSpeed = 1 * maxSpeed
-        body.velocity = new Vector2(direction.x * maxSpeed, direction.y * maxSpeed);
+        float dashDuration = 1f;
+        float start = Time.time;
+
+        while (dashDuration >= 0)
+        {
+            body.velocity = direction * 100;
+            dashDuration -= Time.deltaTime;
+            Debug.Log(dashDuration);
+        }
+        body.velocity = direction * maxSpeed;
+        //body.velocity = direction * 100;
     }
 
     // Ideal implementation of player movement
@@ -86,12 +102,21 @@ public class TopDownController : MonoBehaviour
         currVelocity.x = Mathf.MoveTowards(currVelocity.x, desiredVelocity.x, maxSpeedChange);
         currVelocity.y = Mathf.MoveTowards(currVelocity.y, desiredVelocity.y, maxSpeedChange);
         body.velocity = currVelocity;
+        
         /* Next thing to implement:
          * - Separate acceleration and deceleration curves. Currently acceleration and deceleration
          *   have the same rate of change, but good games allow both to be different. (Refer
          *   to acceleration curves shown in https://www.youtube.com/watch?v=yorTG9at90g)
          */
     }
+
+    // Barebones version of player movement
+    private void movePlayerBasic()
+    {
+        //X * maxSpeed = 1 * maxSpeed
+        body.velocity = new Vector2(direction.x * maxSpeed, direction.y * maxSpeed);
+    }
+
     // Ice physics
     private void movePlayerIcePhysics()
     {
