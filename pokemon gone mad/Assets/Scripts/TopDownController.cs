@@ -12,11 +12,13 @@ public class TopDownController : MonoBehaviour
     //Variables related to movement
     public float maxSpeed;
     public float maxAccel;
+    public bool pauseState;
     //public float maxDecel = 50f;
     public float friction = 1f;
     private Vector2 direction, desiredVelocity, currVelocity;
     private float maxSpeedChange, acceleration;
     private bool debug;
+    
 
     // Start is called before the first frame update
     // Place fields here if you want to edit them while in playground mode
@@ -31,34 +33,40 @@ public class TopDownController : MonoBehaviour
     // Code that affects getting input values
     void Update()
     {
-        // X & Y is 0 when nothing is pressed
-        // direction.x is 1 when moving right, -1 when moving left
-        // direction.y is 1 when moving up, -1 when moving down
-        direction.x = getInput().x;
-        direction.y = getInput().y;
-        desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
-        float timer = Time.time;
-        if (debug)
+        if (!pauseState)
         {
-            //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
-            //Debug.Log("timer: " + timer);
-        }
-        //Jame's code
-        if (direction.x != 0 || direction.y != 0)
-        {
-            if (direction.x > 0){
-                animator.SetFloat("horizontal",1);
+            // X & Y is 0 when nothing is pressed
+            // direction.x is 1 when moving right, -1 when moving left
+            // direction.y is 1 when moving up, -1 when moving down
+            direction.x = getInput().x;
+            direction.y = getInput().y;
+            desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
+            float timer = Time.time;
+            if (debug)
+            {
+                //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
+                //Debug.Log("timer: " + timer);
             }
-            else {
-                animator.SetFloat("horizontal",-1);
+            //Jame's code
+            if (direction.x != 0 || direction.y != 0)
+            {
+                if (direction.x > 0)
+                {
+                    animator.SetFloat("horizontal", 1);
+                }
+                else
+                {
+                    animator.SetFloat("horizontal", -1);
+                }
+                animator.SetFloat("speed", 1);
             }
-            animator.SetFloat("speed", 1);
+            else
+            {
+                animator.SetFloat("horizontal", 0);
+                animator.SetFloat("speed", 0);
+            }
         }
-        else
-        {
-            animator.SetFloat("horizontal",0);
-            animator.SetFloat("speed", 0);
-        }
+        
     }
 
     // Code that affects rigid body physics
