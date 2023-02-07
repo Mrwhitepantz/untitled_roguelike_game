@@ -41,6 +41,7 @@ public class MazeGenerator : MonoBehaviour
         // RemoveSingleWalls();
         ConnectExits();
         SpawnLevel();
+        PlacePlayer();
     }
 
     void Setup()
@@ -60,6 +61,12 @@ public class MazeGenerator : MonoBehaviour
         walkers = new List<Walker>();
         AddWalker(roomCenter, RandomDirection(), walkers);
         AddWalker(roomCenter, RandomDirection(), walkers);
+    }
+
+    void PlacePlayer()
+    {
+        GameObject player = Resources.Load("Assets/Prefabs/PlayerPrefab.prefab") as GameObject;
+        Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     void AddWalker(Vector2 spawnPos, Vector2 dir, List<Walker> walkers)
