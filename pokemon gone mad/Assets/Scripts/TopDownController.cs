@@ -26,10 +26,17 @@ public class TopDownController : MonoBehaviour
         body.velocity = direction * moveSpeed;
         if(direction.x != 0 || direction.y != 0)
         {
+            if (direction.x > 0){
+                animator.SetFloat("horizontal",1);
+            }
+            else {
+                animator.SetFloat("horizontal",-1);
+            }
             animator.SetFloat("speed", 1);
         }
         else
         {
+            animator.SetFloat("horizontal",0);
             animator.SetFloat("speed", 0);
         }
     }
