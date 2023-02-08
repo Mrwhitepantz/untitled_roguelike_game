@@ -18,26 +18,37 @@ public class TopDownController : MonoBehaviour
     private float maxSpeedChange, acceleration;
     private bool debug;
 
+    //Variables for dashing
+    private bool canDash;
+    private bool isDashing;
+
     // Start is called before the first frame update
     // Place fields here if you want to edit them while in playground mode
     void Start()
     {
         debug = true;
+        //Movement
         maxSpeed = 8f;
         maxAccel = 95f;
+
+        //Dashing
+        canDash = true;
     }
 
     // Update is called once per frame
     // Code that affects getting input values
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
         // X & Y is 0 when nothing is pressed
         // direction.x is 1 when moving right, -1 when moving left
         // direction.y is 1 when moving up, -1 when moving down
         direction.x = getInput().x;
         direction.y = getInput().y;
         desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
-        float timer = Time.time;
         if (debug)
         {
             //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
@@ -64,28 +75,47 @@ public class TopDownController : MonoBehaviour
     // Code that affects rigid body physics
     void FixedUpdate()
     {
-        if (Input.GetKey("mouse 1")) //left click
+        if (Input.GetKey("mouse 1") && canDash) //left click
         {
             Debug.Log("Dash!");
-            dash();
+            //StartCoroutine(dash()); //Found a tutorial on this, not sure why I need to use StartCoroutine()
+            naiveDash();
+            
         }
         movePlayer();
         //movePlayerBasic();
         //movePlayerIcePhysics();
     }
 
-    private void dash()
+    private void naiveDash()
     {
         float dashDuration = 1f;
-        float start = Time.time;
+        body.velocity = direction * 50;
+        float dashTimer = dashDuration;
+        /*if (dashTimer > 0)
+        {
+            //dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                movePlayer();
+            }
+        }*/
 
-        while (dashDuration >= 0)
+        /*canDash = false;
+        isDashing = true;
+        float dashDuration = .5f;
+        float start = Time.time;
+        body.velocity = direction * 100;
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;*/
+
+        /*while (dashDuration >= 0)
         {
             body.velocity = direction * 100;
             dashDuration -= Time.deltaTime;
             Debug.Log(dashDuration);
         }
-        body.velocity = direction * maxSpeed;
+        body.velocity = direction * maxSpeed;*/
         //body.velocity = direction * 100;
     }
 
