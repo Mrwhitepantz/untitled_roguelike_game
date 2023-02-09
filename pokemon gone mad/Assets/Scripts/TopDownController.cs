@@ -40,7 +40,7 @@ public class TopDownController : MonoBehaviour
             // direction.y is 1 when moving up, -1 when moving down
             direction.x = getInput().x;
             direction.y = getInput().y;
-            desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
+            desiredVelocity = new Vector2(direction.x, direction.y).normalized * (maxSpeed - friction);
             float timer = Time.time;
             if (debug)
             {

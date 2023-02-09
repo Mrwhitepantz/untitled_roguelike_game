@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2201743763190959621}
   - component: {fileID: 2201743763190959623}
   - component: {fileID: 2201743763190959622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 2201743763518125948}
   - component: {fileID: 2201743763518125947}
   - component: {fileID: 3563779729288313108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnvironmentObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2201743764541707543}
   - component: {fileID: 2201743764541707561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 2201743764858926531}
   - component: {fileID: 2201743764858926533}
   - component: {fileID: 2201743764858926532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnivornmentDecorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}

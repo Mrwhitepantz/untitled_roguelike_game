@@ -6,9 +6,11 @@ using UnityEngine.Tilemaps;
 
 public class RoomBuilder : MonoBehaviour
 {
-    //public Biome biome;
-    private readonly float moisture;
-    private readonly float temperature;
+    public Biome biome;
+    public float noiseSeed;
+    private float moisture;
+    private float temperature;
+
     private static readonly int roomWidth = 40;
     private static readonly int roomHeight = 40;
     private Tilemap[] tileMaps;
@@ -16,64 +18,75 @@ public class RoomBuilder : MonoBehaviour
     private static readonly int gridHeight = roomHeight / 2;
     private Vector2 gridCenter = new(gridWidth / 2, gridHeight / 2);
 
-    enum GridSpace { empty, floor, wall };
+    public enum GridSpace { empty, floor, wall };
     
 
     // Start is called before the first frame update
     void Start()
     {
         // build a new room here
-        BuildRoom(this.transform.position);
+        GridSpace[,] gridMap = PrepareGrid();
+        moisture = GetMoisture(this.transform.position);
+        temperature = GetTemperature(this.transform.position);
+        Debug.Log("moisture: " + moisture);
+        Debug.Log("temperature: " + moisture);
+        biome = new(moisture, temperature);
+        tileMaps = GetComponentsInChildren<Tilemap>();
+        foreach(Tilemap map in tileMaps)
+        {
+            Debug.Log(map.ToString());
+        }
+        SpawnLevel(gridMap, biome);
+
+
     }
 
-    public void BuildRoom(Vector3 roomOrigin)
+    public GridSpace[,] PrepareGrid()
     {
+        GridSpace[,] grid = new GridSpace[gridWidth, gridHeight];
+        int lastCol = gridWidth - 1;
+        int lastRow = gridHeight - 1;
+        int centerCol = (int)gridCenter.x;
+        int centerRow = (int)gridCenter.y;
 
-        tileMaps = GetComponentsInChildren<Tilemap>();
-
-        // creates a grid half the width/height of the final room so that forms are all 2x bigger for more space
-        GridSpace[,] grid = new GridSpace[20, 20];
-
-        // initialize every cell as empty
-        for(int x=0; x < gridWidth; x++)
+        for (int row = 0; row < gridHeight; row++)
         {
-            for(int y=0; y < gridHeight; y++)
+            for (int col = 0; col < gridWidth; col++)
             {
-                if( x == 0 || y == 0 || x == gridWidth - 1 ||  y == gridHeight - 1)
+                if (row == 0 || col == 0 || row == lastRow || col == lastCol)
                 {
-                    grid[x, y] = GridSpace.wall;
+                    grid[row, col] = GridSpace.wall;
                 }
                 else
                 {
-                    grid[x, y] = GridSpace.empty;
+                    grid[row, col] = GridSpace.empty;
                 }
-                
+
             }
         }
 
-        // set the exits to floor
         for (int offset = -2; offset < 2; offset++)
         {
             // top
-            grid[(int)gridCenter.x + offset, 0] = GridSpace.floor;
+            grid[centerCol + offset, 0] = GridSpace.floor;
             // bottom
-            grid[(int)gridCenter.x + offset, gridHeight - 1] = GridSpace.floor;
+            grid[centerCol + offset, lastRow] = GridSpace.floor;
             // left
-            grid[0, (int)gridCenter.y + offset] = GridSpace.floor;
+            grid[0, centerRow + offset] = GridSpace.floor;
             // right
-            grid[gridWidth - 1, (int)gridCenter.y + offset] = GridSpace.floor;
+            grid[lastCol, centerRow + offset] = GridSpace.floor;
         }
 
-        SpawnLevel(grid);
-        
+        return grid;
     }
 
-    void SpawnLevel(GridSpace[,] grid)
+    void SpawnLevel(GridSpace[,] grid, Biome biome)
     {
-        Tile groundTile = CreateTile(Resources.Load<Texture2D>("Sprites/GroundTiles/sand"));
-        Tile wallTile = CreateTile(Resources.Load<Texture2D>("Sprites/Environment/desert_boulder"));
+        Tile groundTile = biome.groundTile;
+        Tile wallTile = biome.wallTile;
         
-        for (int x = 0; x < roomWidth / 2; x++)
+        
+        for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < roomHeight / 2; y++)
             {
@@ -92,21 +105,10 @@ public class RoomBuilder : MonoBehaviour
         }
     }
 
-    Tile CreateTile(Texture2D texture)
-    {
-        Tile tile = ScriptableObject.CreateInstance<Tile>();
-        tile.sprite = (Sprite.Create(texture, 
-                            new Rect(0, 0, 32, 32), 
-                            new Vector2(.5f, .5f), 
-                            32f)
-                        );
-        return tile;
-    }
-
     void SpawnTile(int x, int y, Tile tile, Tilemap map)
     {
         // Offset the spawn coordinates by half the room size so it is centered properly
-        Vector3Int offset = new(roomWidth / 2, roomHeight / 2, 0);
+        Vector3Int offset = new(gridWidth, gridHeight, 0);
 
         // spawns the cell and its right, down, and downright neighbors
         for (int i = 0; i < 2; i++)
@@ -135,11 +137,14 @@ public class RoomBuilder : MonoBehaviour
     
     float GetMoisture(Vector3 roomOrigin)
     {
-        return 1f;
+        Debug.Log("seed: " + noiseSeed);
+        return Mathf.Clamp(Mathf.PerlinNoise(roomOrigin.x * .38f * noiseSeed, roomOrigin.y * .38f * noiseSeed),0,.999999f);
     }
 
     float GetTemperature(Vector3 roomOrigin)
     {
-        return 1f;
+        Debug.Log("seed: " + noiseSeed);
+        return Mathf.Clamp(Mathf.PerlinNoise(roomOrigin.x * .68f * noiseSeed, roomOrigin.y * .68f * noiseSeed), 0, .999999f);
+        
     }
 }
