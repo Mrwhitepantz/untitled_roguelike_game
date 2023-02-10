@@ -18,7 +18,6 @@ public class RoomTransitionManager : MonoBehaviour
     private GameObject player;
     private Vector3 roomOffset, playerOffset;
     private List<Vector3> roomList = new();
-    private float noiseSeed;
 
     // Panel/transition code from Mister Taft Creates https://www.youtube.com/watch?v=JcEJtEWjiZU
 
@@ -30,7 +29,6 @@ public class RoomTransitionManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = (TopDownController) player.GetComponent("TopDownController");
         roomList.Add(new Vector3(0, 0, 1));
-        noiseSeed = Random.Range(10000f, 100000000f);
 
     }
 
@@ -70,8 +68,8 @@ public class RoomTransitionManager : MonoBehaviour
         if(!roomList.Contains(this.transform.position))
         {
             roomList.Add(this.transform.position);
-            RoomBuilder room = gameObject.AddComponent<RoomBuilder>();
-            room.Instantiate(roomContainer, this.transform.position, Quaternion.identity, noiseSeed);
+            //RoomBuilder room = gameObject.AddComponent<RoomBuilder>();
+            Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         }
         
         // change camera min/max positions to next room
