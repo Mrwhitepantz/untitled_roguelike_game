@@ -18,31 +18,31 @@ public class TopDownController : MonoBehaviour
     private float maxSpeedChange, acceleration;
     private bool debug;
 
-    //Variables for dashing
-    private bool canDash;
-    private bool isDashing;
+    //Variables for dashing (turn them into private after testing)
+    public float dashSpeed;
+    public float dashDuration;
+    public float dashCooldown;
 
     // Start is called before the first frame update
     // Place fields here if you want to edit them while in playground mode
     void Start()
     {
         debug = true;
+
         //Movement
         maxSpeed = 8f;
         maxAccel = 95f;
 
         //Dashing
-        canDash = true;
+        dashDuration = .25f;
+        dashCooldown = .75f;
+        dashSpeed = 50;
     }
 
     // Update is called once per frame
     // Code that affects getting input values
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
         // X & Y is 0 when nothing is pressed
         // direction.x is 1 when moving right, -1 when moving left
         // direction.y is 1 when moving up, -1 when moving down
@@ -75,48 +75,28 @@ public class TopDownController : MonoBehaviour
     // Code that affects rigid body physics
     void FixedUpdate()
     {
-        if (Input.GetKey("mouse 1") && canDash) //left click
+        if (Input.GetKey("mouse 1")) //left click
         {
-            Debug.Log("Dash!");
-            //StartCoroutine(dash()); //Found a tutorial on this, not sure why I need to use StartCoroutine()
-            naiveDash();
-            
+            StartCoroutine(dash()); //personally prefer this one
+            //naiveDash();
         }
-        movePlayer();
-        //movePlayerBasic();
-        //movePlayerIcePhysics();
+        run();
+        //runNaive();
+        //runIcePhysics();
+    }
+
+    private IEnumerator dash()
+    {
+        body.velocity = direction * dashSpeed;
+        yield return new WaitForSeconds(dashDuration);
+        body.velocity = new Vector2(direction.x * (maxSpeed / 1.5f), direction.y * (maxSpeed / 1.5f)); // higher the divisor, the more choppier end of dash feels
+        //body.velocity = direction; // doesn't feel as good
+        yield return new WaitForSeconds(dashCooldown);
     }
 
     private void naiveDash()
     {
-        float dashDuration = 1f;
-        body.velocity = direction * 50;
-        float dashTimer = dashDuration;
-        /*if (dashTimer > 0)
-        {
-            //dashTimer -= Time.deltaTime;
-            if (dashTimer <= 0)
-            {
-                movePlayer();
-            }
-        }*/
-
-        /*canDash = false;
-        isDashing = true;
-        float dashDuration = .5f;
-        float start = Time.time;
-        body.velocity = direction * 100;
-        yield return new WaitForSeconds(dashDuration);
-        isDashing = false;*/
-
-        /*while (dashDuration >= 0)
-        {
-            body.velocity = direction * 100;
-            dashDuration -= Time.deltaTime;
-            Debug.Log(dashDuration);
-        }
-        body.velocity = direction * maxSpeed;*/
-        //body.velocity = direction * 100;
+        body.velocity = direction * dashSpeed;
     }
 
     // Ideal implementation of player movement
@@ -124,7 +104,7 @@ public class TopDownController : MonoBehaviour
      *  Lower maxSpeed + higher maxAccel makes character feel closer to basic movement
      *  Friction represents the type of ground character is moving in. Higher friction = generally slower movement speed
      */
-    private void movePlayer()
+    private void run()
     {
         /*  What's happening:
          *  - body.velocity is the speed of the rigidbody, which is the character's movement speed
@@ -148,14 +128,14 @@ public class TopDownController : MonoBehaviour
     }
 
     // Barebones version of player movement
-    private void movePlayerBasic()
+    private void naiveRun()
     {
         //X * maxSpeed = 1 * maxSpeed
         body.velocity = new Vector2(direction.x * maxSpeed, direction.y * maxSpeed);
     }
 
     // Ice physics
-    private void movePlayerIcePhysics()
+    private void runIcePhysics()
     {
         float targetSpeed = Mathf.Lerp(direction.x, maxSpeed, 2f);
         float speedDif = targetSpeed - direction.x;
