@@ -6,55 +6,41 @@ using UnityEngine.Tilemaps;
 
 public class RoomBuilder : MonoBehaviour
 {
+    // Biome Generation Variables
     public Biome biome;
-    public float[] noiseSeedMoisture = new float[2];
-    public float[] noiseSeedTemperature = new float[2];
-    private float scale = 2f;
-    private int moisture;
+    private readonly float perlinScale = 3f;    // determines how quickly the values change from room to room
+    private int humidity;
     private int temperature;
 
+    // Grid Generation Variables
     private static readonly int roomWidth = 40;
     private static readonly int roomHeight = 40;
-    private Tilemap[] tileMaps;
     private static readonly int gridWidth = roomWidth / 2;
     private static readonly int gridHeight = roomHeight / 2;
     private Vector2 gridCenter = new(gridWidth / 2, gridHeight / 2);
+    private Vector3 roomOrigin;
 
-    public enum GridSpace { empty, floor, wall };
+    private Tilemap[] tileMapsArray;
 
+    public enum GridSpaceType { empty, floor, wall };
 
-    private void Awake()
-    {
-        //noiseSeedMoisture[0] = Random.value;
-        //noiseSeedMoisture[1] = Random.value;
-        //noiseSeedTemperature[0] = Random.value;
-        //noiseSeedTemperature[1] = Random.value;
-        noiseSeedMoisture[0] = .3f;
-        noiseSeedMoisture[1] = .5f;
-        noiseSeedTemperature[0] = .7f;
-        noiseSeedTemperature[1] = .4f;
-    }
-    // Start is called before the first frame update
-    void Start()
+    public void BuildRoom(float[] noiseSeedArray, Grid grid)
     {
         // build a new room here
-        GridSpace[,] gridMap = PrepareGrid();
+        GridSpaceType[,] gridMap = PrepareGrid();
+        roomOrigin = this.transform.position;
 
-        moisture = GetMoisture(this.transform.position);
-        temperature = GetTemperature(this.transform.position);
-        Debug.Log("moisture: " + moisture);
-        Debug.Log("temperature: " + moisture);
-        biome = Biome.NewBiome(moisture, temperature);
-        tileMaps = GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: Walls/Objects, 3: DecorativeObjects
+        humidity = GetHumidity(new float[] { noiseSeedArray[0], noiseSeedArray[1] });
+        temperature = GetTemperature(new float[] { noiseSeedArray[2], noiseSeedArray[3] });
+        biome = Biome.NewBiome(humidity, temperature);
+        tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
         SpawnLevel(gridMap);
-
-
     }
 
-    public GridSpace[,] PrepareGrid()
+    public GridSpaceType[,] PrepareGrid()
     {
-        GridSpace[,] grid = new GridSpace[gridWidth, gridHeight];
+        GridSpaceType[,] grid = new GridSpaceType[gridWidth, gridHeight];
         int lastCol = gridWidth - 1;
         int lastRow = gridHeight - 1;
         int centerCol = (int)gridCenter.x;
@@ -64,105 +50,121 @@ public class RoomBuilder : MonoBehaviour
         {
             for (int col = 0; col < gridWidth; col++)
             {
+                // make the edges of the grid into walls so each room is self-contained
                 if (row == 0 || col == 0 || row == lastRow || col == lastCol)
                 {
-                    grid[row, col] = GridSpace.wall;
+                    grid[row, col] = GridSpaceType.wall;
                 }
                 else
                 {
-                    grid[row, col] = GridSpace.empty;
+                    grid[row, col] = GridSpaceType.empty;
                 }
 
             }
         }
 
+        // set exits in centers of each side of the room to floor
         for (int offset = -2; offset < 2; offset++)
         {
             // top
-            grid[centerCol + offset, 0] = GridSpace.floor;
+            grid[centerCol + offset, 0] = GridSpaceType.floor;
             // bottom
-            grid[centerCol + offset, lastRow] = GridSpace.floor;
+            grid[centerCol + offset, lastRow] = GridSpaceType.floor;
             // left
-            grid[0, centerRow + offset] = GridSpace.floor;
+            grid[0, centerRow + offset] = GridSpaceType.floor;
             // right
-            grid[lastCol, centerRow + offset] = GridSpace.floor;
+            grid[lastCol, centerRow + offset] = GridSpaceType.floor;
         }
 
         return grid;
     }
 
-    void SpawnLevel(GridSpace[,] grid)
+    void SpawnLevel(GridSpaceType[,] grid)
     {
-        Tile groundTile = biome.groundTile;
-        Tile wallTile = biome.wallTile;
-        
-        
-        for (int x = 0; x < gridWidth; x++)
+        TileBase groundTile = biome.groundTile;
+        TileBase wallTile = biome.wallTile;
+        bool water = biome.GetType().ToString().StartsWith("Water");
+
+        for (int col = 0; col < gridWidth; col++)
         {
-            for (int y = 0; y < roomHeight / 2; y++)
+            for (int row = 0; row < roomHeight / 2; row++)
             {
-                if(biome.GetType().ToString().StartsWith("Water"))
+                switch (grid[col, row])
                 {
-                    SpawnTile(x, y, groundTile, tileMaps[0]);
-                }
-                else
-                {
-                    SpawnTile(x, y, groundTile, tileMaps[1]);
-                }
-                switch (grid[x, y])
-                {
-                    case GridSpace.empty:
+                    case GridSpaceType.empty:
+                        if (water)
+                        {
+                            SpawnTile(col, row, wallTile, tileMapsArray[0]);
+                        }
+                        else SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
-                    case GridSpace.floor:
+                    case GridSpaceType.floor:
+                        SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
-                    case GridSpace.wall:
-                        SpawnTile(x, y, wallTile, tileMaps[2]);
-                        if (biome.wallTileCount > 1) SpawnTile(x, y, biome.wallTile2, tileMaps[3], true);
+                    case GridSpaceType.wall:
+                        if (!water)
+                        {
+                            SpawnTile(col, row, groundTile, tileMapsArray[1]);
+                            SpawnTile(col, row, wallTile, tileMapsArray[2]);
+                            if (biome.wallTileCount > 1) SpawnTile(col, row, biome.wallTile2, tileMapsArray[3], true);
+                        }
+                        else SpawnTile(col, row, wallTile, tileMapsArray[0]);
+                        
                         break;
                 }   
             }
         }
     }
 
-    void SpawnTile(int x, int y, Tile tile, Tilemap map, bool twoTileWall = false)
+    void SpawnTile(int col, int row, TileBase tile, Tilemap map, bool twoTileWall = false)
     {
         // Offset the spawn coordinates by half the room size so it is centered properly
+        // and subtract the roomOrigin to spawn in correct place
         Vector3Int offset = new(gridWidth, gridHeight, 0);
+        offset.x -= (int)roomOrigin.x;
+        offset.y -= (int)roomOrigin.y;
 
-        // spawns the cell and its right, up, and up-right neighbors
+        // spawns the cell and its right, top, and top-right neighbors
+        // this ensures all paths are at least two cells wide to make movement easier
         for (int i = 0; i < 2; i++)
         {
             // If this is the top row, don't set the upper tiles for the two tile wall
-            if(twoTileWall && y == gridHeight - 1)
+            if(twoTileWall && row == gridHeight - 1)
             {
-                Vector3Int spawnPos = new Vector3Int(x * 2 + i, y * 2+1, 0) - offset;
+                Vector3Int spawnPos = new Vector3Int(col * 2 + i, row * 2+1, 0) - offset;
                 map.SetTile(spawnPos, tile);
                 continue;
             }
             for (int j = 0; j < 2; j++)
             {
-                Vector3Int spawnPos = new Vector3Int(x * 2 + i, y * 2 + j, 0) - offset;
+                Vector3Int spawnPos = new Vector3Int(col * 2 + i, row * 2 + j, 0) - offset;
                 if (twoTileWall) spawnPos.y++;
                 map.SetTile(spawnPos, tile);
             }
         }
     }
     
-    int GetMoisture(Vector3 roomOrigin)
+    int GetHumidity(float[] noiseSeeds)
     {
-        float perlinRaw = Mathf.PerlinNoise((noiseSeedMoisture[1] * roomOrigin.x/roomWidth + noiseSeedMoisture[0]) / scale, ( noiseSeedMoisture[1]) / scale);
+        float noiseX = noiseSeeds[1] * roomOrigin.x / roomWidth;
+        float noiseY = noiseSeeds[0] * roomOrigin.y / roomHeight;
         
+        float perlinRaw = Mathf.PerlinNoise((noiseX + noiseSeeds[0]) / perlinScale, (noiseY + noiseSeeds[1]) / perlinScale); 
+        // PerlinNoise can return values slightly below 0 or above 1,
+        // so needs to be clamped to ensure mapping works correctly
         float perlinClamp = Mathf.Clamp(perlinRaw, 0, .9999999f);
-        Debug.Log("Moisture perlinRaw: " + perlinRaw +" perlinClamp: " + perlinClamp);
         return Mathf.FloorToInt(perlinClamp * 100);
     }
 
-    int GetTemperature(Vector3 roomOrigin)
+    int GetTemperature(float[] noiseSeeds)
     {
-        float perlinRaw = Mathf.PerlinNoise((noiseSeedTemperature[1] * roomOrigin.x/roomWidth + noiseSeedTemperature[0]) / scale, (noiseSeedTemperature[0] * roomOrigin.y/roomHeight + noiseSeedTemperature[1]) / scale);
-        float perlinClamp = Mathf.Clamp(perlinRaw, 0, .9999999f);
-        Debug.Log("Temperature perlinRaw: " + perlinRaw + " perlinClamp: " + perlinClamp);
-        return Mathf.FloorToInt(perlinClamp * 100);
+        float noiseX = noiseSeeds[1] * roomOrigin.x / roomWidth;
+        float noiseY = noiseSeeds[0] * roomOrigin.y / roomHeight;
 
+        float perlinRaw = Mathf.PerlinNoise(( noiseX + noiseSeeds[0]) / perlinScale, (noiseY + noiseSeeds[1]) / perlinScale);
+        // PerlinNoise can return values slightly below 0 or above 1,
+        // so needs to be clamped to ensure mapping works correctly
+        float perlinClamp = Mathf.Clamp(perlinRaw, 0, .9999999f);
+        return Mathf.FloorToInt(perlinClamp * 100);
     }
 }

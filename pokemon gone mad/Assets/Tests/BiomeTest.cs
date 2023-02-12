@@ -8,17 +8,27 @@ public class BiomeTest : MonoBehaviour
     public int radius = 0;
     public RoomBuilder roomContainer;
     public bool active = false;
+    public Grid worldGrid;
     // Start is called before the first frame update
     void Start()
     {
         if (active)
         {
-            for (int x = -radius; x < radius; x++)
+            float[] noiseList = new float[4];
+            for (int i = 0; i < 4; i++)
             {
-                for (int y = -radius; y < radius; y++)
+                noiseList[i] = Random.value;
+            }
+            Debug.Log(noiseList[0] + "\n" + noiseList[1] + "\n" + noiseList[2] + "\n" + noiseList[3]);
+            for (int x = -radius; x <= radius; x++)
+            {
+                for (int y = -radius; y <= radius; y++)
                 {
                     Vector3 pos = new(x * roomSize, y * roomSize, 0);
-                    Instantiate(roomContainer, pos, Quaternion.identity);
+                    RoomBuilder room = Instantiate(roomContainer, pos, Quaternion.identity);
+
+                    float[] manNoise = new float[] { .35f, .59f, .72f, .42f };
+                    room.BuildRoom(noiseList, worldGrid);
                 }
             }
         }
