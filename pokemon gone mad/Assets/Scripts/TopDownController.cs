@@ -7,21 +7,23 @@ public class TopDownController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     public Rigidbody2D body;
+    public Camera sceneCam;
+    public Weapon weapon;
 
-    //Make these public if we want to adjust any fields while in playground mode
+    //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
     //Variables related to movement
     public float maxSpeed;
     public float maxAccel;
-    //public float maxDecel = 50f;
-    public float friction = 1f;
+    public float friction;
     private Vector2 direction, desiredVelocity, currVelocity;
-    private float maxSpeedChange, acceleration;
+    private float maxSpeedChange;
     private bool debug;
 
     //Variables for dashing (turn them into private after testing)
     public float dashSpeed;
     public float dashDuration;
     public float dashCooldown;
+    private bool canDash;
 
     // Start is called before the first frame update
     // Place fields here if you want to edit them while in playground mode
@@ -32,50 +34,54 @@ public class TopDownController : MonoBehaviour
         //Movement
         maxSpeed = 8f;
         maxAccel = 95f;
+        friction = 1f;
 
         //Dashing
         dashDuration = .25f;
         dashCooldown = .75f;
-        dashSpeed = 50;
+        dashSpeed = 50f;
+        canDash = true;
     }
 
     // Update is called once per frame
     // Code that affects getting input values
     void Update()
     {
-        // X & Y is 0 when nothing is pressed
+        // X & Y = 0 when nothing is pressed
         // direction.x is 1 when moving right, -1 when moving left
         // direction.y is 1 when moving up, -1 when moving down
-        direction.x = getInput().x;
-        direction.y = getInput().y;
+        direction = getInput();
         desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
-        if (debug)
-        {
-            //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
-            //Debug.Log("timer: " + timer);
-        }
+        lookAtMouse();
         //Jame's code
         if (direction.x != 0 || direction.y != 0)
         {
-            if (direction.x > 0){
-                animator.SetFloat("horizontal",1);
+            if (direction.x > 0)
+            {
+                animator.SetFloat("horizontal", 1);
             }
-            else {
-                animator.SetFloat("horizontal",-1);
+            else
+            {
+                animator.SetFloat("horizontal", -1);
             }
             animator.SetFloat("speed", 1);
         }
         else
         {
-            animator.SetFloat("horizontal",0);
+            animator.SetFloat("horizontal", 0);
             animator.SetFloat("speed", 0);
         }
+        // Weapon script
+        /*if (Input.GetMouseButtonDown(0)) // left click
+        {
+            weapon.fire();
+        }*/
     }
 
     // Code that affects rigid body physics
     void FixedUpdate()
     {
-        if (Input.GetKey("mouse 1")) //left click
+        if (Input.GetKey("mouse 1") && canDash) //right click
         {
             StartCoroutine(dash()); //personally prefer this one
             //naiveDash();
@@ -85,13 +91,33 @@ public class TopDownController : MonoBehaviour
         //runIcePhysics();
     }
 
+    private void lookAtMouse()
+    {
+        Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
+        if (debug)
+        {
+            //Debug.Log("Mouse X: " + mousePos.x + " Y: " + mousePos.y);
+            //Vector2 direction = controller.getCurrVelocity();
+            //Debug.Log("Player X: " + direction.x + " Y: " + direction.y);
+            //float aimAngle = Mathf.Atan2(mousePos.x, mousePos.y) * Mathf.Rad2Deg - 90f;
+        }
+
+        Vector2 aimDirection = mousePos - body.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        body.rotation = aimAngle;
+    }
+
+    // Ideal implementation of dashing
     private IEnumerator dash()
     {
+        canDash = false;
         body.velocity = direction * dashSpeed;
         yield return new WaitForSeconds(dashDuration);
-        body.velocity = new Vector2(direction.x * (maxSpeed / 1.5f), direction.y * (maxSpeed / 1.5f)); // higher the divisor, the more choppier end of dash feels
+        body.velocity = new Vector2(direction.x * (maxSpeed / 1.5f), direction.y * (maxSpeed / 1.5f)); // higher the divisor, the choppier end of dash feels
+        //body.velocity = new Vector2(direction.x * (maxSpeed / 2f), direction.y * (maxSpeed / 2f));
         //body.velocity = direction; // doesn't feel as good
         yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     private void naiveDash()
@@ -119,12 +145,6 @@ public class TopDownController : MonoBehaviour
         currVelocity.x = Mathf.MoveTowards(currVelocity.x, desiredVelocity.x, maxSpeedChange);
         currVelocity.y = Mathf.MoveTowards(currVelocity.y, desiredVelocity.y, maxSpeedChange);
         body.velocity = currVelocity;
-        
-        /* Next thing to implement:
-         * - Separate acceleration and deceleration curves. Currently acceleration and deceleration
-         *   have the same rate of change, but good games allow both to be different. (Refer
-         *   to acceleration curves shown in https://www.youtube.com/watch?v=yorTG9at90g)
-         */
     }
 
     // Barebones version of player movement
@@ -139,7 +159,7 @@ public class TopDownController : MonoBehaviour
     {
         float targetSpeed = Mathf.Lerp(direction.x, maxSpeed, 2f);
         float speedDif = targetSpeed - direction.x;
-        float movement = speedDif * acceleration;
+        float movement = speedDif * maxAccel;
         body.AddForce(movement * new Vector2(direction.x, direction.y), ForceMode2D.Force);
     }
 
