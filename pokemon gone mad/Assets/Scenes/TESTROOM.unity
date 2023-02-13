@@ -1642,7 +1642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2132341229}
-  cam: {fileID: 0}
+  cameraMaxPos: {x: 0, y: 0, z: 0}
+  cameraMinPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1348484169
 GameObject:
   m_ObjectHideFlags: 0
@@ -12447,9 +12448,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2132341232}
   animator: {fileID: 2132341234}
   body: {fileID: 2132341231}
-  moveSpeed: 10
   maxSpeed: 0
-  linearDrag: 0
+  maxAccel: 0
+  pauseState: 0
+  friction: 1
 --- !u!50 &2132341231
 Rigidbody2D:
   serializedVersion: 4
@@ -12531,7 +12533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132341229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24999997, y: 0.24999997, z: 0}
+  m_LocalPosition: {x: 0.52, y: -0.02, z: 0}
   m_LocalScale: {x: 2.5625, y: 2.5625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
