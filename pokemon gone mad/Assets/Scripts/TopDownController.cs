@@ -10,6 +10,7 @@ public class TopDownController : MonoBehaviour
     public Camera sceneCam;
     public Weapon weapon;
 
+<<<<<<< HEAD
     private bool debug;
     //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
     //Variables related to movement
@@ -25,6 +26,19 @@ public class TopDownController : MonoBehaviour
     private float dashDuration;
     private float dashCooldown;
     private bool canDash;
+=======
+    //Make these public if we want to adjust any fields while in playground mode
+    //Variables related to movement
+    public float maxSpeed;
+    public float maxAccel;
+    public bool pauseState;
+    //public float maxDecel = 50f;
+    public float friction = 1f;
+    private Vector2 direction, desiredVelocity, currVelocity;
+    private float maxSpeedChange, acceleration;
+    private bool debug;
+    
+>>>>>>> main
 
     // Start is called before the first frame update
     // Place fields here if you want to edit them while in playground mode
@@ -49,6 +63,7 @@ public class TopDownController : MonoBehaviour
     // Code that affects getting input values
     void Update()
     {
+<<<<<<< HEAD
         // X & Y = 0 when nothing is pressed
         // direction.x is 1 when moving right, -1 when moving left
         // direction.y is 1 when moving up, -1 when moving down
@@ -68,11 +83,50 @@ public class TopDownController : MonoBehaviour
             }
             animator.SetFloat("speed", 1);
         }
-        else
+        else 
         {
             animator.SetFloat("horizontal", 0);
             animator.SetFloat("speed", 0);
+======= }
+        if (pauseState)
+        {
+            body.velocity = Vector2.zero;
         }
+        else
+        {
+            // X & Y is 0 when nothing is pressed
+            // direction.x is 1 when moving right, -1 when moving left
+            // direction.y is 1 when moving up, -1 when moving down
+            direction.x = getInput().x;
+            direction.y = getInput().y;
+            desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
+            float timer = Time.time;
+            if (debug)
+            {
+                //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
+                //Debug.Log("timer: " + timer);
+            }
+            //Jame's code
+            if (direction.x != 0 || direction.y != 0)
+            {
+                if (direction.x > 0)
+                {
+                    animator.SetFloat("horizontal", 1);
+                }
+                else
+                {
+                    animator.SetFloat("horizontal", -1);
+                }
+                animator.SetFloat("speed", 1);
+            }
+            else
+            {
+                animator.SetFloat("horizontal", 0);
+                animator.SetFloat("speed", 0);
+            }
+>>>>>>> main
+        }
+        
     }
 
     // Code that affects rigid body physics
