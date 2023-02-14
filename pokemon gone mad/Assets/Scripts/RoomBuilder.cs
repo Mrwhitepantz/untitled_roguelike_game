@@ -35,6 +35,7 @@ public class RoomBuilder : MonoBehaviour
         biome = Biome.NewBiome(humidity, temperature);
         tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
+
         SpawnLevel(gridMap);
     }
 
