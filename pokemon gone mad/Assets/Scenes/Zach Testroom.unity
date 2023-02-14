@@ -1642,7 +1642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2132341229}
-  cam: {fileID: 0}
+  cameraMaxPos: {x: 0, y: 0, z: 0}
+  cameraMinPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1348484169
 GameObject:
   m_ObjectHideFlags: 0
@@ -12410,7 +12411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3730d4c19d08c046925bbbeddfeec2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8851098855207269556, guid: 1c14a2d688b16574ea75bf0f6278ecae, type: 3}
+  bullet: {fileID: 5622797255184522459, guid: 5b6c031cab8568c49a906b1a3f00a138, type: 3}
   firePoint: {fileID: 1945923164}
   bulletForce: 30
 --- !u!1 &1644363078
@@ -12653,3 +12654,4 @@ MonoBehaviour:
   body: {fileID: 2132341231}
   sceneCam: {fileID: 519420031}
   weapon: {fileID: 1447334026}
+  pauseState: 0
