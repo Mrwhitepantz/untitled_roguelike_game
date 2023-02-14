@@ -1878,10 +1878,403 @@ MonoBehaviour:
   m_GameObject: {fileID: 411427088}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
   m_Script: {fileID: 11500000, guid: 117def271ea646f4b869cf84200148e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 411427088}
+=======
+  m_Script: {fileID: 11500000, guid: b437adcc39aa3c94a8ccf38e8f6bff8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 1854721614}
+--- !u!1001 &482252026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2060074637}
+    m_Modifications:
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 24.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052949098939598743, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+      propertyPath: m_Name
+      value: Panel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+--- !u!224 &492216860 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+  m_PrefabInstance: {fileID: 791384139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &517921527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517921530}
+  - component: {fileID: 517921529}
+  - component: {fileID: 517921528}
+  m_Layer: 5
+  m_Name: Stat Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &517921528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517921527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.38431373}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &517921529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517921527}
+  m_CullTransparentMesh: 1
+--- !u!224 &517921530
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517921527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 14.011, y: 6.4374, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1372592215}
+  m_Father: {fileID: 205066988}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &692264287 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7072215721527015554, guid: 88ac02710a9c45a46a0d4d95eaccd5c6, type: 3}
+  m_PrefabInstance: {fileID: 1712554762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &732485452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3522686699006425659, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+  m_PrefabInstance: {fileID: 791384139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &791384139
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 205066988}
+    m_Modifications:
+    - target: {fileID: 3522686699006425658, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699006425658, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699006425658, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699006425658, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447427, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_Name
+      value: XP HP UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 213
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699299447436, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -951.3791
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -996.2114
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 39.894287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686699422552289, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.15640259
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -896
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522686700612009179, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -963
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
 --- !u!1 &803472829
 GameObject:
   m_ObjectHideFlags: 0
@@ -17983,7 +18376,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0093907
+=======
+      m_AnimationSpeed: 1.0405257
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -20, z: 0}
@@ -17995,7 +18392,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0668174
+=======
+      m_AnimationSpeed: 1.1330692
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -20, z: 0}
@@ -18007,7 +18408,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0783565
+=======
+      m_AnimationSpeed: 1.0781623
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -20, z: 0}
@@ -18019,7 +18424,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1115221
+=======
+      m_AnimationSpeed: 1.1334397
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -20, z: 0}
@@ -18031,7 +18440,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1560323
+=======
+      m_AnimationSpeed: 1.1328206
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -20, z: 0}
@@ -18043,7 +18456,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1887842
+=======
+      m_AnimationSpeed: 1.0482843
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -20, z: 0}
@@ -18055,7 +18472,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1635429
+=======
+      m_AnimationSpeed: 1.0314649
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -20, z: 0}
@@ -18067,7 +18488,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1873412
+=======
+      m_AnimationSpeed: 1.1958808
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -20, z: 0}
@@ -18079,7 +18504,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1034527
+=======
+      m_AnimationSpeed: 1.1188169
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -20, z: 0}
@@ -18091,7 +18520,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1721189
+=======
+      m_AnimationSpeed: 1.0413158
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -20, z: 0}
@@ -18103,7 +18536,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0397491
+=======
+      m_AnimationSpeed: 1.0851351
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -20, z: 0}
@@ -18115,7 +18552,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1322247
+=======
+      m_AnimationSpeed: 1.1007516
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -20, z: 0}
@@ -18127,7 +18568,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.081628
+=======
+      m_AnimationSpeed: 1.1443424
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -20, z: 0}
@@ -18139,7 +18584,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1217453
+=======
+      m_AnimationSpeed: 1.0068883
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -20, z: 0}
@@ -18151,7 +18600,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0202417
+=======
+      m_AnimationSpeed: 1.1444615
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -19, z: 0}
@@ -18163,7 +18616,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0065252
+=======
+      m_AnimationSpeed: 1.0437828
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -19, z: 0}
@@ -18175,7 +18632,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1813515
+=======
+      m_AnimationSpeed: 1.1849183
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -19, z: 0}
@@ -18187,7 +18648,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.053759
+=======
+      m_AnimationSpeed: 1.0060532
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -19, z: 0}
@@ -18199,7 +18664,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0311267
+=======
+      m_AnimationSpeed: 1.0067046
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -19, z: 0}
@@ -18211,7 +18680,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0094622
+=======
+      m_AnimationSpeed: 1.0368164
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -19, z: 0}
@@ -18223,7 +18696,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0579896
+=======
+      m_AnimationSpeed: 1.1743418
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -19, z: 0}
@@ -18235,7 +18712,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0320745
+=======
+      m_AnimationSpeed: 1.1034033
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -19, z: 0}
@@ -18247,7 +18728,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1600925
+=======
+      m_AnimationSpeed: 1.0108511
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -19, z: 0}
@@ -18259,7 +18744,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.193681
+=======
+      m_AnimationSpeed: 1.1108248
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -19, z: 0}
@@ -18271,7 +18760,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0313154
+=======
+      m_AnimationSpeed: 1.0642198
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -19, z: 0}
@@ -18283,7 +18776,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0923095
+=======
+      m_AnimationSpeed: 1.0426774
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -19, z: 0}
@@ -18295,7 +18792,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1413474
+=======
+      m_AnimationSpeed: 1.0919006
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -19, z: 0}
@@ -18307,7 +18808,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0660882
+=======
+      m_AnimationSpeed: 1.027024
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -19, z: 0}
@@ -18319,7 +18824,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0380013
+=======
+      m_AnimationSpeed: 1.064069
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -19, z: 0}
@@ -18331,7 +18840,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0821894
+=======
+      m_AnimationSpeed: 1.1521462
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -18, z: 0}
@@ -18343,7 +18856,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1817068
+=======
+      m_AnimationSpeed: 1.0640123
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -18, z: 0}
@@ -18355,7 +18872,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0108198
+=======
+      m_AnimationSpeed: 1.1187668
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -18, z: 0}
@@ -18367,7 +18888,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1682614
+=======
+      m_AnimationSpeed: 1.1403117
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -18, z: 0}
@@ -18379,7 +18904,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0415127
+=======
+      m_AnimationSpeed: 1.1561893
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -18, z: 0}
@@ -18391,7 +18920,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0450972
+=======
+      m_AnimationSpeed: 1.1682339
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -18, z: 0}
@@ -18403,7 +18936,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1155405
+=======
+      m_AnimationSpeed: 1.052173
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -18, z: 0}
@@ -18415,7 +18952,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1590234
+=======
+      m_AnimationSpeed: 1.0363376
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -18, z: 0}
@@ -18427,7 +18968,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1240146
+=======
+      m_AnimationSpeed: 1.0876033
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -18, z: 0}
@@ -18439,7 +18984,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.042511
+=======
+      m_AnimationSpeed: 1.0640149
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -18, z: 0}
@@ -18451,7 +19000,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1768827
+=======
+      m_AnimationSpeed: 1.1236942
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -18, z: 0}
@@ -18463,7 +19016,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1216385
+=======
+      m_AnimationSpeed: 1.0155511
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -18, z: 0}
@@ -18475,7 +19032,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1794301
+=======
+      m_AnimationSpeed: 1.1706811
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -18, z: 0}
@@ -18487,7 +19048,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1073985
+=======
+      m_AnimationSpeed: 1.1885151
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -18, z: 0}
@@ -18499,7 +19064,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1982565
+=======
+      m_AnimationSpeed: 1.1051744
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -18, z: 0}
@@ -18511,7 +19080,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0481131
+=======
+      m_AnimationSpeed: 1.0407869
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -17, z: 0}
@@ -18523,7 +19096,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1410785
+=======
+      m_AnimationSpeed: 1.0595305
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -17, z: 0}
@@ -18535,7 +19112,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1470312
+=======
+      m_AnimationSpeed: 1.0219374
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -17, z: 0}
@@ -18547,7 +19128,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.065049
+=======
+      m_AnimationSpeed: 1.0668644
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -17, z: 0}
@@ -18559,7 +19144,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0498912
+=======
+      m_AnimationSpeed: 1.1877385
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -17, z: 0}
@@ -18571,7 +19160,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1342225
+=======
+      m_AnimationSpeed: 1.1423377
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -17, z: 0}
@@ -18583,7 +19176,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0108349
+=======
+      m_AnimationSpeed: 1.1625953
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -17, z: 0}
@@ -18595,7 +19192,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1092333
+=======
+      m_AnimationSpeed: 1.1153891
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -17, z: 0}
@@ -18607,7 +19208,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0015047
+=======
+      m_AnimationSpeed: 1.1269281
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -17, z: 0}
@@ -18619,7 +19224,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.143073
+=======
+      m_AnimationSpeed: 1.1030924
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -17, z: 0}
@@ -18631,7 +19240,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1071106
+=======
+      m_AnimationSpeed: 1.0724025
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -17, z: 0}
@@ -18643,7 +19256,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1387101
+=======
+      m_AnimationSpeed: 1.0184367
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -17, z: 0}
@@ -18655,7 +19272,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1752908
+=======
+      m_AnimationSpeed: 1.094368
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -17, z: 0}
@@ -18667,7 +19288,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1460298
+=======
+      m_AnimationSpeed: 1.0377944
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -17, z: 0}
@@ -18679,7 +19304,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0364988
+=======
+      m_AnimationSpeed: 1.079969
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -17, z: 0}
@@ -18691,7 +19320,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1609154
+=======
+      m_AnimationSpeed: 1.1520977
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -16, z: 0}
@@ -18703,7 +19336,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0686443
+=======
+      m_AnimationSpeed: 1.1200876
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -16, z: 0}
@@ -18715,7 +19352,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0231092
+=======
+      m_AnimationSpeed: 1.1994252
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -16, z: 0}
@@ -18727,7 +19368,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0593505
+=======
+      m_AnimationSpeed: 1.1904036
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -16, z: 0}
@@ -18739,7 +19384,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.132795
+=======
+      m_AnimationSpeed: 1.1222584
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -16, z: 0}
@@ -18751,7 +19400,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.136311
+=======
+      m_AnimationSpeed: 1.1567116
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -16, z: 0}
@@ -18763,7 +19416,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0626206
+=======
+      m_AnimationSpeed: 1.0423286
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -16, z: 0}
@@ -18775,7 +19432,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1132178
+=======
+      m_AnimationSpeed: 1.1097989
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -16, z: 0}
@@ -18787,7 +19448,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0301297
+=======
+      m_AnimationSpeed: 1.1312114
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -16, z: 0}
@@ -18799,7 +19464,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0145748
+=======
+      m_AnimationSpeed: 1.0671246
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -16, z: 0}
@@ -18811,7 +19480,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1037276
+=======
+      m_AnimationSpeed: 1.0949113
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -16, z: 0}
@@ -18823,7 +19496,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1032751
+=======
+      m_AnimationSpeed: 1.1874982
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -16, z: 0}
@@ -18835,7 +19512,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1134739
+=======
+      m_AnimationSpeed: 1.1247916
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -16, z: 0}
@@ -18847,7 +19528,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1763082
+=======
+      m_AnimationSpeed: 1.1612226
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -16, z: 0}
@@ -18859,7 +19544,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0714967
+=======
+      m_AnimationSpeed: 1.0021124
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -16, z: 0}
@@ -18871,7 +19560,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1107206
+=======
+      m_AnimationSpeed: 1.1495034
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -15, z: 0}
@@ -18883,7 +19576,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0266285
+=======
+      m_AnimationSpeed: 1.1204684
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -15, z: 0}
@@ -18895,7 +19592,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1438932
+=======
+      m_AnimationSpeed: 1.007228
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -15, z: 0}
@@ -18907,7 +19608,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0200243
+=======
+      m_AnimationSpeed: 1.0337709
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -15, z: 0}
@@ -18919,7 +19624,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1774673
+=======
+      m_AnimationSpeed: 1.1468141
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -15, z: 0}
@@ -18931,7 +19640,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0801246
+=======
+      m_AnimationSpeed: 1.0394778
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -15, z: 0}
@@ -18943,7 +19656,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0854565
+=======
+      m_AnimationSpeed: 1.1236047
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -15, z: 0}
@@ -18955,7 +19672,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0830163
+=======
+      m_AnimationSpeed: 1.0629132
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -15, z: 0}
@@ -18967,7 +19688,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.14701
+=======
+      m_AnimationSpeed: 1.1997768
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -15, z: 0}
@@ -18979,7 +19704,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1892729
+=======
+      m_AnimationSpeed: 1.0443488
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -15, z: 0}
@@ -18991,7 +19720,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0557444
+=======
+      m_AnimationSpeed: 1.0811665
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -15, z: 0}
@@ -19003,7 +19736,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1714817
+=======
+      m_AnimationSpeed: 1.0467564
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -15, z: 0}
@@ -19015,7 +19752,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0267377
+=======
+      m_AnimationSpeed: 1.0574728
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -15, z: 0}
@@ -19027,7 +19768,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1881714
+=======
+      m_AnimationSpeed: 1.1787009
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -15, z: 0}
@@ -19039,7 +19784,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.001537
+=======
+      m_AnimationSpeed: 1.1227946
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -15, z: 0}
@@ -19051,7 +19800,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0556765
+=======
+      m_AnimationSpeed: 1.1022205
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -5, y: -15, z: 0}
@@ -19063,7 +19816,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0286374
+=======
+      m_AnimationSpeed: 1.007881
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -14, z: 0}
@@ -19075,7 +19832,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0140189
+=======
+      m_AnimationSpeed: 1.1147914
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -14, z: 0}
@@ -19087,7 +19848,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0716169
+=======
+      m_AnimationSpeed: 1.0081122
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -14, z: 0}
@@ -19099,7 +19864,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1217015
+=======
+      m_AnimationSpeed: 1.0566449
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -14, z: 0}
@@ -19111,7 +19880,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1400422
+=======
+      m_AnimationSpeed: 1.1124828
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -14, z: 0}
@@ -19123,7 +19896,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1356475
+=======
+      m_AnimationSpeed: 1.0588243
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -14, z: 0}
@@ -19135,7 +19912,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1081262
+=======
+      m_AnimationSpeed: 1.1718669
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -14, z: 0}
@@ -19147,7 +19928,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1336253
+=======
+      m_AnimationSpeed: 1.093755
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -14, z: 0}
@@ -19159,7 +19944,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1837621
+=======
+      m_AnimationSpeed: 1.1003568
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -14, z: 0}
@@ -19171,7 +19960,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1505688
+=======
+      m_AnimationSpeed: 1.0433561
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -14, z: 0}
@@ -19183,7 +19976,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1789769
+=======
+      m_AnimationSpeed: 1.1313975
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -14, z: 0}
@@ -19195,7 +19992,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.009669
+=======
+      m_AnimationSpeed: 1.1105089
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -14, z: 0}
@@ -19207,7 +20008,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1461054
+=======
+      m_AnimationSpeed: 1.1231382
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -14, z: 0}
@@ -19219,7 +20024,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1129891
+=======
+      m_AnimationSpeed: 1.0901144
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -14, z: 0}
@@ -19231,7 +20040,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0509028
+=======
+      m_AnimationSpeed: 1.0266509
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -14, z: 0}
@@ -19243,7 +20056,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1194026
+=======
+      m_AnimationSpeed: 1.0405262
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -13, z: 0}
@@ -19255,7 +20072,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1406898
+=======
+      m_AnimationSpeed: 1.1877006
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -13, z: 0}
@@ -19267,7 +20088,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1568946
+=======
+      m_AnimationSpeed: 1.1364022
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -13, z: 0}
@@ -19279,7 +20104,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0705135
+=======
+      m_AnimationSpeed: 1.0895858
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -13, z: 0}
@@ -19291,7 +20120,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1191084
+=======
+      m_AnimationSpeed: 1.0340914
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -13, z: 0}
@@ -19303,7 +20136,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1238902
+=======
+      m_AnimationSpeed: 1.1858057
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -13, z: 0}
@@ -19315,7 +20152,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1744521
+=======
+      m_AnimationSpeed: 1.1289941
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -13, z: 0}
@@ -19327,7 +20168,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1773007
+=======
+      m_AnimationSpeed: 1.0639834
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -13, z: 0}
@@ -19339,7 +20184,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0725653
+=======
+      m_AnimationSpeed: 1.1764817
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -13, z: 0}
@@ -19351,7 +20200,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1508751
+=======
+      m_AnimationSpeed: 1.0261028
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -13, z: 0}
@@ -19363,7 +20216,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1529264
+=======
+      m_AnimationSpeed: 1.1076895
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -13, z: 0}
@@ -19375,7 +20232,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1162744
+=======
+      m_AnimationSpeed: 1.0959942
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -13, z: 0}
@@ -19387,7 +20248,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.124985
+=======
+      m_AnimationSpeed: 1.0312346
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -13, z: 0}
@@ -19399,7 +20264,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1274691
+=======
+      m_AnimationSpeed: 1.064281
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -12, z: 0}
@@ -19411,7 +20280,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0421213
+=======
+      m_AnimationSpeed: 1.1670678
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -12, z: 0}
@@ -19423,7 +20296,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.028276
+=======
+      m_AnimationSpeed: 1.1848031
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -12, z: 0}
@@ -19435,7 +20312,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0749164
+=======
+      m_AnimationSpeed: 1.1720085
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -12, z: 0}
@@ -19447,7 +20328,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0797131
+=======
+      m_AnimationSpeed: 1.1512444
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -12, z: 0}
@@ -19459,7 +20344,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.155326
+=======
+      m_AnimationSpeed: 1.0347784
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -12, z: 0}
@@ -19471,7 +20360,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.002941
+=======
+      m_AnimationSpeed: 1.0348703
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -12, z: 0}
@@ -19483,7 +20376,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1880285
+=======
+      m_AnimationSpeed: 1.080363
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -12, z: 0}
@@ -19495,7 +20392,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0512216
+=======
+      m_AnimationSpeed: 1.0615561
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -12, z: 0}
@@ -19507,7 +20408,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.071572
+=======
+      m_AnimationSpeed: 1.1016778
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -12, z: 0}
@@ -19519,7 +20424,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0647262
+=======
+      m_AnimationSpeed: 1.189721
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -11, z: 0}
@@ -19531,7 +20440,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1616429
+=======
+      m_AnimationSpeed: 1.1321341
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -11, z: 0}
@@ -19543,7 +20456,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0163537
+=======
+      m_AnimationSpeed: 1.0887606
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -11, z: 0}
@@ -19555,7 +20472,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0425961
+=======
+      m_AnimationSpeed: 1.144681
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -11, z: 0}
@@ -19567,7 +20488,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0859842
+=======
+      m_AnimationSpeed: 1.0700785
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -11, z: 0}
@@ -19579,7 +20504,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1470623
+=======
+      m_AnimationSpeed: 1.0698558
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -11, z: 0}
@@ -19591,7 +20520,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0396706
+=======
+      m_AnimationSpeed: 1.0779486
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -11, z: 0}
@@ -19603,7 +20536,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0564482
+=======
+      m_AnimationSpeed: 1.1632144
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -11, z: 0}
@@ -19615,7 +20552,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0453501
+=======
+      m_AnimationSpeed: 1.0451866
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -11, z: 0}
@@ -19627,7 +20568,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.148964
+=======
+      m_AnimationSpeed: 1.145454
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -11, z: 0}
@@ -19639,7 +20584,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1995184
+=======
+      m_AnimationSpeed: 1.018661
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -10, z: 0}
@@ -19651,7 +20600,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0621747
+=======
+      m_AnimationSpeed: 1.0894501
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -10, z: 0}
@@ -19663,7 +20616,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0231159
+=======
+      m_AnimationSpeed: 1.0961347
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -10, z: 0}
@@ -19675,7 +20632,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0467472
+=======
+      m_AnimationSpeed: 1.1267586
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -10, z: 0}
@@ -19687,7 +20648,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.086777
+=======
+      m_AnimationSpeed: 1.027472
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -10, z: 0}
@@ -19699,7 +20664,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0565329
+=======
+      m_AnimationSpeed: 1.1755573
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -10, z: 0}
@@ -19711,7 +20680,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1452307
+=======
+      m_AnimationSpeed: 1.0909013
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -10, z: 0}
@@ -19723,7 +20696,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1294093
+=======
+      m_AnimationSpeed: 1.106327
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -10, z: 0}
@@ -19735,7 +20712,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1701648
+=======
+      m_AnimationSpeed: 1.0369018
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -12, y: -10, z: 0}
@@ -19747,7 +20728,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.005958
+=======
+      m_AnimationSpeed: 1.1964602
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: -9, z: 0}
@@ -19759,7 +20744,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0390303
+=======
+      m_AnimationSpeed: 1.1950794
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -9, z: 0}
@@ -19771,7 +20760,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0762401
+=======
+      m_AnimationSpeed: 1.1296811
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -9, z: 0}
@@ -19783,7 +20776,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0995207
+=======
+      m_AnimationSpeed: 1.1310554
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: -9, z: 0}
@@ -19795,7 +20792,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0513134
+=======
+      m_AnimationSpeed: 1.0595071
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -9, z: 0}
@@ -19807,7 +20808,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.1917455
+=======
+      m_AnimationSpeed: 1.0603485
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -9, z: 0}
@@ -19819,7 +20824,11 @@ Tilemap:
       - {fileID: -7064220622572970029, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: -2740290441555968558, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
       - {fileID: 7149751655148466542, guid: b9a83ff5e8f26c748b0798fe7be36a6f, type: 3}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
       m_AnimationSpeed: 1.0692439
+=======
+      m_AnimationSpeed: 1.1246771
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -23604,6 +24613,68 @@ MonoBehaviour:
   roomOffset: {x: 0, y: 40, z: 0}
   playerOffset: {x: 0, y: 1.5, z: 0}
   roomSwitcher: {fileID: 1692506366}
+<<<<<<< HEAD:pokemon gone mad/Assets/Scenes/Noah Test.unity
+=======
+--- !u!1 &1854721609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3522686699422552288, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+  m_PrefabInstance: {fileID: 791384139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854721612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3522686699422552291, guid: 1351ad2de4e72d6479aa578d80f76a5b, type: 3}
+  m_PrefabInstance: {fileID: 791384139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854721609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1854721614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854721609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ea3c8b0e7a0cf409b9685328adc059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1854721612}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.972549, g: 0.34509805, b: 0.21960784, a: 1}
+    key1: {r: 0.972549, g: 0.8784314, b: 0.21960784, a: 1}
+    key2: {r: 0.4392157, g: 0.972549, b: 0.65882355, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 13107
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 732485452}
+>>>>>>> main:pokemon gone mad/Assets/Scenes/NewTestScene.unity
 --- !u!1 &1896195172
 GameObject:
   m_ObjectHideFlags: 0
