@@ -9,26 +9,35 @@ using UnityEngine;
 //     }
 // }
 
-public class AnimatorSpeed : MonoBehaviour
-{
-    Animator m_Animator;
-    //Value from the slider, and it converts to speed level
-    float m_MySliderValue;
+public class ItemManager : MonoBehaviour{
+    public GameObject player;
+    private TopDownController topDownController;
 
     void Start()
     {
-        //Get the animator, attached to the GameObject you are intending to animate.
-        m_Animator = gameObject.GetComponent<Animator>();
+        topDownController = player.GetComponent<TopDownController>();
     }
 
-    void OnGUI()
-    {
-        //Create a Label in Game view for the Slider
-        GUI.Label(new Rect(0, 25, 40, 60), "Speed");
-        //Create a horizontal Slider to control the speed of the Animator. Drag the slider to 1 for normal speed.
+    public void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.name == "Sunglasses"){
+            topDownController.animator.SetBool("SunglassesItem",true);
+            topDownController.maxSpeed=16f; //double speed
+            Destroy(collision.gameObject);
+        }
 
-        m_MySliderValue = GUI.HorizontalSlider(new Rect(45, 25, 200, 60), m_MySliderValue, 0.0F, 1.0F);
-        //Make the speed of the Animator match the Slider value
-        m_Animator.speed = m_MySliderValue;
+        if (collision.gameObject.name == "PotionBlue"){
+            topDownController.animator.SetBool("PotionBlueItem",true);
+            topDownController.maxSpeed = 4f;
+            Destroy(collision.gameObject);
+        }
+        StartCoroutine(waiter());
+        Debug.Log(collision.gameObject.name);
     }
+    public IEnumerator waiter(){
+        yield return new WaitForSecondsRealtime(3);
+
+        topDownController.maxSpeed = 8f;
+        topDownController.animator.SetBool("SunglassesItem",false);
+        topDownController.animator.SetBool("PotionBlueItem",false);
+}
 }

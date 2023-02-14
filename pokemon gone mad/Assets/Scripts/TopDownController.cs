@@ -10,6 +10,7 @@ public class TopDownController : MonoBehaviour
 
     //Make these public if we want to adjust any fields while in playground mode
     //Variables related to movement
+    public float playerHealth = 100;
     public float maxSpeed;
     public float maxAccel;
     public bool pauseState;
@@ -146,21 +147,6 @@ public class TopDownController : MonoBehaviour
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
-    void OnCollisionEnter2D(Collision2D collision){
-
-        if (collision.gameObject.name == "Sunglasses"){
-            maxSpeed = 16f;
-            //m_Speed = 2;
-
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.name == "Potion"){
-            maxSpeed = 4f;
-            //m_Speed = .5;
-            Destroy(collision.gameObject);
-            
-        }
-
-        Debug.Log(collision.gameObject.name);
-    }
+    
+    
 }
