@@ -25,8 +25,18 @@ public class BulletScript : MonoBehaviour
         //rb.AddForce(force);
         transform.position += target * speed * Time.deltaTime;
         StartCoroutine(waiter());
+      
             
                 
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "BadMen") {
+            Debug.Log("hit");
+            Destroy(gameObject);
+        }
+        
     }
     IEnumerator waiter()
     {
