@@ -10,19 +10,20 @@ public class TopDownController : MonoBehaviour
     public Camera sceneCam;
     public Weapon weapon;
 
+    private bool debug;
     //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
     //Variables related to movement
-    public float maxSpeed;
-    public float maxAccel;
-    public float friction;
+    private float maxSpeed;
+    private float maxAccel;
+    private float friction;
     private Vector2 direction, desiredVelocity, currVelocity;
     private float maxSpeedChange;
-    private bool debug;
+    private bool pauseState;
 
     //Variables for dashing (turn them into private after testing)
-    public float dashSpeed;
-    public float dashDuration;
-    public float dashCooldown;
+    private float dashSpeed;
+    private float dashDuration;
+    private float dashCooldown;
     private bool canDash;
 
     // Start is called before the first frame update
@@ -35,6 +36,7 @@ public class TopDownController : MonoBehaviour
         maxSpeed = 8f;
         maxAccel = 95f;
         friction = 1f;
+        pauseState = false;
 
         //Dashing
         dashDuration = .25f;
@@ -71,11 +73,6 @@ public class TopDownController : MonoBehaviour
             animator.SetFloat("horizontal", 0);
             animator.SetFloat("speed", 0);
         }
-        // Weapon script
-        /*if (Input.GetMouseButtonDown(0)) // left click
-        {
-            weapon.fire();
-        }*/
     }
 
     // Code that affects rigid body physics

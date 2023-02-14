@@ -12412,7 +12412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8851098855207269556, guid: 1c14a2d688b16574ea75bf0f6278ecae, type: 3}
   firePoint: {fileID: 1945923164}
-  bulletForce: 20
+  bulletForce: 30
 --- !u!1 &1644363078
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,9 +12653,3 @@ MonoBehaviour:
   body: {fileID: 2132341231}
   sceneCam: {fileID: 519420031}
   weapon: {fileID: 1447334026}
-  maxSpeed: 0
-  maxAccel: 0
-  friction: 0
-  dashSpeed: 0
-  dashDuration: 0
-  dashCooldown: 0
