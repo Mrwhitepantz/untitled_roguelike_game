@@ -17,7 +17,7 @@ ScriptedImporter:
     ExtrudeEdges: 1
     Pivot: 0
     _pivot: {x: 0.5, y: 0.5}
-    GeneratePhysicsShape: 1
+    GeneratePhysicsShape: 0
     WrapMode: 1
     FilterMode: 0
     AnisoLevel: 1
