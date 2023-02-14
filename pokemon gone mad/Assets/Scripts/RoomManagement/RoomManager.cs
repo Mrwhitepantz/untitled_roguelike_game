@@ -18,7 +18,6 @@ public class RoomManager : MonoBehaviour
     private FollowPlayer cameraController;
     private TopDownController playerController;
     private GameObject playerObject;
-    private Vector3 currentRoomPosition;
     private Vector3 roomOffset, playerOffset;
     private readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
@@ -32,10 +31,9 @@ public class RoomManager : MonoBehaviour
         cameraController = Camera.main.GetComponent<FollowPlayer>();
         playerObject = GameObject.FindGameObjectWithTag("Player");
         playerController = (TopDownController) playerObject.GetComponent("TopDownController");
-        currentRoomPosition = this.transform.position;
 
         // add first room to the roomList
-        RoomBuilder firstRoom = Instantiate(roomContainer, currentRoomPosition, Quaternion.identity);
+        RoomBuilder firstRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         firstRoom.biome = new ForestBiome();
         roomDictionary.Add(new Vector3(0, 0, 1), firstRoom);
 
@@ -48,7 +46,7 @@ public class RoomManager : MonoBehaviour
 
     public Biome GetRoomBiome()
     {
-        return roomDictionary[currentRoomPosition].biome;
+        return roomDictionary[this.transform.position].biome;
     }
 
     // Starts the transition beteen rooms and begins the coroutine
@@ -75,12 +73,13 @@ public class RoomManager : MonoBehaviour
         yield return new WaitForSeconds(fadeWaitSeconds);
 
         // move room switchers to next room
-        currentRoomPosition += roomOffset;
+        this.transform.position += roomOffset;
         // if the next room isn't in the roomList, make a new RoomBuilder and add it
-        if(!roomDictionary.ContainsKey(currentRoomPosition))
+        if(!roomDictionary.ContainsKey(this.transform.position))
         {
-            RoomBuilder newRoom = Instantiate(roomContainer, currentRoomPosition, Quaternion.identity);
-            roomDictionary.Add(currentRoomPosition, newRoom);
+            RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
+            roomDictionary.Add(this.transform.position, newRoom);
+            Debug.Log("building new room?");
             newRoom.BuildRoom(noiseSeedArray, worldGrid);
         }
         
