@@ -10,27 +10,14 @@ public class TopDownController : MonoBehaviour
     public Camera sceneCam;
     public Weapon weapon;
 
-<<<<<<< HEAD
-    //Make these public if we want to adjust any fields while in playground mode
-    //Variables related to movement
-    public float playerHealth = 100;
-    public float maxSpeed;
-    public float maxAccel;
-    public bool pauseState;
-    //public float maxDecel = 50f;
-    public float friction = 1f;
-    private Vector2 direction, desiredVelocity, currVelocity;
-    private float maxSpeedChange, acceleration;
-=======
->>>>>>> main
     private bool debug;
     //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
     //Variables related to movement
-    private float maxSpeed;
+    public float maxSpeed;
     private float maxAccel;
     private float friction;
-    private Vector2 direction, desiredVelocity, currVelocity;
-    private float maxSpeedChange;
+    public Vector2 direction, desiredVelocity, currVelocity;
+    public float maxSpeedChange;
     public bool pauseState;
 
     //Variables for dashing
@@ -216,10 +203,4 @@ public class TopDownController : MonoBehaviour
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
-<<<<<<< HEAD
-    
-    
 }
-=======
-}
->>>>>>> main
