@@ -8,7 +8,6 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public float speed;
     public float nextPointDictance;
-    public float sooterRange;
 
     Path path;
     int currentPoint;
@@ -58,20 +57,10 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 dirction = ((Vector2)path.vectorPath[currentPoint] - rb.position).normalized;
         Vector2 force = dirction * speed * Time.deltaTime;
-        float range = Vector3.Distance(player.position, transform.position);
-        if (range < sooterRange)
-        {
-            rb.velocity = Vector3.zero;
 
-        }
-        else {
-            rb.AddForce(force);
-
-        }
-        
+        rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentPoint]);
-        
         if (distance < nextPointDictance) {
             currentPoint++;
         }
