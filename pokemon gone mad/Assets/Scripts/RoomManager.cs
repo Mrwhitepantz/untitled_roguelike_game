@@ -66,7 +66,6 @@ public class RoomManager : MonoBehaviour
 
         // put the player in a pause state so they can't move
         playerController.pauseState = true;
-        playerController.body.velocity = Vector3.zero;
 
         StartCoroutine(TransitionCoroutine());
     }
