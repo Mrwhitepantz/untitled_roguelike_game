@@ -20,7 +20,7 @@ public class TopDownController : MonoBehaviour
     private float maxSpeedChange;
     private bool pauseState;
 
-    //Variables for dashing (turn them into private after testing)
+    //Variables for dashing
     private float dashSpeed;
     private float dashDuration;
     private float dashCooldown;
@@ -83,9 +83,9 @@ public class TopDownController : MonoBehaviour
             StartCoroutine(dash()); //personally prefer this one
             //naiveDash();
         }
-        run();
-        //runNaive();
-        //runIcePhysics();
+        //run();
+        //naiveRun();
+        runIcePhysics();
     }
 
     private void lookAtMouse()
@@ -154,9 +154,9 @@ public class TopDownController : MonoBehaviour
     // Ice physics
     private void runIcePhysics()
     {
-        float targetSpeed = Mathf.Lerp(direction.x, maxSpeed, 2f);
+        float targetSpeed = Mathf.Lerp(direction.x, maxSpeed, .5f);
         float speedDif = targetSpeed - direction.x;
-        float movement = speedDif * maxAccel;
+        float movement = speedDif * (maxAccel-80);
         body.AddForce(movement * new Vector2(direction.x, direction.y), ForceMode2D.Force);
     }
 
