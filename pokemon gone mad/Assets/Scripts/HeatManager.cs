@@ -49,7 +49,7 @@ public class HeatManager : MonoBehaviour
         }
     }
 
-    public IEnumerator ReturnToBaseTemperatureLevelCoroutine()
+    private IEnumerator ReturnToBaseTemperatureLevelCoroutine()
     {
         returnToBase = true;
         if (!heating)
@@ -71,7 +71,7 @@ public class HeatManager : MonoBehaviour
         returnToBase = false;
     }
 
-    public IEnumerator HeatingCoroutine()
+    private IEnumerator HeatingCoroutine()
     {
         heatCoroutine = true;
         while(temperatureLevel < maxHeat && !overHeated)
@@ -91,7 +91,7 @@ public class HeatManager : MonoBehaviour
         }
     }
 
-    public IEnumerator FreezingCoroutine()
+    private IEnumerator FreezingCoroutine()
     {
         freezeCoroutine = true;
         while (temperatureLevel > maxFreeze && !frozen)
@@ -111,7 +111,7 @@ public class HeatManager : MonoBehaviour
         }
     }
 
-    public IEnumerator OverHeatCo()
+    private IEnumerator OverHeatCo()
     {
         overHeated = true;
         while(temperatureLevel >= maxHeat / 2)
@@ -123,7 +123,7 @@ public class HeatManager : MonoBehaviour
         overHeated = false;
     }
 
-    public IEnumerator FrozenCo()
+    private IEnumerator FrozenCo()
     {
         frozen = true;
         while (temperatureLevel <= maxFreeze / 2)
