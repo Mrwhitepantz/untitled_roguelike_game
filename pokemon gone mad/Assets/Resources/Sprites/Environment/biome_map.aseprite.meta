@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a760ce2230dd84b4b90d503fa32860f1
+guid: 620bfabfdb10afd41bd21097147a28f2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -12,7 +12,7 @@ ScriptedImporter:
     TextureType: 8
     TextureShape: 1
     SpriteMode: 2
-    PixelsPerUnit: 100
+    PixelsPerUnit: 10
     MeshType: 1
     ExtrudeEdges: 1
     Pivot: 0

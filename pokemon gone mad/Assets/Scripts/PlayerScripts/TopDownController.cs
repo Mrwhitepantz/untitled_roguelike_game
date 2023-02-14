@@ -13,11 +13,11 @@ public class TopDownController : MonoBehaviour
     private bool debug;
     //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
     //Variables related to movement
-    private float maxSpeed;
-    private float maxAccel;
-    private float friction;
-    private Vector2 direction, desiredVelocity, currVelocity;
-    private float maxSpeedChange;
+    public float maxSpeed;
+    public float maxAccel;
+    public float friction;
+    public Vector2 direction, desiredVelocity, currVelocity;
+    public float maxSpeedChange;
     public bool pauseState;
 
     //Variables for dashing
