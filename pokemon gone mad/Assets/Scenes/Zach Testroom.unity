@@ -12411,7 +12411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3730d4c19d08c046925bbbeddfeec2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5622797255184522459, guid: 5b6c031cab8568c49a906b1a3f00a138, type: 3}
+  bullet: {fileID: 7559460122900930184, guid: c5233584e9d4cd245889260df9116610, type: 3}
   firePoint: {fileID: 1945923164}
   bulletForce: 30
 --- !u!1 &1644363078

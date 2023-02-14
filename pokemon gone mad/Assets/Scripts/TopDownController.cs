@@ -30,6 +30,7 @@ public class TopDownController : MonoBehaviour
     // Place fields here if you want to edit them while in playground mode
     void Start()
     {
+        //sceneCam = GetComponent<Camera>();
         debug = true;
 
         //Movement
@@ -46,7 +47,7 @@ public class TopDownController : MonoBehaviour
     }
 
     // Update is called once per frame
-    // Code that affects getting input values
+    // Code that affects getting input values for movement
     void Update()
     {
         // X & Y = 0 when nothing is pressed
@@ -75,7 +76,7 @@ public class TopDownController : MonoBehaviour
         }
         if (pauseState)
         {
-            body.velocity = Vector2.zero;
+            body.velocity = Vector2.zero; //ideally should have this in FixedUpdate
         }
         else
         {
@@ -85,12 +86,6 @@ public class TopDownController : MonoBehaviour
             direction.x = getInput().x;
             direction.y = getInput().y;
             desiredVelocity = new Vector2(direction.x, direction.y) * (maxSpeed - friction);
-            //float timer = Time.time;
-            if (debug)
-            {
-                //Debug.Log("X: " + direction.x + ", " + "Y: " + direction.y);
-                //Debug.Log("timer: " + timer);
-            }
             //Jame's code
             if (direction.x != 0 || direction.y != 0)
             {
@@ -129,14 +124,6 @@ public class TopDownController : MonoBehaviour
     private void lookAtMouse()
     {
         Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
-        if (debug)
-        {
-            //Debug.Log("Mouse X: " + mousePos.x + " Y: " + mousePos.y);
-            //Vector2 direction = controller.getCurrVelocity();
-            //Debug.Log("Player X: " + direction.x + " Y: " + direction.y);
-            //float aimAngle = Mathf.Atan2(mousePos.x, mousePos.y) * Mathf.Rad2Deg - 90f;
-        }
-
         Vector2 aimDirection = mousePos - body.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         body.rotation = aimAngle;
