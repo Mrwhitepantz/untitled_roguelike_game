@@ -19,11 +19,28 @@ public class TopDownController : MonoBehaviour
     private float dashCooldown = .95f;
     private bool dashCounter = true;
 
+    //public GameObject player; //At first needed this, but for some reason I don't need to have it
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
+
+    void Start()
+    {
+        //animator = player.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+    }
+
+    /* Helper method that checks if player can dash.
+     * In the future - will implement dashCounter as an int so that dashes can be a renewable
+     * resource
+     */
     public bool canDash()
     {
         return dashCounter;
     }
 
+    /* Performs a dash on character. After dashing for a certain amount of time, player will enter
+     * a cooldown state.
+     */
     public IEnumerator dash(Rigidbody2D body, Vector2 inputDir)
     {
         dashCounter = false;
@@ -50,6 +67,28 @@ public class TopDownController : MonoBehaviour
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
+    public void animate(Vector2 inputDir)
+    {
+        if (inputDir.x != 0 || inputDir.y != 0)
+        {
+            if (inputDir.x > 0)
+            {
+                animator.SetFloat("horizontal", 1);
+            }
+            else
+            {
+                animator.SetFloat("horizontal", -1);
+            }
+            animator.SetFloat("speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("horizontal", 0);
+            animator.SetFloat("speed", 0);
+        }
+    }
+
+    //Ideally don't want to pass animator as a parameter
     public void animate(Animator animator, Vector2 inputDir)
     {
         if (inputDir.x != 0 || inputDir.y != 0)

@@ -6,29 +6,29 @@ public class Player : MonoBehaviour
 {
     public TopDownController movement;
     public ShootingController shooter;
+    public PlayerHealth health;
     public Vector2 direction;
     public Rigidbody2D body;
-    public SpriteRenderer spriteRenderer;
-    public Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         //controller = new TopDownController("Squirtle"); // this unfortunately does not work. Get a NullReference exception
         movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
         body = GetComponent<Rigidbody2D>();
         shooter = GetComponent<ShootingController>();
-        animator = GetComponent<Animator>();
+        health = GetComponent<PlayerHealth>();
     }
 
-    // Update is called once per frame
+    //Any code that ISN'T updating with rigidbody2D goes here
     void Update()
     {
         direction = movement.getInput();
-        movement.animate(animator, direction);
-        body.rotation = shooter.lookAtMouse(body.position);
+        //movement.animate(animator, direction);
+        movement.animate(direction);
+        
     }
 
+    //Any code that IS updating any rigidBody values  goes here
     void FixedUpdate()
     {
         if (Input.GetKey("mouse 1") && movement.canDash())
@@ -37,5 +37,6 @@ public class Player : MonoBehaviour
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
         }
         body.velocity = movement.run(body.velocity, direction);
+        body.rotation = shooter.lookAtMouse(body.position);
     }
 }
