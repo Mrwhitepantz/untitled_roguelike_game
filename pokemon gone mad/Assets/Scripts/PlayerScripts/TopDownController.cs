@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class TopDownController : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public Animator animator;
-    public Rigidbody2D body;
-    public Camera sceneCam;
-    public Weapon weapon;
-
-    private bool debug;
     //Ideally make these variables private but idk who else have been accessing these fields
     //Variables related to movement
     public float maxSpeed = 8f;
     public float maxAccel = 95f;
     public float friction = 1f;
-    public Vector2 desiredVelocity, currVelocity;
+    public Vector2 desiredVelocity;
     public float maxSpeedChange;
     public bool pauseState;
 
@@ -55,5 +48,26 @@ public class TopDownController : MonoBehaviour
     public Vector2 getInput()
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    public void animate(Animator animator, Vector2 inputDir)
+    {
+        if (inputDir.x != 0 || inputDir.y != 0)
+        {
+            if (inputDir.x > 0)
+            {
+                animator.SetFloat("horizontal", 1);
+            }
+            else
+            {
+                animator.SetFloat("horizontal", -1);
+            }
+            animator.SetFloat("speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("horizontal", 0);
+            animator.SetFloat("speed", 0);
+        }
     }
 }
