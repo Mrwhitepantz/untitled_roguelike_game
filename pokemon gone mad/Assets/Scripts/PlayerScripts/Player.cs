@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Using
     public TopDownController movement;
     public ShootingController shooter;
+    public CamShake cineCam;
+
+    //Yet to use
     public PlayerHealth health;
+    //public ItemManager inventory;
+
     public Vector2 direction;
     public Rigidbody2D body;
 
@@ -17,6 +23,7 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
+        cineCam = GetComponent<CamShake>();
     }
 
     //Any code that ISN'T updating with rigidbody2D goes here
@@ -35,6 +42,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
+            cineCam.shakeCamera(5f, .1f);
         }
         body.velocity = movement.run(body.velocity, direction);
         body.rotation = shooter.lookAtMouse(body.position);
