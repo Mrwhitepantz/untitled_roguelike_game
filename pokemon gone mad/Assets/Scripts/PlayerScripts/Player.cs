@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
         direction = movement.getInput();
         //movement.animate(animator, direction);
         movement.animate(direction);
-        
+        if (Input.GetKey("mouse 0"))
+        {
+            shooter.shoot();
+        }
     }
 
     //Any code that IS updating any rigidBody values  goes here
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
-            cineCam.shakeCamera(5f, .1f);
+            cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
         body.rotation = shooter.lookAtMouse(body.position);
