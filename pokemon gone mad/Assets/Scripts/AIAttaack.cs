@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIShoot : MonoBehaviour
+public class AIAttaack : MonoBehaviour
 {
+    public GameObject PC;
+    public Vector3 Target;
+    public Transform player;
     public GameObject shot;
     public float shotcooldown;
     private float cooldownTime;
     public float lookspeed;
     public float distance;
+    public float meleeR;
+    public float shootR;
+    public float force;
     //private bool canshoot = true;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
+        Target = ((GameObject.Find("Player").transform.position)-transform.position).normalized;
         transform.Rotate(Vector3.forward * lookspeed * Time.deltaTime);
         RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, transform.right, distance);
         Debug.DrawRay(transform.position, lineOfSight.point, Color.black);
@@ -30,12 +37,18 @@ public class AIShoot : MonoBehaviour
         }
         //if (lineOfSight.collider.tag == "Player")
         //{
-        
-                if (Time.time > cooldownTime)
-                {
-                    Instantiate(shot, transform.position, Quaternion.identity);
-                    cooldownTime = Time.time + shotcooldown;
-                }
+        float range = Vector3.Distance(player.position, transform.position);
+        if (Time.time > cooldownTime)
+        {
+            if (range > meleeR && range < shootR)
+            {
+                Instantiate(shot, transform.position, Quaternion.identity);
+                cooldownTime = Time.time + shotcooldown;
+            }
+            else if (range <= meleeR) {
+                PC.GetComponent<Rigidbody2D>().AddForce(force * Target);
+            }
+        }
             //}
             //else {
                 //Debug.DrawLine(transform.position, lineOfSight.point, Color.blue);

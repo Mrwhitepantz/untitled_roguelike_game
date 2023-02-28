@@ -12411,7 +12411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3730d4c19d08c046925bbbeddfeec2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5622797255184522459, guid: 5b6c031cab8568c49a906b1a3f00a138, type: 3}
+  bullet: {fileID: 154299525712039152, guid: 052914997717c884faf5ef9acfe31fbd, type: 3}
   firePoint: {fileID: 1945923164}
   bulletForce: 30
 --- !u!1 &1644363078
@@ -12500,6 +12500,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132341233}
+  - component: {fileID: 2132341237}
+  - component: {fileID: 2132341238}
   - component: {fileID: 2132341236}
   - component: {fileID: 2132341232}
   - component: {fileID: 2132341231}
@@ -12594,7 +12596,7 @@ Transform:
   m_GameObject: {fileID: 2132341229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.24999997, y: 0.24999997, z: 0}
-  m_LocalScale: {x: 2.5625, y: 2.5625, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447334025}
@@ -12644,7 +12646,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132341229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e4eace7d0772f24aac179ec1f9c9a94, type: 3}
   m_Name: 
@@ -12654,4 +12656,50 @@ MonoBehaviour:
   body: {fileID: 2132341231}
   sceneCam: {fileID: 519420031}
   weapon: {fileID: 1447334026}
+  maxSpeed: 0
+  maxAccel: 0
+  friction: 0
+  direction: {x: 0, y: 0}
+  desiredVelocity: {x: 0, y: 0}
+  currVelocity: {x: 0, y: 0}
+  maxSpeedChange: 0
+  pauseState: 0
+--- !u!114 &2132341237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132341229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44d4dd50e4d73641b6fc48e531d6783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  direction: {x: 0, y: 0}
+  body: {fileID: 0}
+--- !u!114 &2132341238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132341229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa0c52f89d9ef240bc1fa9791b91f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
+  body: {fileID: 0}
+  sceneCam: {fileID: 0}
+  weapon: {fileID: 0}
+  maxSpeed: 8
+  maxAccel: 95
+  friction: 1
+  desiredVelocity: {x: 0, y: 0}
+  currVelocity: {x: 0, y: 0}
+  maxSpeedChange: 0
   pauseState: 0
