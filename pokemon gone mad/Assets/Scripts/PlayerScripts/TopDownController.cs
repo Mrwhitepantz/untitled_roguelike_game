@@ -66,7 +66,8 @@ public class TopDownController : MonoBehaviour
     // Get's x and y values
     public Vector2 getInput()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; //needs to be normalized or else diagonal movement will go further
+        //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     public void animate(Vector2 inputDir)
