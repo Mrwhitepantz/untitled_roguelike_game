@@ -56,7 +56,7 @@ public class TopDownController : MonoBehaviour
     public Vector2 run(Vector2 currVelocity, Vector2 inputDir)
     {
         maxSpeedChange = maxAccel * Time.deltaTime;
-        desiredVelocity = new Vector2(inputDir.x, inputDir.y) * (maxSpeed - friction);
+        desiredVelocity = new Vector2(inputDir.x, inputDir.y).normalized * (maxSpeed - friction);
         currVelocity.x = Mathf.MoveTowards(currVelocity.x, desiredVelocity.x, maxSpeedChange);
         currVelocity.y = Mathf.MoveTowards(currVelocity.y, desiredVelocity.y, maxSpeedChange);
         return currVelocity;

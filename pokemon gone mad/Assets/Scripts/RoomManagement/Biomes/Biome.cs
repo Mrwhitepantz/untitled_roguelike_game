@@ -22,21 +22,16 @@ public class Biome
         switch (Mathf.FloorToInt(mapPixel.r * 255))
         {
             case (217):      //Desert
-                Debug.Log("Desert");
                 return new DesertBiome();
             case (132):     //Rocky
-                Debug.Log("Rocky");
                 return new RockyBiome();
             case (106):     //Forest
                 return new ForestBiome();
             case (75):      //Tropical
-                Debug.Log("Tropical");
                 return new TropicalBiome();
             case (203):     //Snowy
-                Debug.Log("Snowy");
                 return new SnowyBiome();
             case (99):      //Water
-                Debug.Log("Water");
                 return new WaterBiome();
             default:
                 return new ForestBiome();
