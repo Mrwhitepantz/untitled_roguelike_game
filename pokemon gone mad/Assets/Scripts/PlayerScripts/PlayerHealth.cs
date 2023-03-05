@@ -29,6 +29,23 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Square")
+        {
+            DamageToPlayer(20);
+        }
+        else if (other.gameObject.name == "testBullet 1(Clone)")
+        {
+            DamageToPlayer(5);
+        }
+        else if (other.gameObject.name == "HealthPot")
+        {
+            HealthToPlayer(20);
+            Destroy(other.gameObject);
+        }
+    }
+
     void DamageToPlayer(int damage)
     {
         currentHealth -= damage;
