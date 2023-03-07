@@ -5,6 +5,7 @@ using UnityEngine;
 public class ForestMaze
 {
     RoomBuilder.GridSpaceType[,] gridArray;
+
     public ForestMaze(RoomBuilder.GridSpaceType[,] grid)
     {
         gridArray = grid;
@@ -13,7 +14,7 @@ public class ForestMaze
     public class MazeClearing
     {
         public MazeClearing firstChild, secondChild;
-        private const int minLeafSize = 2;
+        private const int minLeafSize = 3;
         public int X, Y, width, height;
 
         public MazeClearing(int x, int y, int w, int h)
@@ -49,10 +50,10 @@ public class ForestMaze
                 splitHorizontal = Random.value > .5;
             }
 
-            int max = (splitHorizontal ? height : width) - minLeafSize;
-            if (max < minLeafSize) return false;
+            int maxSplit = (splitHorizontal ? height : width) - minLeafSize;
+            if (maxSplit < minLeafSize) return false;
 
-            int split = Random.Range(minLeafSize, max);
+            int split = Random.Range(minLeafSize, maxSplit);
 
             if (splitHorizontal)
             {
@@ -81,14 +82,18 @@ public class ForestMaze
             }
             else
             {
-                int roomX = Random.Range(X, X + width - minLeafSize);
-                int roomY = Random.Range(Y, Y + height - minLeafSize);
-                int roomWidth = Random.Range(minLeafSize, width - 2);
-                int roomHeight = Random.Range(minLeafSize, height - 2);
+                Debug.Log("X:" + X + "Y:" + Y + "w:" + width + "h" + height);
+                
+                int roomX = Random.Range(X, X + width - minLeafSize - 1);
+                int roomY = Random.Range(Y, Y + height - minLeafSize - 1);
+                int roomWidth = Random.Range(minLeafSize, Mathf.Min(width, (gridArray.GetLength(0) - roomX)));
+                int roomHeight = Random.Range(minLeafSize, Mathf.Min(height, (gridArray.GetLength(1) - roomY)));
 
-                for(int i = roomX; i < roomX + roomWidth; i++)
+                Debug.Log("rx:" + roomX + "ry:"+roomY+"rw:"+roomWidth+"rh"+roomHeight);
+
+                for(int i = roomX; i < roomX + roomWidth - 1; i++)
                 {
-                    for(int j = roomY; j < roomY + roomHeight; j++)
+                    for(int j = roomY; j < roomY + roomHeight - 1; j++)
                     {
                         if(gridArray[i,j] == RoomBuilder.GridSpaceType.empty)
                         {
@@ -101,15 +106,24 @@ public class ForestMaze
         }
     }
 
-    public void CreateWalls(int roomWidth, int roomHeight, RoomBuilder.GridSpaceType[,] gridArray)
+    public void CreateWalls(int roomWidth, int roomHeight)
     {
-
+        for (int i = 0; i < roomHeight; i++)
+        {
+            for(int j = 0; j < roomWidth; j++)
+            {
+                if(gridArray[i, j] == RoomBuilder.GridSpaceType.empty)
+                {
+                    gridArray[i, j] = RoomBuilder.GridSpaceType.wall;
+                }
+            }
+        }
     }
 
     public void CreateClearings(int width, int height)
     {
         Debug.Log("Clearing");
-        const int maxLeafSize = 6;
+        const int maxLeafSize = 12;
         List<MazeClearing> clearingList = new();
         MazeClearing root = new(0, 0, width, height);
         clearingList.Add(root);
@@ -120,7 +134,7 @@ public class ForestMaze
             for (int clearing = 0; clearing < clearingList.Count; clearing++)
             {
                 // check that clearing is a leaf and if it's bigger than maxLeafSize
-                if (clearingList[clearing].IsLeaf() && (clearingList[clearing].width > maxLeafSize || clearingList[clearing].height > maxLeafSize))
+                if (clearingList[clearing].IsLeaf() && (clearingList[clearing].width > maxLeafSize || clearingList[clearing].height > maxLeafSize || Random.value < .25f))
                 {
                     // check that it was able to be split
                     if (clearingList[clearing].Split())

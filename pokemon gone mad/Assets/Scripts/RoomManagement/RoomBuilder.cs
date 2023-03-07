@@ -35,11 +35,12 @@ public class RoomBuilder : MonoBehaviour
         biome = Biome.NewBiome(humidity, temperature);
         tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
-        if(biome.GetType().ToString().StartsWith("Forest"))
-        {
-            ForestMaze mazeGen = new(gridMap);
-            mazeGen.CreateClearings(gridWidth, gridHeight);
-        }
+        //if(biome.GetType().ToString().StartsWith("Forest"))
+        //{
+        //    ForestMaze mazeGen = new(gridMap);
+        //    mazeGen.CreateClearings(gridWidth, gridHeight);
+        //    mazeGen.CreateWalls(gridWidth, gridHeight);
+        //}
 
         SpawnLevel(gridMap);
     }
@@ -102,7 +103,7 @@ public class RoomBuilder : MonoBehaviour
                         {
                             SpawnTile(col, row, wallTile, tileMapsArray[0]);
                         }
-                        //else SpawnTile(col, row, groundTile, tileMapsArray[1]);
+                        else SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
                     case GridSpaceType.floor:
                         SpawnTile(col, row, groundTile, tileMapsArray[1]);
