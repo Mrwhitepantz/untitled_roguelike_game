@@ -32,10 +32,10 @@ public class Player : MonoBehaviour
         direction = movement.getInput();
         //movement.animate(animator, direction);
         movement.animate(direction);
-        if (Input.GetKey("mouse 0"))
+        /*if (Input.GetKey("mouse 0"))
         {
             shooter.shoot();
-        }
+        }*/
     }
 
     //Any code that IS updating any rigidBody values  goes here
@@ -48,6 +48,6 @@ public class Player : MonoBehaviour
             cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
-        body.rotation = shooter.lookAtMouse(body.position);
+        body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
     }
 }

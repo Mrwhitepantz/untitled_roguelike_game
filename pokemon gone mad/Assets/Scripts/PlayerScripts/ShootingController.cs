@@ -7,31 +7,32 @@ public class ShootingController : MonoBehaviour
     public Camera sceneCam;
 
     //Zach: variables for raycasting shooting
-    private float speed;
-    public Transform gunPoint;
-    public GameObject bulletTrail;
-    private float weaponRange = 10f;
-    private Animator muzzleFlashAnimator;
+    public Weapon weapon;
 
     public void Start()
     {
         sceneCam = Camera.main;
-        gunPoint = GetComponent<Transform>();
+        //gunPoint = GetComponent<Transform>();
+        //bulletPrefab = GetComponent<pBullet>();
+        //bulletScript = GetComponent<playerBullet>();
+        //bullet = GetComponent<Rigidbody2D>();
         //bulletTrail = GetComponent<BulletTrail2>();
     }
 
-    /*public float lookAtMouse(Camera sceneCam, Vector2 playerPos)
+    public void Update()
     {
-        Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 aimDirection = mousePos - playerPos;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        return aimAngle;
-    }*/
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.shoot();
+        }
 
-    public void shoot()
+    }
+
+    //Previous raycast attempt for shooting
+    /*public void shoot()
     {
         //muzzleFlashAnimator.SetTrigger("Shoot");
-        var hit = Physics2D.Raycast(
+        RaycastHit2D hit = Physics2D.Raycast(
             gunPoint.position,
             transform.up,
             weaponRange
@@ -50,15 +51,16 @@ public class ShootingController : MonoBehaviour
             /*trailScript.SetTargetPosition(hit.point);
             var hittable = hit.collider.GetComponent<IHittable>(); // can't seem to get IHittable working
             hittable?.Hit();*/
-            Debug.Log("Hit something");
+            /*Debug.Log("Hit something");
+            Debug.DrawRay(gunPoint.position, transform.up, Color.red);
         }
         else // if hit nothing
         {
             /*var endPosition = gunPoint.position + transform.up * weaponRange;
             trailScript.SetTargetPosition(endPosition);*/
-            Debug.Log("Hit nothing");
+            /*Debug.Log("Hit nothing");
         }
-    }
+    }*/
 
     public float lookAtMouse(Vector2 playerPos)
     {
