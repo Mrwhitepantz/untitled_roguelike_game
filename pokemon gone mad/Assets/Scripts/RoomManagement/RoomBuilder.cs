@@ -35,6 +35,12 @@ public class RoomBuilder : MonoBehaviour
         biome = Biome.NewBiome(humidity, temperature);
         tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
+        //if(biome.GetType().ToString().StartsWith("Forest"))
+        //{
+        //    ForestMaze mazeGen = new(gridMap);
+        //    mazeGen.CreateClearings(gridWidth, gridHeight);
+        //    mazeGen.CreateWalls(gridWidth, gridHeight);
+        //}
 
         SpawnLevel(gridMap);
     }

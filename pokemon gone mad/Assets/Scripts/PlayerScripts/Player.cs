@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public TopDownController movement;
     public ShootingController shooter;
     public CamShake cineCam;
-
+    public Vector2 velocity;
     //Yet to use
     public PlayerHealth health;
     //public ItemManager inventory;
@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
             cineCam.shakeCamera(5f, .1f);
         }
         body.velocity = movement.run(body.velocity, direction);
+        velocity = body.velocity.normalized;
         body.rotation = shooter.lookAtMouse(body.position);
     }
 }

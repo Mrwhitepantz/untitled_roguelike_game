@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeGenerator : MonoBehaviour
+public class MazeGeneratorTest : MonoBehaviour
 {
     public GameObject wallObjBot, wallObjTop, floorObj;
     public static Vector2 roomSizeWorld = new(20, 20);
