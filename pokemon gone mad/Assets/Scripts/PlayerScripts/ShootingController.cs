@@ -23,7 +23,8 @@ public class ShootingController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            weapon.shoot();
+            //weapon.shootProjectile();
+            weapon.shootRaycast();
         }
 
     }
