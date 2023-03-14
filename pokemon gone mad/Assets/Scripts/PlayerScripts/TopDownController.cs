@@ -42,6 +42,7 @@ public class TopDownController : MonoBehaviour
     /* Performs a dash on character. After dashing for a certain amount of time, player will enter
      * a cooldown state.
      */
+    //Bug: will use a dash when standing still
     public IEnumerator dash(Rigidbody2D body, Vector2 inputDir)
     {
         dashCounter = false;
@@ -65,7 +66,8 @@ public class TopDownController : MonoBehaviour
     // Get's x and y values
     public Vector2 getInput()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; //needs to be normalized or else diagonal movement will go further
+        //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     public void animate(Vector2 inputDir)
@@ -90,7 +92,7 @@ public class TopDownController : MonoBehaviour
     }
 
     //Ideally don't want to pass animator as a parameter
-    public void animate(Animator animator, Vector2 inputDir)
+    /*public void animate(Animator animator, Vector2 inputDir)
     {
         if (inputDir.x != 0 || inputDir.y != 0)
         {
@@ -109,5 +111,5 @@ public class TopDownController : MonoBehaviour
             animator.SetFloat("horizontal", 0);
             animator.SetFloat("speed", 0);
         }
-    }
+    }*/
 }
