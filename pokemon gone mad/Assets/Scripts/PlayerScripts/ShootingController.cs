@@ -26,7 +26,7 @@ public class ShootingController : MonoBehaviour
             //weapon.shootProjectile();
             weapon.shootRaycast();
         }
-
+        //Debug.Log("mouse position" + Input.mousePosition);
     }
 
     //Previous raycast attempt for shooting

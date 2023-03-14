@@ -32,10 +32,7 @@ public class Player : MonoBehaviour
         direction = movement.getInput();
         //movement.animate(animator, direction);
         movement.animate(direction);
-        /*if (Input.GetKey("mouse 0"))
-        {
-            shooter.shoot();
-        }*/
+        //Debug.Log("Mouse position: " + shooter.lookAtMouse(body.position));
     }
 
     //Any code that IS updating any rigidBody values  goes here

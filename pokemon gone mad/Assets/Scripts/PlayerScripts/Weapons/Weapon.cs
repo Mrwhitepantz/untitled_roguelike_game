@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("Missed w/ raycast");
             lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, firePoint.position + firePoint.right * 100);
+            lineRenderer.SetPosition(1, Input.mousePosition * 10);
         }
     }
 }
