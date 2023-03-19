@@ -4,13 +4,5 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-    void CreateFloors(int width, int height, RoomBuilder.GridSpaceType[,] gridArray)
-    {
-
-    }
-
-    void CreateWalls(int width, int height, RoomBuilder.GridSpaceType[,] gridArray)
-    {
-
-    }
+    public void CreateWalls(int width, int height, RoomBuilder.GridSpaceType[,] gridArray) { }
 }
