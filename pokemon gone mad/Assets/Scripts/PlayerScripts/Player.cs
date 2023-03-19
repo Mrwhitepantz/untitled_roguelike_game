@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public TopDownController movement;
     public ShootingController shooter;
     public CamShake cineCam;
-    public Vector2 velocity;
+
     //Yet to use
     public PlayerHealth health;
     //public ItemManager inventory;
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         direction = movement.getInput();
         //movement.animate(animator, direction);
         movement.animate(direction);
-        
+        //Debug.Log("Mouse position: " + shooter.lookAtMouse(body.position));
     }
 
     //Any code that IS updating any rigidBody values  goes here
@@ -42,10 +42,9 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
-            cineCam.shakeCamera(5f, .1f);
+            cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
-        velocity = body.velocity.normalized;
-        body.rotation = shooter.lookAtMouse(body.position);
+        body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
     }
 }
