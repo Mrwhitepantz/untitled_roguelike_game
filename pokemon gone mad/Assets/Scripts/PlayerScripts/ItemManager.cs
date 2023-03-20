@@ -9,7 +9,7 @@ using UnityEngine;
 //     }
 // }
 
-/*public class ItemManager : MonoBehaviour{
+public class ItemManager : MonoBehaviour{
     public GameObject player;
     private TopDownController topDownController;
 
@@ -40,4 +40,4 @@ using UnityEngine;
         topDownController.animator.SetBool("SunglassesItem",false);
         topDownController.animator.SetBool("PotionBlueItem",false);
 }
-}*/
+}
