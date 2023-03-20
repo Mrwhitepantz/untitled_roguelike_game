@@ -18,7 +18,7 @@ public class playerBullet : MonoBehaviour
         } 
         else
         {
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 1);
         }
 
         Instantiate(impactEffect, transform.position, transform.rotation);
