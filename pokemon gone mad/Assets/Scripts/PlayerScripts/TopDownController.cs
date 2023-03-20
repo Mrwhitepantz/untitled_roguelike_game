@@ -76,8 +76,8 @@ public class TopDownController : MonoBehaviour
     public void animate(Vector2 inputDir)
     {
         
-        Debug.Log("x");
-        Debug.Log(inputDir.x);
+        //Debug.Log("x");
+        //Debug.Log(inputDir.x);
         
         if (inputDir.x != 0 ){
             animator.SetFloat("speed", 1);
@@ -86,8 +86,8 @@ public class TopDownController : MonoBehaviour
             } else { animator.SetFloat("horizontal", -1);}
         } else {animator.SetFloat("horizontal", 0);}
         if (inputDir.y != 0 ){
-            Debug.Log("y");
-            Debug.Log(inputDir.y);
+            //Debug.Log("y");
+            //Debug.Log(inputDir.y);
             animator.SetFloat("speed", 1);
             if (inputDir.y > 0) {
                 animator.SetFloat("vertical", 1);
