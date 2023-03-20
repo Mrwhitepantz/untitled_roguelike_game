@@ -9,7 +9,7 @@ public class OldTopDownController : MonoBehaviour
     public Animator animator;
     public Rigidbody2D body;
     public Camera sceneCam;
-    public Weapon weapon;
+    //public Weapon weapon; // commented this out because it will lead to compile error
 
     private bool debug;
     //Make these public if we want to adjust any fields while in playground mode (but turn it into private after finishing)
