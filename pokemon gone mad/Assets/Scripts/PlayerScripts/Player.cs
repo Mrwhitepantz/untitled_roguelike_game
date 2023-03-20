@@ -30,11 +30,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         direction = movement.getInput();
+
+
         //movement.animate(animator, direction);
         movement.animate(direction);
         //Debug.Log("Mouse position: " + shooter.lookAtMouse(body.position));
     }
-
     //Any code that IS updating any rigidBody values  goes here
     void FixedUpdate()
     {

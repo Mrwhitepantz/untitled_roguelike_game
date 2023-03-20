@@ -5,6 +5,9 @@ using Cinemachine;
 
 public class TopDownController : MonoBehaviour
 {
+    //public GameObject player; //At first needed this, but for some reason I don't need to have it
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
     //Ideally make these variables private but idk who else have been accessing these fields
     //Variables related to movement
     public float maxSpeed = 8f;
@@ -14,15 +17,14 @@ public class TopDownController : MonoBehaviour
     public float maxSpeedChange;
     public bool pauseState;
 
+    //Variables for directional movement
+    public Vector2 directionTemp;
+
     //Variables for dashing
     private float dashSpeed = 50f;
     private float dashDuration = .15f;
     private float dashCooldown = .95f;
     private bool dashCounter = true;
-
-    //public GameObject player; //At first needed this, but for some reason I don't need to have it
-    public SpriteRenderer spriteRenderer;
-    public Animator animator;
 
     void Start()
     {
@@ -63,53 +65,38 @@ public class TopDownController : MonoBehaviour
         return currVelocity;
     }
 
-    // Get's x and y values
+    // Gets x and y values
     public Vector2 getInput()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; //needs to be normalized or else diagonal movement will go further
+        directionTemp = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        return directionTemp; //needs to be normalized or else diagonal movement will go further
         //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     public void animate(Vector2 inputDir)
     {
-        if (inputDir.x != 0 || inputDir.y != 0)
-        {
-            if (inputDir.x > 0)
-            {
-                animator.SetFloat("horizontal", 1);
-            }
-            else
-            {
-                animator.SetFloat("horizontal", -1);
-            }
+        
+        Debug.Log("x");
+        Debug.Log(inputDir.x);
+        
+        if (inputDir.x != 0 ){
             animator.SetFloat("speed", 1);
-        }
-        else
-        {
-            animator.SetFloat("horizontal", 0);
+            if (inputDir.x > 0) {
+                animator.SetFloat("horizontal", 1);
+            } else { animator.SetFloat("horizontal", -1);}
+        } else {animator.SetFloat("horizontal", 0);}
+        if (inputDir.y != 0 ){
+            Debug.Log("y");
+            Debug.Log(inputDir.y);
+            animator.SetFloat("speed", 1);
+            if (inputDir.y > 0) {
+                animator.SetFloat("vertical", 1);
+            } else { animator.SetFloat("vertical", -1);}
+            
+        } else {animator.SetFloat("vertical", 0);}
+        if ((inputDir.x == 0) && (inputDir.y == 0)) {
+            
             animator.SetFloat("speed", 0);
         }
     }
-
-    //Ideally don't want to pass animator as a parameter
-    /*public void animate(Animator animator, Vector2 inputDir)
-    {
-        if (inputDir.x != 0 || inputDir.y != 0)
-        {
-            if (inputDir.x > 0)
-            {
-                animator.SetFloat("horizontal", 1);
-            }
-            else
-            {
-                animator.SetFloat("horizontal", -1);
-            }
-            animator.SetFloat("speed", 1);
-        }
-        else
-        {
-            animator.SetFloat("horizontal", 0);
-            animator.SetFloat("speed", 0);
-        }
-    }*/
 }
