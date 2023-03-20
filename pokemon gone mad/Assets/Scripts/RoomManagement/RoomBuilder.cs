@@ -17,7 +17,8 @@ public class RoomBuilder : MonoBehaviour
     private static readonly int roomHeight = 40;
     private static readonly int gridWidth = roomWidth / 2;
     private static readonly int gridHeight = roomHeight / 2;
-    private Vector2 gridCenter = new(gridWidth / 2, gridHeight / 2);
+    private static readonly int exitOffset = 2;
+    private Vector2Int gridCenter = new(gridWidth / 2, gridHeight / 2);
     private Vector3 roomOrigin;
 
     private Tilemap[] tileMapsArray;
@@ -35,6 +36,13 @@ public class RoomBuilder : MonoBehaviour
         biome = Biome.NewBiome(humidity, temperature);
         tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
+        if (biome.GetType().ToString().StartsWith("Forest"))
+        {
+            ForestMaze mazeGen = new(gridMap);
+            mazeGen.CreateClearings(gridWidth, gridHeight);
+            mazeGen.ConnectExits(gridCenter, exitOffset);
+            mazeGen.CreateWalls(gridWidth, gridHeight);
+        }
 
         SpawnLevel(gridMap);
     }
@@ -65,7 +73,7 @@ public class RoomBuilder : MonoBehaviour
         }
 
         // set exits in centers of each side of the room to floor
-        for (int offset = -2; offset < 2; offset++)
+        for (int offset = -exitOffset; offset < exitOffset; offset++)
         {
             // top
             grid[centerCol + offset, 0] = GridSpaceType.floor;
