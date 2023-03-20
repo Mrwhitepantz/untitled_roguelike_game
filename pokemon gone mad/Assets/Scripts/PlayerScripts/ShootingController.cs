@@ -5,9 +5,7 @@ using UnityEngine;
 public class ShootingController : MonoBehaviour
 {
     public Camera sceneCam;
-
-    //Zach: variables for raycasting shooting
-    public Weapon weapon;
+    public Gun weapon;
 
     public void Start()
     {
@@ -21,47 +19,13 @@ public class ShootingController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            //weapon.shootProjectile();
-            weapon.shootRaycast();
+            weapon.shoot();
+            //weapon.shootRaycast();
         }
         //Debug.Log("mouse position" + Input.mousePosition);
     }
-
-    //Previous raycast attempt for shooting
-    /*public void shoot()
-    {
-        //muzzleFlashAnimator.SetTrigger("Shoot");
-        RaycastHit2D hit = Physics2D.Raycast(
-            gunPoint.position,
-            transform.up,
-            weaponRange
-            );
-
-        var trail = Instantiate(
-            bulletTrail, 
-            gunPoint.position,
-            transform.rotation
-            );
-
-        var trailScript = trail.GetComponent<BulletTrailScript>();
-
-        if (hit.collider != null) // if hit something
-        {
-            /*trailScript.SetTargetPosition(hit.point);
-            var hittable = hit.collider.GetComponent<IHittable>(); // can't seem to get IHittable working
-            hittable?.Hit();*/
-            /*Debug.Log("Hit something");
-            Debug.DrawRay(gunPoint.position, transform.up, Color.red);
-        }
-        else // if hit nothing
-        {
-            /*var endPosition = gunPoint.position + transform.up * weaponRange;
-            trailScript.SetTargetPosition(endPosition);*/
-            /*Debug.Log("Hit nothing");
-        }
-    }*/
 
     public float lookAtMouse(Vector2 playerPos)
     {
