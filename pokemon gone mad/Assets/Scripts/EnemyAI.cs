@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    public Vector3 Target;
     public Transform player;
     public float speed;
     public float nextPointDictance;
@@ -17,6 +18,27 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     // Start is called before the first frame update
+    bool LOS(){
+        //bood ret = false;
+        Target = ((GameObject.Find("Player").transform.position)-transform.position).normalized;
+        //transform.Rotate(Vector3.forward * lookspeed * Time.deltaTime);
+        RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, (player.position-transform.position), 1 << LayerMask.NameToLayer("map/objects"));
+
+            if (lineOfSight.collider.tag == "Player"){
+                Debug.Log("I HAVE HIT THE PLAYER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FromAI ATTACk");
+                Debug.DrawRay(transform.position, (player.position-transform.position), Color.green);
+                return true;
+            }
+            else
+            {
+                Debug.Log("I HAVE MISSED THE PLAYER FromAI ATTACk I hit" + lineOfSight.collider.tag);
+                Debug.DrawRay(transform.position, (player.position-transform.position), Color.red);
+                return false;
+            }
+
+        //return false;
+
+    }
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -59,7 +81,8 @@ public class EnemyAI : MonoBehaviour
         Vector2 dirction = ((Vector2)path.vectorPath[currentPoint] - rb.position).normalized;
         Vector2 force = dirction * speed * Time.deltaTime;
         float range = Vector3.Distance(player.position, transform.position);
-        if (range < sooterRange)
+        bool LineOS = LOS();
+        if (range < sooterRange && LineOS)
         {
             rb.velocity = Vector3.zero;
 
