@@ -27,9 +27,9 @@ public class ShootingController : MonoBehaviour
         //Debug.Log("mouse position" + Input.mousePosition);
     }
 
-    public float lookAtMouse(Vector2 playerPos)
+    public float lookAtMouse(Vector2 playerPos, Vector2 mousePos)
     {
-        Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePos - playerPos;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         return aimAngle;
