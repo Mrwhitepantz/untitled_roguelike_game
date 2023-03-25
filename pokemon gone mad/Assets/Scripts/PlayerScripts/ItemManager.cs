@@ -12,6 +12,7 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour{
     public GameObject player;
     private TopDownController topDownController;
+    public bool ifCollision = false;
 
     void Start()
     {
@@ -20,12 +21,16 @@ public class ItemManager : MonoBehaviour{
 
     public void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.name == "Sunglasses"){
+            ifCollision = true;
+            topDownController.ifCollision = true;
             topDownController.animator.SetBool("SunglassesItem",true);
             topDownController.maxSpeed=16f; //double speed
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.name == "PotionBlue"){
+            ifCollision = true;
+            topDownController.ifCollision = true;
             topDownController.animator.SetBool("PotionBlueItem",true);
             topDownController.maxSpeed = 4f;
             Destroy(collision.gameObject);
@@ -41,3 +46,4 @@ public class ItemManager : MonoBehaviour{
         topDownController.animator.SetBool("PotionBlueItem",false);
 }
 }
+

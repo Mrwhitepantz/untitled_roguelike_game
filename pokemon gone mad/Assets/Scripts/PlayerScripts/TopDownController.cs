@@ -16,6 +16,7 @@ public class TopDownController : MonoBehaviour
     public Vector2 desiredVelocity;
     public float maxSpeedChange;
     public bool pauseState;
+    public bool ifCollision = false;
 
     //Variables for directional movement
     public Vector2 directionTemp;
@@ -69,6 +70,7 @@ public class TopDownController : MonoBehaviour
     public Vector2 getInput()
     {
         directionTemp = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Debug.Log(directionTemp);
         return directionTemp; //needs to be normalized or else diagonal movement will go further
         //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
@@ -78,6 +80,7 @@ public class TopDownController : MonoBehaviour
         
         //Debug.Log("x");
         //Debug.Log(inputDir.x);
+        
         
         if (inputDir.x != 0 ){
             animator.SetFloat("speed", 1);

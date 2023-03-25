@@ -25,13 +25,13 @@ public class EnemyAI : MonoBehaviour
         RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, (player.position-transform.position), 1 << LayerMask.NameToLayer("map/objects"));
 
             if (lineOfSight.collider.tag == "Player"){
-                Debug.Log("I HAVE HIT THE PLAYER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FromAI ATTACk");
+                //Debug.Log("I HAVE HIT THE PLAYER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FromAI ATTACk");
                 Debug.DrawRay(transform.position, (player.position-transform.position), Color.green);
                 return true;
             }
             else
             {
-                Debug.Log("I HAVE MISSED THE PLAYER FromAI ATTACk I hit" + lineOfSight.collider.tag);
+                //Debug.Log("I HAVE MISSED THE PLAYER FromAI ATTACk I hit" + lineOfSight.collider.tag);
                 Debug.DrawRay(transform.position, (player.position-transform.position), Color.red);
                 return false;
             }
