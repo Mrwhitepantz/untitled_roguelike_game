@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TESTROOM.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Tests/Noah_Tests.unity
-    guid: 1c54c3830dd7705489497b0f31db38af
+    path: Assets/Tests/GameplayScene(For Real).unity
+    guid: 489afe9d4054aa54eae8f249ca65766a
   m_configObjects: {}

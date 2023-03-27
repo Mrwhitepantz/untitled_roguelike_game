@@ -6,6 +6,13 @@ TagManager:
   tags:
   - RoomSwitcher
   - BadMen
+  - Items
+  - Squrtal
+  - TestSquare
+  - Boss
+  - GameHazard
+  - Pikachu
+  - Charmander
   layers:
   - Default
   - TransparentFX
