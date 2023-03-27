@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 559.3334
-    y: 409.33334
-    width: 1704
-    height: 976
+    x: 0
+    y: 43.2
+    width: 2048
+    height: 1068.8
   m_ShowMode: 4
   m_Title: Inspector
-  m_RootView: {fileID: 7}
+  m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
+  m_Maximized: 1
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -34,23 +34,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1017.3333
-    y: 0
-    width: 341.3333
-    height: 560
-  m_MinSize: {x: 200, y: 200}
+    x: 0
+    y: 100
+    width: 760
+    height: 918.80005
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 5}
+  - {fileID: 2}
+  m_Position:
+    serializedVersion: 2
+    x: 1288
+    y: 0
+    width: 760
+    height: 1018.80005
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 18
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,44 +88,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 10}
-  - {fileID: 4}
+  - {fileID: 11}
+  - {fileID: 3}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1704
-    height: 926
-  m_MinSize: {x: 400, y: 200}
-  m_MaxSize: {x: 32384, y: 16192}
+    width: 2048
+    height: 1018.80005
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 41
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1358.6666
-    y: 0
-    width: 345.33337
-    height: 926
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
+  controlID: 17
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -118,13 +117,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 336
-    height: 560
-  m_MinSize: {x: 200, y: 200}
+    width: 760
+    height: 100
+  m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &6
@@ -137,24 +136,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 560
-    width: 1358.6666
-    height: 366
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 14}
+    y: 0
+    width: 304.8
+    height: 616.8
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 14}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 0
 --- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 616.8
+    width: 1288
+    height: 402.00006
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 22}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 22}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,22 +192,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 8}
-  - {fileID: 3}
   - {fileID: 9}
+  - {fileID: 4}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1704
-    height: 976
+    width: 2048
+    height: 1068.8
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &8
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,12 +224,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1704
+    width: 2048
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &9
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,36 +245,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 956
-    width: 1704
+    y: 1048.8
+    width: 2048
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &10
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 11}
-  - {fileID: 6}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1358.6666
-    height: 926
-  m_MinSize: {x: 300, y: 200}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 1
-  controlID: 17
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -263,20 +263,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 5}
   - {fileID: 12}
-  - {fileID: 2}
+  - {fileID: 7}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1358.6666
-    height: 560
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 8096}
-  vertical: 0
-  controlID: 18
+    width: 1288
+    height: 1018.80005
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 23
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 13}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1288
+    height: 616.8
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 24
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,19 +315,1362 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 336
+    x: 304.8
     y: 0
-    width: 681.3333
-    height: 560
+    width: 983.2
+    height: 616.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 17}
-  - {fileID: 13}
+  - {fileID: 20}
+  - {fileID: 21}
+  - {fileID: 16}
+  - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &13
+  m_LastSelected: 1
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 304.80002
+    y: 73.6
+    width: 981.2
+    height: 595.8
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: -6188125891308171872, guid: bb2b5c963268965489c6fe572010020a, type: 2}
+    - {fileID: -6188125891308171872, guid: fda7d9b5fb141cf438945b61fb019086, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 101
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 142
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7225
+      e01: 0
+      e02: 0
+      e03: 89.35199
+      e10: 0
+      e11: 0.7225
+      e12: 0
+      e13: 155.01749
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: fda7d9b5fb141cf438945b61fb019086, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -6188125891308171872, guid: fda7d9b5fb141cf438945b61fb019086, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 1
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1288
+    y: 173.6
+    width: 759
+    height: 897.80005
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 228
+    splitterInitialOffset: 850.8
+    currentActiveSplitter: -1
+    realSizes:
+    - 780.8
+    - 47.200012
+    relativeSizes:
+    - 0.9434782
+    - 0.056521773
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 828
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 15}
+    m_NewResultList:
+    - id: 1008
+      uniqueId: '[pokemon gone mad][suite]'
+      name: pokemon gone mad
+      fullName: pokemon gone mad
+      resultStatus: 2
+      duration: 1.1905681
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[PlayTests][C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/PlayTests.dll][suite]'
+      name: PlayTests.dll
+      fullName: C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/PlayTests.dll
+      resultStatus: 2
+      duration: 1.1044607
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[pokemon gone mad][suite]'
+    - id: 1001
+      uniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+      name: NoahPlayerTest
+      fullName: NoahPlayerTest
+      resultStatus: 2
+      duration: 1.1007924
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1003
+      parentUniqueId: '[PlayTests][C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/PlayTests.dll][suite]'
+    - id: 1005
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerEastAnimation]
+      name: PlayerEastAnimation
+      fullName: NoahPlayerTest.PlayerEastAnimation
+      resultStatus: 1
+      duration: 1.6588336
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 6 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.50 ms Searched Nodes 27 Path Length 10
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 9 Path Length 9
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1008
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerEastIdleAnimation]
+      name: PlayerEastIdleAnimation
+      fullName: NoahPlayerTest.PlayerEastIdleAnimation
+      resultStatus: 1
+      duration: 2.7203782
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 5 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 41 Path Length 10
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 9 Path Length 9
+
+        Path
+        Number 3 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 13 Path Length 8
+
+        Path Number 4 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 11 Path Length 7
+
+        Path
+        Number 5 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1002
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerIdleAnimation]
+      name: PlayerIdleAnimation
+      fullName: NoahPlayerTest.PlayerIdleAnimation
+      resultStatus: 1
+      duration: 0.5772742
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 5 ms to complete
+
+        Path Completed : Computation Time
+        2.50 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        (0.00, 0.00)
+
+        (0.00, 0.00)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1013
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerItemManagerInteraction]
+      name: PlayerItemManagerInteraction
+      fullName: NoahPlayerTest.PlayerItemManagerInteraction
+      resultStatus: 1
+      duration: 4.541588
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 7 ms to complete
+
+        Path Completed : Computation Time
+        3.50 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 32 Path Length 10
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.50 ms Searched Nodes 20 Path Length 10
+
+        Path
+        Number 3 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 12 Path Length 5
+
+        Path Number 4 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 3 Path Length 2
+
+        Path
+        Number 5 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 11 Path Length 6
+
+        Path Number 6 (unique id)
+
+        PotionBlue
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 21 Path Length 9
+
+        Path
+        Number 7 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 16 Path Length 9
+
+        Path Number 8 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 27 Path Length 8
+
+        Path
+        Number 9 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1003
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerNorthAnimation]
+      name: PlayerNorthAnimation
+      fullName: NoahPlayerTest.PlayerNorthAnimation
+      resultStatus: 1
+      duration: 1.6042283
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 9 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 77 Path Length 13
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 77 Path Length 15
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1008
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerNorthEastAnimation]
+      name: PlayerNorthEastAnimation
+      fullName: NoahPlayerTest.PlayerNorthEastAnimation
+      resultStatus: 2
+      duration: 1.76662
+      messages: "  Expected string length 24 but was 19. Strings differ at index
+        11.\r\n  Expected: \"farfetch'd_moveNorthEast\"\r\n  But was:  \"farfetch'd_MoveEast\"\r\n 
+        ----------------------^\r\n"
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 6 ms to complete
+
+        Path Completed : Computation Time
+        2.50 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 46 Path Length 12
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 44 Path Length 14
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 'at NoahPlayerTest+<PlayerNorthEastAnimation>d__15.MoveNext ()
+        [0x000db] in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon
+        gone mad\pokemon gone mad\Assets\Tests\PlayTests\NoahPlayTests.cs:128
+
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+        in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon gone
+        mad\pokemon gone mad\Library\PackageCache\com.unity.test-framework@1.1.31\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1009
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerNorthIdleAnimation]
+      name: PlayerNorthIdleAnimation
+      fullName: NoahPlayerTest.PlayerNorthIdleAnimation
+      resultStatus: 1
+      duration: 2.7302194
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 12 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 56 Path Length 12
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 97 Path Length 16
+
+        Path
+        Number 3 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 76 Path Length 15
+
+        Path Number 4 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 68 Path Length 14
+
+        Path
+        Number 5 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1007
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerNorthWestAnimation]
+      name: PlayerNorthWestAnimation
+      fullName: NoahPlayerTest.PlayerNorthWestAnimation
+      resultStatus: 2
+      duration: 1.767739
+      messages: "  Expected string length 24 but was 19. Strings differ at index
+        15.\r\n  Expected: \"farfetch'd_moveNorthWest\"\r\n  But was:  \"farfetch'd_moveWest\"\r\n 
+        --------------------------^\r\n"
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 6 ms to complete
+
+        Path Completed : Computation Time
+        2.50 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 56 Path Length 12
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 61 Path Length 14
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 'at NoahPlayerTest+<PlayerNorthWestAnimation>d__14.MoveNext ()
+        [0x000db] in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon
+        gone mad\pokemon gone mad\Assets\Tests\PlayTests\NoahPlayTests.cs:114
+
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+        in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon gone
+        mad\pokemon gone mad\Library\PackageCache\com.unity.test-framework@1.1.31\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1004
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerSouthAnimation]
+      name: PlayerSouthAnimation
+      fullName: NoahPlayerTest.PlayerSouthAnimation
+      resultStatus: 1
+      duration: 1.6367421
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 5 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 25 Path Length 8
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 20 Path Length 6
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1010
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerSouthIdleAnimation]
+      name: PlayerSouthIdleAnimation
+      fullName: NoahPlayerTest.PlayerSouthIdleAnimation
+      resultStatus: 1
+      duration: 2.7479718
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 5 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 42 Path Length 9
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 18 Path Length 6
+
+        Path
+        Number 3 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 16 Path Length 6
+
+        Path Number 4 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 7 Path Length 4
+
+        Path
+        Number 5 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1014
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerToptoDownTopDownController]
+      name: PlayerToptoDownTopDownController
+      fullName: NoahPlayerTest.PlayerToptoDownTopDownController
+      resultStatus: 2
+      duration: 0.9054396
+      messages: "  Expected: 1\r\n  But was:  0.0f\r\n"
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 6 ms to complete
+
+        Path Completed : Computation Time
+        2.50 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        (0.00, 0.00)
+
+        Parameter ''Speed''
+        does not exist.
+
+        Parameter ''Horizontal'' does not exist.
+
+        Parameter
+        ''Vertical'' does not exist.
+
+        Parameter ''Speed'' does not exist.
+
+        (0.00,
+        0.00)
+
+'
+      stacktrace: 'at NoahPlayerTest+<PlayerToptoDownTopDownController>d__21.MoveNext
+        () [0x00199] in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon
+        gone mad\pokemon gone mad\Assets\Tests\PlayTests\NoahPlayTests.cs:253
+
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+        in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon gone
+        mad\pokemon gone mad\Library\PackageCache\com.unity.test-framework@1.1.31\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1006
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerWestAnimation]
+      name: PlayerWestAnimation
+      fullName: NoahPlayerTest.PlayerWestAnimation
+      resultStatus: 1
+      duration: 1.6702758
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 5 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 31 Path Length 10
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 32 Path Length 11
+
+        Path
+        Number 3 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    - id: 1007
+      uniqueId: PlayTests.dll/NoahPlayerTest/[PlayTests][NoahPlayerTest.PlayerWestIdleAnimation]
+      name: PlayerWestIdleAnimation
+      fullName: NoahPlayerTest.PlayerWestIdleAnimation
+      resultStatus: 1
+      duration: 2.7005453
+      messages: 
+      output: 'The referenced script (Unknown) on this Behaviour is missing!
+
+        The
+        referenced script on this Behaviour (Game Object ''Inv Pause'') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        The class
+        named ''Gun'' is abstract. The script class can''t be abstract!
+
+        The
+        referenced script on this Behaviour (Game Object '''') is missing!
+
+        The
+        referenced script (Unknown) on this Behaviour is missing!
+
+        GameObject
+        (named ''Weapon'') references runtime script in scene file. Fixing!
+
+        The
+        class named ''Gun'' is abstract. The script class can''t be abstract!
+
+        Scanning
+        - Process took 6 ms to complete
+
+        Path Completed : Computation Time
+        3.00 ms Searched Nodes 38 Path Length 10
+
+        Path Number 1 (unique id)
+
+        (0.00,
+        0.00)
+
+        (0.00, 0.00)
+
+        Path Completed : Computation Time
+        0.00 ms Searched Nodes 25 Path Length 10
+
+        Path Number 2 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 27 Path Length 11
+
+        Path
+        Number 3 (unique id)
+
+        Path Completed : Computation Time 0.00 ms
+        Searched Nodes 60 Path Length 12
+
+        Path Number 4 (unique id)
+
+        Path
+        Completed : Computation Time 0.00 ms Searched Nodes 52 Path Length 11
+
+        Path
+        Number 5 (unique id)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayTests.dll/[PlayTests][NoahPlayerTest][suite]
+    m_ResultText: "PlayerToptoDownTopDownController (0.905s)\n---\nExpected: 1\r\n 
+      But was:  0.0f\n---\nat NoahPlayerTest+<PlayerToptoDownTopDownController>d__21.MoveNext
+      () [0x00199] in C:\\Users\\Noahb\\Desktop\\Roguelike\\untitled_roguelike_game\\pokemon
+      gone mad\\pokemon gone mad\\Assets\\Tests\\PlayTests\\NoahPlayTests.cs:253\r\nat
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in
+      C:\\Users\\Noahb\\Desktop\\Roguelike\\untitled_roguelike_game\\pokemon gone
+      mad\\pokemon gone mad\\Library\\PackageCache\\com.unity.test-framework@1.1.31\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46\n---\nThe
+      referenced script (Unknown) on this Behaviour is missing!\r\nThe referenced
+      script on this Behaviour (Game Object 'Inv Pause') is missing!\r\nThe referenced
+      script (Unknown) on this Behaviour is missing!\r\nThe class named 'Gun' is
+      abstract. The script class can't be abstract!\r\nThe referenced script on this
+      Behaviour (Game Object '') is missing!\r\nThe referenced script (Unknown) on
+      this Behaviour is missing!\r\nGameObject (named 'Weapon') references runtime
+      script in scene file. Fixing!\r\nThe class named 'Gun' is abstract. The script
+      class can't be abstract!\r\nScanning - Process took 6 ms to complete\r\nPath
+      Completed : Computation Time 2.50 ms Searched Nodes 38 Path Length 10\nPath
+      Number 1 (unique id)\r\n(0.00, 0.00)\r\n(0.00, 0.00)\r\n(0.00, 0.00)\r\nParameter
+      'Speed' does not exist.\r\nParameter 'Horizontal' does not exist.\r\nParameter
+      'Vertical' does not exist.\r\nParameter 'Speed' does not exist.\r\n(0.00, 0.00)"
+    m_ResultStacktrace: 'at NoahPlayerTest+<PlayerToptoDownTopDownController>d__21.MoveNext
+      () [0x00199] in C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon
+      gone mad\pokemon gone mad\Assets\Tests\PlayTests\NoahPlayTests.cs:253
+
+      at
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in
+      C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon gone mad\pokemon
+      gone mad\Library\PackageCache\com.unity.test-framework@1.1.31\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 9e3509ec
+      m_LastClickedID: -334940770
+      m_ExpandedIDs: 06e789c3343c65d0a8e771f512f6ed7cffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: -1
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 15}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[pokemon gone mad][suite]'
+      name: pokemon gone mad
+      fullName: pokemon gone mad
+      resultStatus: 1
+      duration: 0.0542124
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[EditorTests][C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/EditorTests.dll][suite]'
+      name: EditorTests.dll
+      fullName: C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/EditorTests.dll
+      resultStatus: 1
+      duration: 0.0356169
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[pokemon gone mad][suite]'
+    - id: 1001
+      uniqueId: EditorTests.dll/[EditorTests][James_Tests][suite]
+      name: James_Tests
+      fullName: James_Tests
+      resultStatus: 1
+      duration: 0.0280687
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[EditorTests][C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/EditorTests.dll][suite]'
+    - id: 1003
+      uniqueId: EditorTests.dll/James_Tests/[EditorTests][James_Tests.JF_TestsWithEnumeratorPasses]
+      name: JF_TestsWithEnumeratorPasses
+      fullName: James_Tests.JF_TestsWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.0079928
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditorTests.dll/[EditorTests][James_Tests][suite]
+    - id: 1002
+      uniqueId: EditorTests.dll/James_Tests/[EditorTests][James_Tests.TestBiomeTypeIsForest]
+      name: TestBiomeTypeIsForest
+      fullName: James_Tests.TestBiomeTypeIsForest
+      resultStatus: 1
+      duration: 0.0123765
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditorTests.dll/[EditorTests][James_Tests][suite]
+    - id: 1009
+      uniqueId: EditorTests.dll/[EditorTests][noahEditorTests][suite]
+      name: noahEditorTests
+      fullName: noahEditorTests
+      resultStatus: 1
+      duration: 0.0055543
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1011
+      parentUniqueId: '[EditorTests][C:/Users/Noahb/Desktop/Roguelike/untitled_roguelike_game/pokemon
+        gone mad/pokemon gone mad/Library/ScriptAssemblies/EditorTests.dll][suite]'
+    - id: 1010
+      uniqueId: EditorTests.dll/noahEditorTests/[EditorTests][noahEditorTests.playerHaveAnimation]
+      name: playerHaveAnimation
+      fullName: noahEditorTests.playerHaveAnimation
+      resultStatus: 1
+      duration: 0.0001202
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: EditorTests.dll/[EditorTests][noahEditorTests][suite]
+    m_ResultText: playerHaveAnimation (0.000s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 3b90a872
+      m_LastClickedID: 1923649595
+      m_ExpandedIDs: 15769ac03273a07312f6ed7cffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,15 +1690,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 468
-    y: 181
-    width: 973
-    height: 501
+    x: 350.4
+    y: 73.6
+    width: 1076.4
+    height: 595.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &14
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -351,10 +1718,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 559.3334
-    y: 999.3334
-    width: 1357.6666
-    height: 345
+    x: 0
+    y: 690.4
+    width: 1287
+    height: 381.00006
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -372,23 +1739,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/RoomManagement/Mazes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/RoomManagement/Mazes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\scott\Documents\GitHub\untitled_roguelike_game\pokemon
-    gone mad
+  m_LastProjectPath: C:\Users\Noahb\Desktop\Roguelike\untitled_roguelike_game\pokemon
+    gone mad\pokemon gone mad
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 38680000
-    m_LastClickedID: 26680
-    m_ExpandedIDs: 00000000926500003868000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 203}
+    m_SelectedIDs: e87f0000
+    m_LastClickedID: 32744
+    m_ExpandedIDs: 000000007463000076630000786300007a6300007c6300007e6300005c6700007e67000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -416,7 +1783,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000092650000
+    m_ExpandedIDs: 000000007463000076630000786300007a6300007c6300007e630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -441,8 +1808,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 421a0000
+    m_LastClickedInstanceID: 6722
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -460,7 +1827,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 6}
+      m_ClientGUIView: {fileID: 7}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -471,8 +1838,8 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 115
---- !u!114 &15
+  m_DirectoriesAreaWidth: 317
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,10 +1859,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1918
-    y: 439.33334
-    width: 344.33337
-    height: 905
+    x: 1288
+    y: 73.6
+    width: 759
+    height: 79
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -503,7 +1870,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -513,7 +1880,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &16
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,10 +1900,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 559.3334
-    y: 439.33334
-    width: 335
-    height: 539
+    x: 0
+    y: 73.6
+    width: 303.8
+    height: 595.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -544,9 +1911,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2c630000
-      m_LastClickedID: 25388
-      m_ExpandedIDs: c0faffff04fbffff686300007663000096630000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9847fdffe247fdff984afdff984cfdffe24cfdff984ffdffde51fdff2852fdffde54fdffe256fdff2c57fdffe259fdff245ffdff6e5ffdff2462fdffc466fdff0e67fdffc469fdffd26bfdff1c6cfdffd26efdff2c71fdff7671fdff2c74fdffe876fdff3277fdffe879fdffea7bfdff347cfdffea7efdfff680fdff4081fdfff683fdffa087fdffea87fdffa08afdfff08bfdff3a8cfdff048ffdff5a93fdffa493fdff5a96fdff5a98fdffa498fdff5a9bfdff56a0fdffa0a0fdff56a3fdff54a5fdff9ea5fdff54a8fdff60aafdffaaaafdff60adfdff5eaffdffa8affdff5eb2fdff5cb4fdffa6b4fdff5cb7fdff5ab9fdffa4b9fdff5abcfdff02bffdff4cbffdff02c2fdff52c3fdff9cc3fdff52c6fdff58c8fdffa2c8fdff58cbfdff66cdfdffb0cdfdff66d0fdffecd2fdff36d3fdffecd5fdffb8dcfdff02ddfdffccdffdffcae1fdff14e2fdffcae4fdff9ae7fdffe4e7fdff9aeafdff10eefdff5aeefdff2cf1fdff2cf3fdff74f3fdfff4f3fdff8ef5fdffd8f5fdff96f8fdffd8fafdff22fbfdffe0fdfdff2e01feff7801feff3604feff5609feffa009feff720cfeffd20dfeff1c0efeffda10feff2a12feff7412feff3215feff3a17feff8417feff561afeff561cfeffa01cfeff5e1ffeffbe2cfeff082dfeffc62ffeff3432feff7e32feff3c35feff3a37feff8437feff563afeff563cfeffa03cfeff5e3ffeff5e41feffa841feff6644feff6a46feffb446feff7249feff764bfeffc04bfeff7e4efeffce4ffeff1850feffd652feffd254feff1c55feffda57feff2e59feff7859feff365cfeff285ffeff725ffeff3062feff4464feff8e64feff4c67feff5c69feffa669feff646cfeffae6ffefff86ffeffb672feffc274feff0c75feffca77feffc879feff127afeffe87cfeffe87efeff327ffeff0882feff2884feff7284feff4887feff4489feff8e89feff648cfeff7a8efeffc48efeff9a91feffec92feff3693feff0c96feff3e98feff8898feff529bfeffac9cfefff69cfeffac9ffefffca0feff46a1fefffca3feff62a5feff9ca5feff28a8feff10adfeff5aadfeff24b0feff8ab1feffd4b1feff8ab4feff94b7feffdeb7feff94bafeffb2bcfefffcbcfeffb2bffeffb0c1fefffac1feffb0c4feff66c7feffb0c7feff66cafeff64ccfeffaeccfeff64cffeff94d1feffded1feff94d4feff92d6feffdcd6feff92d9feff90dbfeffdadbfeff90defeff8ee0feffd8e0feff8ee3feff8ee5feffd8e5feff8ee8feff8ceafeffd6eafeffa0edfeffb0f0fefffaf0feffb0f3fefff6f5feff40f6fefff6f8fefff8fafeff40fbfeffc0fbfeffa6fdfefff0fdfeffa600ffffc802ffff1203ffffc805ffffcc07ffff1608ffffce0affffc80cffff120dffff920effffce11ffff1812ffffa013ffff3c16ffff8616ffff1818ffff1e1affff681afffffa1bffff0e1effff581effffea1fffff9022ffffda22ffff6c24ffff6e26ffffb826ffff4a28ffff562affffa02affff302cffff322effff7c2effff0c30ffff0e35ffff5835ffffe036ffffde38ffff2639ffffa639ffffe641ffff3642ffffc242ffffea44ffff3445ffffbc46ffff224effff6c4effff0850ffff1c54ffff6654ffffee55ffff4257ffff8c57ffff1459ffff145bffff5e5bffffe65cfffff05effff3a5fffffc260ffff1662ffff6062ffffe863fffff471ffff3e72ffffc473ffff1875ffff6275ffffe876ffff547bffff8e7bffff007dffff9480ffffce80ffff1e82fffffe83ffff3884ffff8a85ffffd086ffff0a87ffff7088ffffa092ffffda92ffff2a94ffff1c96ffff5696ffffa697ffffb49affffee9affff409cffff289fffff629fffffb4a0ffff96a2ffffd0a2ffff2ea4ffffc8a5ffff5aafffffa4c3ffff2ec6ffff74c6ffff86c8ffffe6c9fffffecbffff9eceffff58d0ffffa2d0ffff2cd2ffff4ad9ffffe8daffffb2dcffff1adeffff16e0ffffb4e1ffff7ce3ffff0ce5ffff9ce6ffffd8e8ffff0ce9ffff82ebffff36efffffa2f0ffffd6f0ffffb2f1ffff96f2ffff46f4ffff7af4ffff28f8ffff0cfbffff3a860000e68f0000ba90000016940000e69400003ea70000daa700003ea8000054a8000062a800001e110100e0320100b63301005c5c0100f4ee0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -562,7 +1929,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 5}
+        m_ClientGUIView: {fileID: 6}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -570,7 +1937,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: da7d71b1edd2df344b9121ad0df98ed5
---- !u!114 &17
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -590,10 +1957,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 895.3334
-    y: 439.33334
-    width: 679.3333
-    height: 539
+    x: 304.80002
+    y: 73.6
+    width: 981.2
+    height: 595.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -850,9 +2217,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.6396568, y: 3.7575815, z: -3.3489501}
+    m_Target: {x: 1.0546162, y: 3.1823773, z: -2.0186179}
     speed: 2
-    m_Value: {x: -3.6396568, y: 3.7575815, z: -3.3489501}
+    m_Value: {x: 1.0546162, y: 3.1823773, z: -2.0186179}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -903,9 +2270,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.1477995
+    m_Target: 10.873003
     speed: 2
-    m_Value: 15.1477995
+    m_Value: 10.873003
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -930,7 +2297,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -950,10 +2317,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1576.6667
-    y: 439.33334
-    width: 339.3333
-    height: 539
+    x: 304.80002
+    y: 73.6
+    width: 981.2
+    height: 595.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -964,7 +2331,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 508.99997, y: 777}
+  m_TargetSize: {x: 1226.5, y: 718.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -979,10 +2346,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -169.66666
-    m_HBaseRangeMax: 169.66666
-    m_VBaseRangeMin: -259
-    m_VBaseRangeMax: 259
+    m_HBaseRangeMin: -490.6
+    m_HBaseRangeMax: 490.6
+    m_VBaseRangeMin: -287.4
+    m_VBaseRangeMax: 287.4
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -991,7 +2358,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1000,29 +2367,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 339.3333
-      height: 518
+      width: 981.2
+      height: 574.8
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 169.66666, y: 259}
+    m_Translation: {x: 490.6, y: 287.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -169.66666
-      y: -259
-      width: 339.3333
-      height: 518
+      x: -490.6
+      y: -287.4
+      width: 981.2
+      height: 574.8
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 508.99997, y: 808.5}
+  m_LastWindowPixelSize: {x: 1226.5, y: 744.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &19
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1042,10 +2409,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 559.3334
-    y: 999.3334
-    width: 1357.6666
-    height: 345
+    x: 0
+    y: 690.4
+    width: 1287
+    height: 381.00006
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
