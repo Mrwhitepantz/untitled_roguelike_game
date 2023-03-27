@@ -7,8 +7,7 @@ public class Player : MonoBehaviour
     //Using
     public TopDownController movement;
     public ShootingController shooter;
-    
-    //public CamShake cineCam;
+    public CamShake cineCam;
 
     //Yet to use
     public PlayerHealth health;
@@ -31,7 +30,6 @@ public class Player : MonoBehaviour
     //Any code that ISN'T updating with rigidbody2D goes here
     void Update()
     {
-        // Zach: some code that Noah added for testing suite
         if (Test == false){
             direction = movement.getInput();
         } else {
@@ -53,7 +51,9 @@ public class Player : MonoBehaviour
         }
         body.velocity = movement.run(body.velocity, direction);
 
-        //body.rotation = shooter.lookAtMouse(body.position);
+
+        //COMMENTED OUT TO DISABLE ROTATION
+        body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
     }
 
 }

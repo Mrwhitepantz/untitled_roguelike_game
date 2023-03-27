@@ -70,7 +70,7 @@ public class TopDownController : MonoBehaviour
     public Vector2 getInput()
     {
         directionTemp = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        Debug.Log(directionTemp);
+        //Debug.Log(directionTemp);
         return directionTemp; //needs to be normalized or else diagonal movement will go further
         //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
