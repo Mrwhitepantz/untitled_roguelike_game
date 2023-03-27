@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4364121635289970634}
   - component: {fileID: 5575216204321560965}
   - component: {fileID: 5575216204321560964}
-  - component: {fileID: 5575216204321560963}
   - component: {fileID: 5575216204321560962}
   - component: {fileID: 2823479479804945605}
   m_Layer: 0
@@ -85,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5575216204321560964
@@ -109,31 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5575216204321560963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601725054387781760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4eace7d0772f24aac179ec1f9c9a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5575216204321560965}
-  animator: {fileID: 5575216204321560962}
-  body: {fileID: 5575216204321560964}
-  sceneCam: {fileID: 0}
-  weapon: {fileID: 0}
-  maxSpeed: 0
-  maxAccel: 0
-  friction: 1
-  direction: {x: 0, y: 0}
-  desiredVelocity: {x: 0, y: 0}
-  currVelocity: {x: 0, y: 0}
-  maxSpeedChange: 0
-  pauseState: 0
 --- !u!95 &5575216204321560962
 Animator:
   serializedVersion: 5
