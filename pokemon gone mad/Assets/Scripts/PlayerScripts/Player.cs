@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
-        cineCam = GetComponent<CamShake>();
+        //cineCam = GetComponent<CamShake>();
     }
 
     //Any code that ISN'T updating with rigidbody2D goes here
@@ -47,10 +47,13 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
-            cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
+            //cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
-        //body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
+
+
+        //COMMENTED OUT TO DISABLE ROTATION
+        body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
     }
 
 }
