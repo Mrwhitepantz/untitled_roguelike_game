@@ -134,6 +134,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 dirction = ((Vector2)path.vectorPath[currentPoint] - rb.position).normalized;
+        //Debug.Log(dirction);
         Vector2 force = dirction * speed * Time.deltaTime;
         float range = Vector3.Distance(player.position, transform.position);
         findP = (GameObject.Find("Player"));
