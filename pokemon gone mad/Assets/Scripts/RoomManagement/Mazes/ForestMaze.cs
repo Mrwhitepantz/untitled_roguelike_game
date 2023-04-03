@@ -134,8 +134,7 @@ public class ForestMaze
                 // if there is only one child with a room, return that child, otherwise randomly pick
                 if (roomOne == Vector4.zero) return roomTwo;
                 else if (roomTwo == Vector4.zero) return roomOne;
-                else if (Random.value > .5f) return roomTwo;
-                else return roomOne;
+                else return Random.value > .5f ? roomTwo : roomOne;
             }
         }
 

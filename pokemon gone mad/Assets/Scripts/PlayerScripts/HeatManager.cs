@@ -8,8 +8,8 @@ public class HeatManager : MonoBehaviour
     public bool frozen = false;
     [SerializeField]
     private RoomManager room;
-    private readonly float maxHeat = 60f;
-    private readonly float maxFreeze = -60f;
+    private readonly float maxHeat = 30f;
+    private readonly float maxFreeze = -30f;
     private readonly float baseTemp = 0f;
     private bool heating = false;
     private bool freezing = false;
@@ -20,8 +20,9 @@ public class HeatManager : MonoBehaviour
     void FixedUpdate()
     {
         Biome biome = room.GetRoomBiome();
-        if (biome.GetType().ToString().StartsWith("Desert"))
+        if (biome is DesertBiome)
         {
+            Debug.Log("DesertBiome");
             freezing = false;
             heating = true;
             if (!heatCoroutine && !frozen)
@@ -29,7 +30,7 @@ public class HeatManager : MonoBehaviour
                 StartCoroutine(HeatingCoroutine());
             }
         }
-        else if (biome.GetType().ToString().StartsWith("Snowy"))
+        else if (biome is SnowyBiome)
         {
             heating = false;
             freezing = true;
@@ -71,7 +72,7 @@ public class HeatManager : MonoBehaviour
         returnToBase = false;
     }
 
-    private IEnumerator HeatingCoroutine()
+    public IEnumerator HeatingCoroutine()
     {
         heatCoroutine = true;
         while(temperatureLevel < maxHeat && !overHeated)

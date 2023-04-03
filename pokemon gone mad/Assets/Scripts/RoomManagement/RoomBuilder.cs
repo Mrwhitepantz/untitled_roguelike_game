@@ -28,7 +28,7 @@ public class RoomBuilder : MonoBehaviour
     public void BuildRoom(float[] noiseSeedArray, Grid grid)
     {
         // build a new room here
-        GridSpaceType[,] gridMap = PrepareGrid();
+        GridSpaceType[,] gridMap = PrepareGrid(gridWidth, gridHeight);
         roomOrigin = this.transform.position;
 
         humidity = GetHumidity(new float[] { noiseSeedArray[0], noiseSeedArray[1] });
@@ -36,10 +36,17 @@ public class RoomBuilder : MonoBehaviour
         biome = Biome.NewBiome(humidity, temperature);
         tileMapsArray = grid.GetComponentsInChildren<Tilemap>(); // 0: Water, 1: Ground, 2: EnvironmentObjects, 3: EnvironmentDecorations
 
-        if (biome.GetType().ToString().StartsWith("Forest"))
+        if (biome is ForestBiome)
         {
-            ForestMaze mazeGen = new(gridMap);
-            mazeGen.CreateClearings(gridWidth, gridHeight);
+            MazeGenerator mazeGen = new(gridMap);
+            mazeGen.CreateClearings(gridWidth, gridHeight, 3, 12, true);
+            mazeGen.ConnectExits(gridCenter, exitOffset);
+            mazeGen.CreateWalls(gridWidth, gridHeight);
+        }
+        else if (biome is WaterBiome)
+        {
+            MazeGenerator mazeGen = new(gridMap);
+            mazeGen.CreateClearings(gridWidth, gridHeight, 2, 18, false);
             mazeGen.ConnectExits(gridCenter, exitOffset);
             mazeGen.CreateWalls(gridWidth, gridHeight);
         }
@@ -47,17 +54,17 @@ public class RoomBuilder : MonoBehaviour
         SpawnLevel(gridMap);
     }
 
-    public GridSpaceType[,] PrepareGrid()
+    public GridSpaceType[,] PrepareGrid(int gridW, int gridH)
     {
-        GridSpaceType[,] grid = new GridSpaceType[gridWidth, gridHeight];
-        int lastCol = gridWidth - 1;
-        int lastRow = gridHeight - 1;
+        GridSpaceType[,] grid = new GridSpaceType[gridW, gridH];
+        int lastCol = gridW - 1;
+        int lastRow = gridH - 1;
         int centerCol = (int)gridCenter.x;
         int centerRow = (int)gridCenter.y;
 
-        for (int row = 0; row < gridHeight; row++)
+        for (int row = 0; row < gridH; row++)
         {
-            for (int col = 0; col < gridWidth; col++)
+            for (int col = 0; col < gridW; col++)
             {
                 // make the edges of the grid into walls so each room is self-contained
                 if (row == 0 || col == 0 || row == lastRow || col == lastCol)
@@ -92,7 +99,7 @@ public class RoomBuilder : MonoBehaviour
     {
         TileBase groundTile = biome.groundTile;
         TileBase wallTile = biome.wallTile;
-        bool water = biome.GetType().ToString().StartsWith("Water");
+        bool water = biome is WaterBiome;
 
         for (int col = 0; col < gridWidth; col++)
         {
@@ -103,6 +110,8 @@ public class RoomBuilder : MonoBehaviour
                     case GridSpaceType.empty:
                         if (water)
                         {
+                            // water biome wall tile is the same as the empty areas
+                            // but needs to spawn on water layer
                             SpawnTile(col, row, wallTile, tileMapsArray[0]);
                         }
                         else SpawnTile(col, row, groundTile, tileMapsArray[1]);
