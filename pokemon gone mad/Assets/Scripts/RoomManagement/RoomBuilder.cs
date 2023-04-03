@@ -38,8 +38,15 @@ public class RoomBuilder : MonoBehaviour
 
         if (biome is ForestBiome)
         {
-            ForestMaze mazeGen = new(gridMap);
-            mazeGen.CreateClearings(gridWidth, gridHeight);
+            MazeGenerator mazeGen = new(gridMap);
+            mazeGen.CreateClearings(gridWidth, gridHeight, 3, 12, true);
+            mazeGen.ConnectExits(gridCenter, exitOffset);
+            mazeGen.CreateWalls(gridWidth, gridHeight);
+        }
+        else if (biome is WaterBiome)
+        {
+            MazeGenerator mazeGen = new(gridMap);
+            mazeGen.CreateClearings(gridWidth, gridHeight, 2, 18, false);
             mazeGen.ConnectExits(gridCenter, exitOffset);
             mazeGen.CreateWalls(gridWidth, gridHeight);
         }
