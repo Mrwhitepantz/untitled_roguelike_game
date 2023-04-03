@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    public Camera sceneCam;
     public Gun weapon;
-
+    public Camera sceneCam;
     public void Start()
     {
         sceneCam = Camera.main;

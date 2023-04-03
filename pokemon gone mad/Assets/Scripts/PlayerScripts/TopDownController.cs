@@ -25,7 +25,7 @@ public class TopDownController : MonoBehaviour
     private float dashSpeed = 50f;
     private float dashDuration = .15f;
     private float dashCooldown = .95f;
-    private bool dashCounter = true;
+    public int dashCounter = 3;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class TopDownController : MonoBehaviour
      */
     public bool canDash()
     {
-        return dashCounter;
+        return dashCounter > 0;
     }
 
     /* Performs a dash on character. After dashing for a certain amount of time, player will enter
@@ -48,12 +48,12 @@ public class TopDownController : MonoBehaviour
     //Bug: will use a dash when standing still
     public IEnumerator dash(Rigidbody2D body, Vector2 inputDir)
     {
-        dashCounter = false;
+        dashCounter -= 1;
         body.velocity = inputDir * dashSpeed;
         yield return new WaitForSeconds(dashDuration);
         body.velocity = new Vector2(inputDir.x * (maxSpeed / 1.25f), inputDir.y * (maxSpeed / 1.25f)); // higher the divisor, the choppier end of dash feels
         yield return new WaitForSeconds(dashCooldown);
-        dashCounter = true;
+        dashCounter += 1;
     }
 
     //Overloaded version of run for player class
