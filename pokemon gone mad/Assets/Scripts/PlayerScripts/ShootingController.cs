@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    public Camera sceneCam;
     public Gun weapon;
-
+    public Camera sceneCam;
     public void Start()
     {
         sceneCam = Camera.main;
@@ -15,6 +14,7 @@ public class ShootingController : MonoBehaviour
         //bulletScript = GetComponent<playerBullet>();
         //bullet = GetComponent<Rigidbody2D>();
         //bulletTrail = GetComponent<BulletTrail2>();
+    
     }
 
     public void Update()
