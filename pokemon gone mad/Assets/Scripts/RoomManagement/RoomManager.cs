@@ -13,19 +13,19 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private float fadeWaitSeconds = .5f;
     [SerializeField]
-    private RoomBuilder roomContainer;
+    public RoomBuilder roomContainer;
 
-    private FollowPlayer cameraController;
-    private TopDownController playerController;
-    private GameObject playerObject;
+    public FollowPlayer cameraController;
+    public TopDownController playerController;
+    public GameObject playerObject;
     private Vector3 roomOffset, playerOffset;
-    private readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
+    public readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
 
     // Panel/transition code from Mister Taft Creates https://www.youtube.com/watch?v=JcEJtEWjiZU
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         // Assign scene objects
         cameraController = Camera.main.GetComponent<FollowPlayer>();
@@ -33,6 +33,7 @@ public class RoomManager : MonoBehaviour
         playerController = (TopDownController) playerObject.GetComponent("TopDownController");
 
         // add first room to the roomList
+        
         RoomBuilder firstRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         firstRoom.biome = new ForestBiome();
         roomDictionary.Add(new Vector3(0, 0, 1), firstRoom);
@@ -68,6 +69,13 @@ public class RoomManager : MonoBehaviour
         StartCoroutine(TransitionCoroutine());
     }
 
+    public void CreateAndAddRoom()
+    {
+        RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
+        roomDictionary.Add(this.transform.position, newRoom);
+        newRoom.BuildRoom(noiseSeedArray, worldGrid);
+    }
+
     public IEnumerator TransitionCoroutine()
     {
         yield return new WaitForSeconds(fadeWaitSeconds);
@@ -77,10 +85,7 @@ public class RoomManager : MonoBehaviour
         // if the next room isn't in the roomList, make a new RoomBuilder and add it
         if(!roomDictionary.ContainsKey(this.transform.position))
         {
-            RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
-            roomDictionary.Add(this.transform.position, newRoom);
-            Debug.Log("building new room?");
-            newRoom.BuildRoom(noiseSeedArray, worldGrid);
+            CreateAndAddRoom();
         }
         
         // change camera min/max positions to next room

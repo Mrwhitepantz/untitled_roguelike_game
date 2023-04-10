@@ -19,23 +19,16 @@ public class Biome
         // the Color type holds rgba values as a float based on 256 color levels, 0-255.
         // multiplying by 255 and taking the floor returns the value as a color 
         // level the way it is normally seen in a color editor.
-        switch (Mathf.FloorToInt(mapPixel.r * 255))
+        return Mathf.FloorToInt(mapPixel.r * 255) switch
         {
-            case (217):      //Desert
-                return new DesertBiome();
-            case (132):     //Rocky
-                return new RockyBiome();
-            case (106):     //Forest
-                return new ForestBiome();
-            case (75):      //Tropical
-                return new TropicalBiome();
-            case (203):     //Snowy
-                return new SnowyBiome();
-            case (99):      //Water
-                return new WaterBiome();
-            default:
-                return new ForestBiome();
-        }
+            217 => new DesertBiome(),
+            132 => new RockyBiome(),
+            106 => new ForestBiome(),
+            75 => new TropicalBiome(),
+            203 => new SnowyBiome(),
+            99 => new WaterBiome(),
+            _ => new ForestBiome()
+        };
     }
     public Tile CreateTile(Texture2D texture)
     {
