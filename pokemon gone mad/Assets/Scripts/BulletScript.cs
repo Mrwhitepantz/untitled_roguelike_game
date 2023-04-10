@@ -24,19 +24,23 @@ public class BulletScript : MonoBehaviour
         //Vector2 force = dirction * speed * Time.deltaTime;
         //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         //rb.AddForce(force);
-        Debug.Log(target.z);
         float angle = target.y/target.x;
-        // if(target.y>0){
-        //     if(target.x>0){
-        //         angle = target.y/target.x;
-        //     }
-        //     if(target.x<0){
+        angle =  Mathf.Rad2Deg*Mathf.Atan(angle);
+        if(target.x<0){
+            if (target.y>0){
+                angle = target.y/target.x;
+                angle =  Mathf.Rad2Deg*Mathf.Atan(angle);
+            }
+        }
+        if(target.x>0){
 
-        //     }
+            angle = target.y/target.x;
+            angle =  Mathf.Rad2Deg*Mathf.Atan(angle)+180;
             
-        // }
-        rb.rotation = Mathf.Rad2Deg*Mathf.Atan(angle);
-        Debug.Log(rb.rotation);
+            
+        }
+        rb.rotation = angle;
+        //Debug.Log(rb.rotation);
         transform.position += target * speed * Time.deltaTime;
 
         StartCoroutine(waiter());
