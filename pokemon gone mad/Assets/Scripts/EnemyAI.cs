@@ -12,6 +12,8 @@ public class EnemyAI : MonoBehaviour
     public float sooterRange;
     public GameObject findP;
     private int elte;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     Path path;
     int currentPoint;
@@ -95,6 +97,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Start()
     {
+        animator = GetComponent<Animator>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         seeker.StartPath(rb.position, player.position, OnPathComplete);
@@ -135,6 +138,7 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 dirction = ((Vector2)path.vectorPath[currentPoint] - rb.position).normalized;
         //Debug.Log(dirction);
+        animate(dirction);
         Vector2 force = dirction * speed * Time.deltaTime;
         float range = Vector3.Distance(player.position, transform.position);
         findP = (GameObject.Find("Player"));
@@ -154,6 +158,32 @@ public class EnemyAI : MonoBehaviour
         
         if (distance < nextPointDictance) {
             currentPoint++;
+        }
+    }
+    public void animate(Vector2 inputDir)
+    {
+        
+
+        //Debug.Log(inputDir.x);
+        //Debug.Log(inputDir.y);
+        
+        if (inputDir.x != 0 ){
+            animator.SetFloat("speed", 1);
+            if (inputDir.x > 0) {
+                animator.SetFloat("horizontal", 1);
+            } else { animator.SetFloat("horizontal", -1);}
+        } else {animator.SetFloat("horizontal", 0);}
+        if (inputDir.y != 0 ){
+            
+            animator.SetFloat("speed", 1);
+            if (inputDir.y > 0) {
+                animator.SetFloat("vertical", 1);
+            } else { animator.SetFloat("vertical", -1);}
+            
+        } else {animator.SetFloat("vertical", 0);}
+        if ((inputDir.x == 0) && (inputDir.y == 0)) {
+            
+            animator.SetFloat("speed", 0);
         }
     }
 }
