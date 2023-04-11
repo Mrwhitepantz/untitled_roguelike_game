@@ -7,9 +7,9 @@ public class RoomManager : MonoBehaviour
     public Grid worldGrid;
     
     [SerializeField]
-    private GameObject fadeInPanel;
+    private GameObject fadeInPanelPrefab;
     [SerializeField]
-    private GameObject fadeOutPanel;
+    private GameObject fadeOutPanelPrefab;
     [SerializeField]
     private float fadeWaitSeconds = .5f;
     [SerializeField]
@@ -21,6 +21,7 @@ public class RoomManager : MonoBehaviour
     private Vector3 roomOffset, playerOffset;
     public readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
+    private GameObject fadeInPanel, fadeOutPanel;
 
     // Panel/transition code from Mister Taft Creates https://www.youtube.com/watch?v=JcEJtEWjiZU
 
@@ -57,10 +58,9 @@ public class RoomManager : MonoBehaviour
         playerOffset = playerPositionOffset;
 
         // Fade out between rooms
-        if(fadeOutPanel != null)
+        if(fadeOutPanelPrefab != null)
         {
-            GameObject panel = Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, .35f);
+            fadeOutPanel = Instantiate(fadeOutPanelPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         }
 
         // put the player in a pause state so they can't move
@@ -95,10 +95,11 @@ public class RoomManager : MonoBehaviour
         playerObject.transform.position += playerOffset;
 
         // fade back in
-        if (fadeInPanel != null)
+        if (fadeInPanelPrefab != null)
         {
-            GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, .35f);
+            Destroy(fadeOutPanel);
+            fadeInPanel = Instantiate(fadeInPanelPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            Destroy(fadeInPanel, .35f);
         }
         yield return new WaitForSeconds(fadeWaitSeconds);
         // take the player out of the pause state
