@@ -13,6 +13,7 @@ TagManager:
   - GameHazard
   - Pikachu
   - Charmander
+  - testspawn
   layers:
   - Default
   - TransparentFX
