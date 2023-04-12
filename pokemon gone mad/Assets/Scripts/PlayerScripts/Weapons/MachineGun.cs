@@ -30,7 +30,7 @@ public class MachineGun : Gun
         StartCoroutine("shotDelay", fireRate);
     }
 
-    private IEnumerator shotDelay(float delay)
+    public override IEnumerator shotDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 

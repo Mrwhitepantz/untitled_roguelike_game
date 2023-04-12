@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     private int elte;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public float hp = 100;
 
     Path path;
     int currentPoint;
@@ -119,6 +120,20 @@ public class EnemyAI : MonoBehaviour
             currentPoint = 0;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerBullet")
+        {
+            hp -= 10;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

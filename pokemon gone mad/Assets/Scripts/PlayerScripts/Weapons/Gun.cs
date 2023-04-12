@@ -12,19 +12,20 @@ public abstract class Gun : MonoBehaviour
     public GameObject impactEffect;
     public LineRenderer lineRenderer;
 
-    //public abstract float fireRate { get; set; } //Sadly I don't think this works
+    //[SerializeField] protected float fireRate; //for some reason can't create abstract variable?
 
     /*  projectile is the bullet prefab
      *  bullet is the rigidbody2d
      *  is using bulletscript's speed
      */
     public abstract void shoot();
+
+    public abstract IEnumerator shotDelay(float delay);
     
     // Raycast implemention of shooting
     public void shootRaycast()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, transform.TransformDirection(Vector2.up), 10f);
-
         if (hitInfo)
         {
             Debug.Log("Hit something w/ raycast");

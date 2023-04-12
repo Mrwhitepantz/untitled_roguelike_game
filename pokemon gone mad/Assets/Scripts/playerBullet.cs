@@ -6,22 +6,29 @@ public class playerBullet : MonoBehaviour
 {
     public Rigidbody2D bullet;
     public float speed = 20f;
-    public GameObject impactEffect;
+    //public GameObject impactEffect;
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         // It works!
         if (hitInfo.tag == "BadMen")
         {
-            Debug.Log("hit an enemy");
+            Debug.Log("playerBullet: hit an enemy");
             Destroy(gameObject);
         } 
+        else if (hitInfo.tag != "BadMen")
+        {
+            Debug.Log("playerBullet: hit an environment");
+            Destroy(gameObject);
+        }
         else
         {
             Destroy(gameObject, 1);
         }
 
-        Instantiate(impactEffect, transform.position, transform.rotation);
+        //Instantiate(impactEffect, transform.position, transform.rotation);
         // Can add health and other collision related things
     }
+
+    //private void OnCollisionEnter()
 }

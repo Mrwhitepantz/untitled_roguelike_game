@@ -11,7 +11,7 @@ public class Pistol : Gun
 
     //public GameObject impactEffect;
     //public LineRenderer lineRenderer;
-    private float fireRate = .15f;
+    protected float fireRate = .25f;
     /*public override float fireRate // sadly does not work
     {
         get
@@ -26,10 +26,19 @@ public class Pistol : Gun
 
     public override void shoot()
     {
+        StartCoroutine("shotDelay", fireRate);
+    }
+
+    public override IEnumerator shotDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
         bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
         //may need to call OnTrigger2D when implementing damage
         Destroy(projectile, 1); // this will destroy the cloned bullet if it doesn't collide with anything
+
+        StopCoroutine("shotDelay");
     }
 }
