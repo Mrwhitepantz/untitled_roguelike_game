@@ -12,11 +12,14 @@ public class Player : MonoBehaviour
     //Yet to use
     public PlayerHealth health;
     //public ItemManager inventory;
+    public GameObject gun;
+    public Rigidbody2D gunBody;
 
     public Vector2 direction;
     public Rigidbody2D body;
     public bool Test = false;
     public Vector2 testDirection;
+
     void Start()
     {
         //controller = new TopDownController("Squirtle"); // this unfortunately does not work. Get a NullReference exception
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
         movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
+        gun = GameObject.Find("PistolRaycast"); // this will have to involve collision
+        gunBody = gun.GetComponent<Rigidbody2D>();
         //cineCam = GetComponent<CamShake>();
     }
 
@@ -47,13 +52,50 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
+            StartCoroutine(movement.dash(gunBody, direction));
             //cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
+        gunBody.velocity = movement.run(gunBody.velocity, direction);
         body.velocity = movement.run(body.velocity, direction);
 
-
         //COMMENTED OUT TO DISABLE ROTATION
-        body.rotation = shooter.lookAtMouse(body.position); //gun.rotation, have to for 
+        gunBody.rotation = shooter.lookAtMouse(gunBody.position); //gun.rotation, have to for 
+        
+        //gunRotationNoah(body.velocity, gunBody);
+        //gunRotationZach(gunBody, body);
     }
 
+    public void gunRotationZach(Rigidbody2D target, Rigidbody2D player)
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 aimDirection = mousePos - player.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        target.transform.RotateAround(player.position, new Vector3(0, 0, 1), aimAngle);
+    }
+
+    public void gunRotationNoah(Vector2 target, Rigidbody2D rb)
+    {
+        Vector2 dirction = ((Vector2)target - rb.position).normalized;
+        //Vector2 force = dirction * speed * Time.deltaTime;
+        //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        //rb.AddForce(force);
+        float angle = target.y / target.x;
+        angle = Mathf.Rad2Deg * Mathf.Atan(angle);
+        if (target.x < 0)
+        {
+            if (target.y > 0)
+            {
+                angle = target.y / target.x;
+                angle = Mathf.Rad2Deg * Mathf.Atan(angle);
+            }
+        }
+        if (target.x > 0)
+        {
+            angle = target.y / target.x;
+            angle = Mathf.Rad2Deg * Mathf.Atan(angle) + 180;
+        }
+        rb.rotation = angle;
+        //Debug.Log(rb.rotation);
+        //transform.position += target * 90 * Time.deltaTime;
+    }
 }

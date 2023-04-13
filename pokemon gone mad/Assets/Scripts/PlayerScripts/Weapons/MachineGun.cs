@@ -5,32 +5,21 @@ using UnityEngine;
 public class MachineGun : Gun
 {
     //Inherits the following from Gun base class
-    //public Transform firePoint; //where the bullets will appear
-    //public GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
-    //public playerBullet bulletScript; //script corresponding to bullet
+        //public Transform firePoint; //where the bullets will appear
+        //public GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
+        //public playerBullet bulletScript; //script corresponding to bullet
 
-    //public GameObject impactEffect;
-    //public LineRenderer lineRenderer;
+        //public GameObject impactEffect;
+        //public LineRenderer lineRenderer;
 
     public float fireRate = .1f;
-    /*public override float fireRate //Sadly I don't think properties apply with Unity
-    {
-        get
-        {
-            return _fireRate;
-        }
-        set
-        {
-            _fireRate = .2f;
-        }
-    }*/
 
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
     }
 
-    public override IEnumerator shotDelay(float delay)
+    private IEnumerator shotDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 

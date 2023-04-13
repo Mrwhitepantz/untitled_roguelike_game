@@ -8,6 +8,7 @@ public abstract class Gun : MonoBehaviour
     public Transform firePoint; //where the bullets will appear
     public GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
     public playerBullet bulletScript; //script corresponding to bullet
+    public Rigidbody2D weapon;
 
     public GameObject impactEffect;
     public LineRenderer lineRenderer;
@@ -20,7 +21,7 @@ public abstract class Gun : MonoBehaviour
      */
     public abstract void shoot();
 
-    public abstract IEnumerator shotDelay(float delay);
+    //public abstract IEnumerator shotDelay(float delay);
     
     // Raycast implemention of shooting
     public void shootRaycast()

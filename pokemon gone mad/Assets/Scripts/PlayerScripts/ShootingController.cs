@@ -10,6 +10,7 @@ public class ShootingController : MonoBehaviour
     public void Start()
     {
         sceneCam = Camera.main;
+        //weapon = GetComponent<PistolRaycast>(); //will need to create some kind of weapon finder script
         //gunPoint = GetComponent<Transform>();
         //bulletPrefab = GetComponent<pBullet>();
         //bulletScript = GetComponent<playerBullet>();
@@ -31,7 +32,7 @@ public class ShootingController : MonoBehaviour
     {
         Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePos - playerPos;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        return aimAngle;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        return aimAngle + 180;
     }
 }

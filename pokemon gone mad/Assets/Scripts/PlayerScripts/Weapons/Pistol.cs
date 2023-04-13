@@ -12,24 +12,13 @@ public class Pistol : Gun
     //public GameObject impactEffect;
     //public LineRenderer lineRenderer;
     protected float fireRate = .25f;
-    /*public override float fireRate // sadly does not work
-    {
-        get
-        {
-            return _fireRate;
-        }
-        set
-        {
-            _fireRate = .2f;
-        }
-    }*/
 
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
     }
 
-    public override IEnumerator shotDelay(float delay)
+    private IEnumerator shotDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 

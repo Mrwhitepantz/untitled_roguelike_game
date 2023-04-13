@@ -35,6 +35,17 @@ public class ItemManager : MonoBehaviour{
             topDownController.maxSpeed = 4f;
             Destroy(collision.gameObject);
         }
+        
+        //Zach: Some code I added for picking up weapons
+        if (collision.gameObject.name == "Pistol")
+        {
+            ifCollision = true;
+        }
+        if (collision.gameObject.name == "Machinegun")
+        {
+
+        }
+        //Zach: My code ends here
         StartCoroutine(waiter());
         Debug.Log(collision.gameObject.name);
     }
