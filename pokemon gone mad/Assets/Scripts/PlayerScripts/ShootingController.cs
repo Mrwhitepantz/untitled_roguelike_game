@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    [SerializeField] protected Gun weapon;
-    [SerializeField] protected Camera sceneCam;
+    [SerializeField] private Gun weapon;
+    [SerializeField] private Camera sceneCam;
 
     public void Start()
     {
         sceneCam = Camera.main;
-        //weapon = GetComponent<PistolRaycast>(); //will need to create some kind of weapon finder script
+        //weapon = GetComponent<Shotgun>(); //will need to create some kind of weapon finder script
         //gunPoint = GetComponent<Transform>();
         //bulletPrefab = GetComponent<pBullet>();
         //bulletScript = GetComponent<playerBullet>();

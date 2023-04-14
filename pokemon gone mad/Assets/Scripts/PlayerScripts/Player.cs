@@ -9,11 +9,12 @@ public class Player : MonoBehaviour
     public ShootingController shooter;
     public CamShake cineCam;
 
+    public GameObject gun;
+    public Rigidbody2D gunBody;
+
     //Yet to use
     public PlayerHealth health;
     //public ItemManager inventory;
-    public GameObject gun;
-    public Rigidbody2D gunBody;
 
     public Vector2 direction;
     public Rigidbody2D body;
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
-        gun = GameObject.Find("PistolRaycast"); // this will have to involve collision
+        gun = GameObject.Find("Shotgun"); // this will have to involve collision
         gunBody = gun.GetComponent<Rigidbody2D>();
         //cineCam = GetComponent<CamShake>();
     }
