@@ -29,7 +29,7 @@ public class RoomBuilder : MonoBehaviour
     public enum GridSpaceType { empty, floor, wall };
     public void Update()
     {
-        spawn = GameObject.FindGameObjectWithTag("testspawn");
+        //spawn = GameObject.FindGameObjectWithTag("testspawn");
     }
 
     public void BuildRoom(float[] noiseSeedArray, Grid grid)
@@ -128,14 +128,14 @@ public class RoomBuilder : MonoBehaviour
 
                         pos = SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         //Instantiate(spawn, pos, Quaternion.identity);
-                        spawn = GameObject.FindGameObjectWithTag("testspawn");
-                        if( Random.Range(1, 10) ==1 && mobCap > mobcount){
-                            Instantiate(spawn, pos, Quaternion.identity);
-                        Debug.Log("i spawned at " + pos);
-                        Debug.Log(spawn.name);
-                        mobcount=mobcount+1;
+                        //spawn = GameObject.FindGameObjectWithTag("testspawn");
+                        // if( Random.Range(1, 10) ==1 && mobCap > mobcount){
+                        //     //Instantiate(spawn, pos, Quaternion.identity);
+                        // Debug.Log("i spawned at " + pos);
+                        // Debug.Log(spawn.name);
+                        // mobcount=mobcount+1;
 
-                        }
+                        // }
                         
 
                         break;

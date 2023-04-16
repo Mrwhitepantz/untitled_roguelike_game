@@ -13,7 +13,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Typical_Player").transform.position;
+        player = GameObject.Find("Player").transform.position;
         target = (player - transform.position).normalized;
     }
 

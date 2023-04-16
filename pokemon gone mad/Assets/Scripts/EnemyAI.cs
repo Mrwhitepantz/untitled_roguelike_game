@@ -141,7 +141,7 @@ public class EnemyAI : MonoBehaviour
         animate(dirction);
         Vector2 force = dirction * speed * Time.deltaTime;
         float range = Vector3.Distance(player.position, transform.position);
-        findP = (GameObject.Find("Typical_Player"));
+        findP = (GameObject.Find("Player"));
         bool LineOS = LOS(findP);
         if (range < sooterRange && LineOS)
         {
