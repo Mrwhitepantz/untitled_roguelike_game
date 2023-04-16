@@ -6,6 +6,7 @@ public class ShootingController : MonoBehaviour
 {
     [SerializeField] public Gun gun; //script of the weapon
     [SerializeField] protected Camera sceneCam;
+    //[SerializeField] protected playerBullet bulletPrefab;
     public bool hasWeapon;
 
     void Start()
@@ -13,6 +14,7 @@ public class ShootingController : MonoBehaviour
         sceneCam = Camera.main;
         hasWeapon = false;
         gun = null;
+        //bulletPrefab = null;
     }
 
     void Update()
@@ -30,6 +32,11 @@ public class ShootingController : MonoBehaviour
         Vector2 aimDirection = mousePos - playerPos;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         return aimAngle + 180;
+    }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
     }
 
 }

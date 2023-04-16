@@ -46,34 +46,38 @@ public class ItemManager : MonoBehaviour{
         //Zach: Some code I added for picking up weapons
         if (collision.gameObject.name == "Shotgun")
         {
-            if (playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
             {
                 Destroy(playerScript.gun);
+                //Debug.Log("ItemManager: destroyed Shotgun");
             }
             ifCollision = true;
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Shotgun>());
         }
         if (collision.gameObject.name == "ZachMachineGun")
         {
-            if (playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
             {
                 Destroy(playerScript.gun);
+                //Debug.Log("ItemManager: destroyed Machinegun");
             }
             ifCollision = true;
+            //Debug.Log("ItemManager: destroyed Machinegun2");
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<MachineGun>());
         }
         if (collision.gameObject.name == "ZachPistol")
         {
-            if (playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
             {
                 Destroy(playerScript.gun);
+                //Debug.Log("ItemManager: destroyed Pistol");
             }
             ifCollision = true;
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Pistol>());
         }
         //Zach: My code ends here
         StartCoroutine(waiter());
-        Debug.Log("Item Manager: " + collision.gameObject.name);
+        //Debug.Log("Item Manager: " + collision.gameObject.name);
     }
     public IEnumerator waiter(){
         yield return new WaitForSecondsRealtime(3);

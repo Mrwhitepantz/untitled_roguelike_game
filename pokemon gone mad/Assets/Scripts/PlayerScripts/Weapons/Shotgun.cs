@@ -27,9 +27,9 @@ public class Shotgun : Gun
         bullet2.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
         bullet3.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
         sfx.PlayOneShot(gunshotSFX, 1f);
-        Destroy(projectile1, .15f); // this will destroy the cloned bullet if it doesn't collide with anything
+        /*Destroy(projectile1, .15f); // this will destroy the cloned bullet if it doesn't collide with anything
         Destroy(projectile2, .15f);
-        Destroy(projectile3, .15f);
+        Destroy(projectile3, .15f);*/
         StopCoroutine("shotDelay");
     }
 }
