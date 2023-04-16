@@ -55,7 +55,7 @@ public class AIAttaack : MonoBehaviour
     }
 bool LOS(){
         //bood ret = false;
-        Target = ((GameObject.Find("Typical_Player").transform.position)-transform.position).normalized;
+        Target = ((GameObject.Find("Player").transform.position)-transform.position).normalized;
         //transform.Rotate(Vector3.forward * lookspeed * Time.deltaTime);
         RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, (player.position-transform.position), 1 << LayerMask.NameToLayer("map/objects"));
 
