@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    [SerializeField] private Gun weapon;
-    [SerializeField] private Camera sceneCam;
+    [SerializeField] public Gun gun; //script of the weapon
+    [SerializeField] protected Camera sceneCam;
+    public bool hasWeapon;
 
-    public void Start()
+    void Start()
     {
         sceneCam = Camera.main;
-        //weapon = GetComponent<Shotgun>(); //will need to create some kind of weapon finder script
-        //gunPoint = GetComponent<Transform>();
-        //bulletPrefab = GetComponent<pBullet>();
-        //bulletScript = GetComponent<playerBullet>();
-        //bullet = GetComponent<Rigidbody2D>();
-        //bulletTrail = GetComponent<BulletTrail2>();
+        hasWeapon = false;
+        gun = null;
     }
 
-    public void Update()
+    void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && hasWeapon)
         {
-            weapon.shoot();
-            //weapon.shootRaycast();
+            gun.shoot();
         }
         //Debug.Log("mouse position" + Input.mousePosition);
     }
@@ -35,4 +31,5 @@ public class ShootingController : MonoBehaviour
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         return aimAngle + 180;
     }
+
 }

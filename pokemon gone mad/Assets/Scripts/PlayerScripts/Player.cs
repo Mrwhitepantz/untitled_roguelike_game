@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public GameObject gun;
     public Rigidbody2D gunBody;
+    public bool hasWeapon;
 
     //Yet to use
     public PlayerHealth health;
@@ -28,12 +29,13 @@ public class Player : MonoBehaviour
         movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
-        gun = GameObject.Find("Shotgun"); // this will have to involve collision
-        gunBody = gun.GetComponent<Rigidbody2D>();
+        gun = null; // this will have to involve collision
+        hasWeapon = false;
+        gunBody = null;
         //cineCam = GetComponent<CamShake>();
     }
 
-    //Any code that ISN'T updating with rigidbody2D goes here
+    //Zach: Any code that ISN'T updating with rigidbody2D goes here
     void Update()
     {
         if (Test == false){
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
         movement.animate(direction);
         //Debug.Log("Mouse position: " + shooter.lookAtMouse(body.position));
     }
-    //Any code that IS updating any rigidBody values  goes here
+    //Zach: Any code that IS updating any rigidBody values  goes here
     void FixedUpdate()
     {
         if (Input.GetKey("mouse 1") && movement.canDash())
@@ -56,12 +58,15 @@ public class Player : MonoBehaviour
             StartCoroutine(movement.dash(gunBody, direction));
             //cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
-        gunBody.velocity = movement.run(gunBody.velocity, direction);
         body.velocity = movement.run(body.velocity, direction);
+        if (hasWeapon)
+        {
+            gunBody.velocity = movement.run(gunBody.velocity, direction);
+            gunBody.rotation = shooter.lookAtMouse(gunBody.position);
+        }
 
         //COMMENTED OUT TO DISABLE ROTATION
-        gunBody.rotation = shooter.lookAtMouse(gunBody.position); //gun.rotation, have to for 
-        
+
         //gunRotationNoah(body.velocity, gunBody);
         //gunRotationZach(gunBody, body);
     }

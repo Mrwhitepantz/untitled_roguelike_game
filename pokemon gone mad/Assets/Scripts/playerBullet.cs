@@ -8,22 +8,24 @@ public class playerBullet : MonoBehaviour
     public float speed = 20f;
     //public GameObject impactEffect;
 
+
+    // Going to have to move this to somewhere else because it interfere's with on trigger
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         // It works!
         if (hitInfo.tag == "BadMen")
         {
             Debug.Log("playerBullet: hit an enemy");
-            Destroy(gameObject);
+            Destroy(this);
         } 
         else if (hitInfo.tag != "BadMen")
         {
             Debug.Log("playerBullet: hit an environment");
-            Destroy(gameObject);
+            Destroy(this);
         }
         else
         {
-            Destroy(gameObject, 1);
+            Destroy(this, 1);
         }
 
         //Instantiate(impactEffect, transform.position, transform.rotation);

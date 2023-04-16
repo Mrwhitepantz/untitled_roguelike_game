@@ -12,11 +12,13 @@ public class MachineGun : Gun
         //public GameObject impactEffect;
         //public LineRenderer lineRenderer;
 
-    public float fireRate = .1f;
+    [SerializeField] protected float fireRate = .15f;
+
 
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
+        //gunshotSFX.Play();
     }
 
     private IEnumerator shotDelay(float delay)
@@ -27,8 +29,8 @@ public class MachineGun : Gun
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
         bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
         //may need to call OnTrigger2D when implementing damage
-        Destroy(projectile, 1); // this will destroy the cloned bullet if it doesn't collide with anything
         
         StopCoroutine("shotDelay");
+
     }
 }

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7473529696308007421}
   - component: {fileID: 7473529696308007420}
   - component: {fileID: 7473529696308007423}
+  - component: {fileID: 1344805176}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -107,8 +108,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -448116457
-  m_SortingLayer: 4
+  m_SortingLayerID: 1022115325
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2408530018317867212, guid: f3a16cf6ac32f3a48b31686d33e10d3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,6 +163,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   firePoint2: {fileID: 7473529696087891322}
   firePoint3: {fileID: 7473529697881379241}
+  fireRate: 0.5
 --- !u!114 &7473529696308007423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +178,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   speed: 20
+--- !u!61 &1344805176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473529696308007408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2776482}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.3262404}
+  m_EdgeRadius: 0
 --- !u!1 &7473529697572923848
 GameObject:
   m_ObjectHideFlags: 0

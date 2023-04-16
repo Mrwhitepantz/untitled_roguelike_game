@@ -5,9 +5,9 @@ using UnityEngine;
 public class Shotgun : Gun
 {
     //firepoint1 is inherited from Gun
-    public Transform firePoint2;
-    public Transform firePoint3;
-    protected float fireRate = .5f;
+    [SerializeField] protected Transform firePoint2;
+    [SerializeField] protected Transform firePoint3;
+    [SerializeField] protected float fireRate = .5f;
 
     public override void shoot()
     {
