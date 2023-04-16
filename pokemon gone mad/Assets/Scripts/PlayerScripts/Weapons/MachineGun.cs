@@ -18,7 +18,6 @@ public class MachineGun : Gun
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
-        //gunshotSFX.Play();
     }
 
     private IEnumerator shotDelay(float delay)
@@ -28,9 +27,7 @@ public class MachineGun : Gun
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
         bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
-        //may need to call OnTrigger2D when implementing damage
-        
+        sfx.PlayOneShot(gunshotSFX, 1f);
         StopCoroutine("shotDelay");
-
     }
 }

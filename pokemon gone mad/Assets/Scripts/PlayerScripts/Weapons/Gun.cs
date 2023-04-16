@@ -21,11 +21,6 @@ public abstract class Gun : MonoBehaviour
         sfx = GetComponent<AudioSource>();
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
-
     //[SerializeField] protected float fireRate; //for some reason can't create abstract variable?
 
     /*  projectile is the bullet prefab

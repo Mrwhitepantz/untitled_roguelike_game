@@ -26,7 +26,7 @@ public class Shotgun : Gun
         bullet1.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
         bullet2.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
         bullet3.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
-        //may need to call OnTrigger2D when implementing damage
+        sfx.PlayOneShot(gunshotSFX, 1f);
         Destroy(projectile1, .15f); // this will destroy the cloned bullet if it doesn't collide with anything
         Destroy(projectile2, .15f);
         Destroy(projectile3, .15f);

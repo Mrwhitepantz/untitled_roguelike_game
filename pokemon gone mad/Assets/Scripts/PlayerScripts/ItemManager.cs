@@ -90,7 +90,8 @@ public class ItemManager : MonoBehaviour{
         playerScript.gunBody = gun.GetComponent<Rigidbody2D>();
         playerScript.hasWeapon = true;
         shootingController.gun = gunScript;
-        shootingController.gun.sfx.PlayOneShot(equipSFX, 1f);
+        //Code snippet citation: https://support.unity.com/hc/en-us/articles/206116386-How-do-I-play-multiple-Audio-Sources-from-one-GameObject-
+        shootingController.gun.sfx.PlayOneShot(gunScript.equipSFX, 1f);
         shootingController.hasWeapon = true;
     }
     //Zach:My code ends here

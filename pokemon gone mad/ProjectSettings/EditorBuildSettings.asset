@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Outdated Mains/TESTROOM.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Tests/GameplayScene(For Real).unity
     guid: 489afe9d4054aa54eae8f249ca65766a
+  - enabled: 1
+    path: Assets/Scenes/Zach Testroom3.unity
+    guid: ade4f11b7a5854044a1ea1d427badba4
   m_configObjects: {}
