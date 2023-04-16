@@ -15,6 +15,7 @@ TagManager:
   - Charmander
   - PlayerBullet
   - PlayerBullet/pistol
+  - testspawn
   layers:
   - Default
   - TransparentFX
