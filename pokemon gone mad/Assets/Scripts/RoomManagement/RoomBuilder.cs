@@ -20,10 +20,17 @@ public class RoomBuilder : MonoBehaviour
     private static readonly int exitOffset = 2;
     private Vector2Int gridCenter = new(gridWidth / 2, gridHeight / 2);
     private Vector3 roomOrigin;
+    private GameObject spawn;
+    private int mobCap=7;
+    private int mobcount=0;
 
     private Tilemap[] tileMapsArray;
 
     public enum GridSpaceType { empty, floor, wall };
+    public void Update()
+    {
+        //spawn = GameObject.FindGameObjectWithTag("testspawn");
+    }
 
     public void BuildRoom(float[] noiseSeedArray, Grid grid)
     {
@@ -97,6 +104,7 @@ public class RoomBuilder : MonoBehaviour
 
     void SpawnLevel(GridSpaceType[,] grid)
     {
+        Vector3Int pos;
         TileBase groundTile = biome.groundTile;
         TileBase wallTile = biome.wallTile;
         bool water = biome is WaterBiome;
@@ -117,7 +125,19 @@ public class RoomBuilder : MonoBehaviour
                         else SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
                     case GridSpaceType.floor:
-                        SpawnTile(col, row, groundTile, tileMapsArray[1]);
+
+                        pos = SpawnTile(col, row, groundTile, tileMapsArray[1]);
+                        //Instantiate(spawn, pos, Quaternion.identity);
+                        //spawn = GameObject.FindGameObjectWithTag("testspawn");
+                        // if( Random.Range(1, 10) ==1 && mobCap > mobcount){
+                        //     //Instantiate(spawn, pos, Quaternion.identity);
+                        // Debug.Log("i spawned at " + pos);
+                        // Debug.Log(spawn.name);
+                        // mobcount=mobcount+1;
+
+                        // }
+                        
+
                         break;
                     case GridSpaceType.wall:
                         if (!water)
@@ -134,16 +154,18 @@ public class RoomBuilder : MonoBehaviour
         }
     }
 
-    void SpawnTile(int col, int row, TileBase tile, Tilemap map, bool twoTileWall = false)
+    Vector3Int SpawnTile(int col, int row, TileBase tile, Tilemap map, bool twoTileWall = false)
     {
         // Offset the spawn coordinates by half the room size so it is centered properly
         // and subtract the roomOrigin to spawn in correct place
         Vector3Int offset = new(gridWidth, gridHeight, 0);
         offset.x -= (int)roomOrigin.x;
         offset.y -= (int)roomOrigin.y;
+        Vector3Int ret = new Vector3Int(col * 2+1, row * 2+1, 0) - offset;
 
         // spawns the cell and its right, top, and top-right neighbors
         // this ensures all paths are at least two cells wide to make movement easier
+        //  return Vector3Int(col * 2 + 1, row * 2+1, 0) - offset;
         for (int i = 0; i < 2; i++)
         {
             // If this is the top row, don't set the upper tiles for the two tile wall
@@ -160,6 +182,7 @@ public class RoomBuilder : MonoBehaviour
                 map.SetTile(spawnPos, tile);
             }
         }
+        return ret;
     }
     
     int GetHumidity(float[] noiseSeeds)

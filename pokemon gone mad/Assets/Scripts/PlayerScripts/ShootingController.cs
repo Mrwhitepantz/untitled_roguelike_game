@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    public Gun weapon;
-    public Camera sceneCam;
-    public void Start()
+    [SerializeField] public Gun gun; //script of the weapon
+    [SerializeField] protected Camera sceneCam;
+    //[SerializeField] protected playerBullet bulletPrefab;
+    public bool hasWeapon;
+
+    void Start()
     {
         sceneCam = Camera.main;
-        //gunPoint = GetComponent<Transform>();
-        //bulletPrefab = GetComponent<pBullet>();
-        //bulletScript = GetComponent<playerBullet>();
-        //bullet = GetComponent<Rigidbody2D>();
-        //bulletTrail = GetComponent<BulletTrail2>();
-    
+        hasWeapon = false;
+        gun = null;
+        //bulletPrefab = null;
     }
 
-    public void Update()
+    void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && hasWeapon)
         {
-            weapon.shoot();
-            //weapon.shootRaycast();
+            gun.shoot();
         }
         //Debug.Log("mouse position" + Input.mousePosition);
     }
@@ -31,7 +30,13 @@ public class ShootingController : MonoBehaviour
     {
         Vector2 mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePos - playerPos;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        return aimAngle;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        return aimAngle + 180;
     }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+    }
+
 }
