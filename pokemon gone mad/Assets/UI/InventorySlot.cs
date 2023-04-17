@@ -1,23 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class InventorySlot : MonoBehaviour
 {
-    public Item item;
-    public GameObject icon;
+    public GameObject item;
+
+    public GameObject itemImage;
 
     public void UpdateSlot()
     {
-        if(item != null)
+        if (item != null) // make sure item and itemSprite are not null
         {
-            icon.GetComponent<Image>().sprite = item.icon;
-            icon.SetActive(true);
+            SpriteRenderer itemSprite = item.GetComponent<SpriteRenderer>();
+            itemImage.GetComponent<Image>().sprite = itemSprite.sprite;
+            itemImage.SetActive(true); // set the itemImage object to active
         }
         else
         {
-            icon.SetActive(false);
+            itemImage.SetActive(false); // set the itemImage object to inactive
         }
     }
 }
