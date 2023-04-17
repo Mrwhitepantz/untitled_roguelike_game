@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public GameObject gameover;
 
     public HealthBar healthBar;
 
@@ -59,6 +60,8 @@ public class PlayerHealth : MonoBehaviour
             currentHealth= 0;
 
             healthBar.SetHealth(currentHealth);
+            Time.timeScale = 0;
+            gameover.SetActive(true);
         }
     }
 
