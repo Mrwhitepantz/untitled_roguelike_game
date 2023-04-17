@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-    public Item[] itemList = new Item[20];
-    public Item[] weaponList = new Item[5];
-    public List<InventorySlot> inventorySlots = new List<InventorySlot> ();
+    public GameObject[] itemList = new GameObject[20];
+    public GameObject[] weaponList = new GameObject[5];
+    public List<InventorySlot> inventorySlots = new List<InventorySlot>();
     public List<InventorySlot> hotBarSlots = new List<InventorySlot>();
 
-    private bool Add(Item item)
+
+    private bool Add(GameObject item)
     {
         for(int i = 0; i < itemList.Length; i++)
         {
@@ -24,7 +25,7 @@ public class Inventory : MonoBehaviour {
         return false;
     }
 
-    private bool NewWeapon(Item item)
+    private bool NewWeapon(GameObject item)
     {
         for (int i = 0; i < weaponList.Length; i++)
         {
@@ -54,7 +55,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(GameObject item)
     {
         bool hasAdded = Add(item);
 
@@ -64,7 +65,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public void AddWeapon(Item item)
+    public void AddWeapon(GameObject item)
     {
         bool hasAdded = NewWeapon(item);
 

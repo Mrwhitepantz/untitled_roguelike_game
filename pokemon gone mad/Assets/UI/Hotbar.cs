@@ -20,7 +20,7 @@ public class Hotbar : MonoBehaviour
         currentWeapon = slot;
         if (currentWeapon == 1) 
         {
-            select.GetComponent<RectTransform>().anchoredPosition = new Vector2(-179, 0);
+            select.GetComponent<RectTransform>().anchoredPosition = new Vector2(-180, 0);
         }
         else if (currentWeapon == 2)
         {
@@ -36,7 +36,7 @@ public class Hotbar : MonoBehaviour
         }
         else if (currentWeapon == 5)
         {
-            select.GetComponent<RectTransform>().anchoredPosition = new Vector2(179, 0);
+            select.GetComponent<RectTransform>().anchoredPosition = new Vector2(180, 0);
         }
     }
     void Update()
@@ -86,6 +86,10 @@ public class Hotbar : MonoBehaviour
             {
                 CurrentSlot(5);
             }
+            else if (currentWeapon == 5)
+            {
+                CurrentSlot(1);
+            }
         }
         else if (scroll < 0f)
         {
@@ -104,6 +108,10 @@ public class Hotbar : MonoBehaviour
             else if (currentWeapon == 5)
             {
                 CurrentSlot(4);
+            }
+            else if (currentWeapon == 1)
+            {
+                CurrentSlot(5);
             }
         }
     }
