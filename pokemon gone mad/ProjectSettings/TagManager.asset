@@ -16,6 +16,8 @@ TagManager:
   - PlayerBullet
   - PlayerBullet/pistol
   - testspawn
+  - Weapons
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - UI
   - map/objects
   - banGuys
-  - 
+  - Weapons
   - 
   - 
   - 

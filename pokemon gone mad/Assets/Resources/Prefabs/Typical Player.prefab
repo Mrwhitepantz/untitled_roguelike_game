@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb5691d78c7f524c9c7ac3443a45c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
   bullet: {fileID: 0}
   speed: 20
-  impactEffect: {fileID: 0}
 --- !u!114 &2190333804709569111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +117,12 @@ MonoBehaviour:
   firePoint: {fileID: 2190333804947531137}
   bulletPrefab: {fileID: 154299525712039152, guid: 052914997717c884faf5ef9acfe31fbd, type: 3}
   bulletScript: {fileID: 2190333804709569110}
-  impactEffect: {fileID: 0}
+  weapon: {fileID: 0}
+  gunshotSFX: {fileID: 0}
+  equipSFX: {fileID: 0}
+  sfx: {fileID: 0}
   lineRenderer: {fileID: 0}
+  fireRate: 0.25
 --- !u!1 &2190333804947531138
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +347,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6041846890031998161}
   ifCollision: 0
+  equippedWeapon: 
+  shootingController: {fileID: 0}
+  playerScript: {fileID: 0}
 --- !u!114 &2190333805479908955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +380,9 @@ MonoBehaviour:
   movement: {fileID: 2190333805479908931}
   shooter: {fileID: 2190333805479908929}
   cineCam: {fileID: 0}
+  gun: {fileID: 0}
+  gunBody: {fileID: 0}
+  hasWeapon: 0
   health: {fileID: 2190333805479908955}
   direction: {x: 0, y: 0}
   body: {fileID: 5997252522149019093}
@@ -413,8 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7b27f36d6077f4f9fab1f85551f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 2190333804709569111}
+  gun: {fileID: 0}
   sceneCam: {fileID: 0}
+  hasWeapon: 0
 --- !u!114 &2190333805479908932
 MonoBehaviour:
   m_ObjectHideFlags: 0
