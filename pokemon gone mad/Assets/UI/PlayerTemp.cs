@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerTemp : MonoBehaviour
 {
-    public int minTemp = -60;
-    public int maxTemp = 60;
-    public int currentTemp;
+    public float minTemp = -60;
+    public float maxTemp = 60;
+    public float currentTemp;
     public bool freezing = false;
     public bool overheat = false;
 
@@ -35,7 +35,24 @@ public class PlayerTemp : MonoBehaviour
         }
     }
 
-    void TempToPlayer(int temp)
+    public void PlayerCurTemp(float temp)
+    {
+        currentTemp= temp;
+        if (currentTemp> 0)
+        {
+            hotBar.SetTemp(currentTemp);
+            coldBar.SetTemp(0);
+        }
+        else if (currentTemp<0)
+        {
+            coldBar.SetTemp(currentTemp);
+            hotBar.SetTemp(0);
+            freezing = false;
+            overheat = false;
+        }
+    }
+
+    void TempToPlayer(float temp)
     {
         currentTemp += temp;
 

@@ -14,13 +14,13 @@ public class HotTempBar : MonoBehaviour
         flame.SetActive(false);
     }
 
-    public void SetMaxTemp(int temp)
+    public void SetMaxTemp(float temp)
     {
         topSlider.maxValue = temp;
         topSlider.value = temp;
     }
 
-    public void SetTemp(int temp)
+    public void SetTemp(float temp)
     {
         topSlider.value = temp;
         if (topSlider.value == topSlider.maxValue)
