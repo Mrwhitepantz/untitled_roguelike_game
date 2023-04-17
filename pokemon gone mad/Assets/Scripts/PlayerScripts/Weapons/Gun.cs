@@ -5,11 +5,13 @@ using UnityEngine;
 // Consider making this an abstract class
 public abstract class Gun : MonoBehaviour
 {
-    public Transform firePoint; //where the bullets will appear
-    public GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
-    public playerBullet bulletScript; //script corresponding to bullet
-    public Rigidbody2D weapon;
-    public AudioClip gunshotSFX;
+    [SerializeField] protected Transform firePoint; //where the bullets will appear
+    [SerializeField] protected GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
+    //[SerializeField] protected playerBullet bulletScript; //script corresponding to bullet collision logic
+    //[SerializeField] protected abstract float bulletSpeed { get; set; }
+    //[SerializeField] public float bulletSpeed;
+    [SerializeField] protected Rigidbody2D weapon;
+    [SerializeField] protected AudioClip gunshotSFX;
     public AudioClip equipSFX;
     public AudioSource sfx;
 
@@ -19,6 +21,12 @@ public abstract class Gun : MonoBehaviour
     void Start()
     {
         sfx = GetComponent<AudioSource>();
+        //bulletScript = GetComponent<>();
+    }
+
+    public float setBulletSpeed(float speed)
+    {
+        return speed;
     }
 
     //[SerializeField] protected float fireRate; //for some reason can't create abstract variable?

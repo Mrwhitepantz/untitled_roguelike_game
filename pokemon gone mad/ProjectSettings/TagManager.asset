@@ -18,6 +18,7 @@ TagManager:
   - testspawn
   - Weapons
   - EnemyBullet
+  - EnvironmentDecorations
   layers:
   - Default
   - TransparentFX

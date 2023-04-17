@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3324684253861352330}
   - component: {fileID: 9116334976587387948}
   - component: {fileID: 2409604971042468420}
-  - component: {fileID: 5678382674804656107}
+  - component: {fileID: -2063127926947734560}
   m_Layer: 0
-  m_Name: pBullet
+  m_Name: shotgunBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 45210393
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 3f339f2dca82f614ebc48fb6ddf924dd, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: b8acc7f2101f76c4289112fc7d2fde66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5678382674804656107
+--- !u!114 &-2063127926947734560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 154299525712039152}
+  bullet: {fileID: 0}
