@@ -55,7 +55,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("dash");
             StartCoroutine(movement.dash(body, direction)); //you can pass the body, update it's velocity in a different class
-            StartCoroutine(movement.dash(gunBody, direction));
+            if (hasWeapon)
+            {
+                StartCoroutine(movement.dash(gunBody, direction));
+            }
             //cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
