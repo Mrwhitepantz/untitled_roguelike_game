@@ -13,6 +13,7 @@ public class ItemManager : MonoBehaviour{
     public GameObject player;
     private TopDownController topDownController;
     public bool ifCollision = false;
+    public string equippedWeapon;
 
     //Zach: added some fields for picking up weapons
     [SerializeField] protected ShootingController shootingController;
@@ -24,9 +25,14 @@ public class ItemManager : MonoBehaviour{
         topDownController = player.GetComponent<TopDownController>();
         shootingController = player.GetComponent<ShootingController>();
         playerScript = player.GetComponent<Player>();
+        Physics.IgnoreLayerCollision(2,8);
     }
 
     public void OnCollisionEnter2D(Collision2D collision){
+        if (equippedWeapon == collision.gameObject.name){
+            return;
+        }
+        
         if (collision.gameObject.name == "Sunglasses"){
             ifCollision = true;
             topDownController.ifCollision = true;
@@ -46,17 +52,20 @@ public class ItemManager : MonoBehaviour{
         //Zach: Some code I added for picking up weapons
         if (collision.gameObject.name == "Shotgun")
         {
-            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon)
             {
                 Destroy(playerScript.gun);
                 //Debug.Log("ItemManager: destroyed Shotgun");
             }
             ifCollision = true;
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Shotgun>());
+            equippedWeapon=collision.gameObject.name;
+            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+
         }
         if (collision.gameObject.name == "ZachMachineGun")
         {
-            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon)
             {
                 Destroy(playerScript.gun);
                 //Debug.Log("ItemManager: destroyed Machinegun");
@@ -64,16 +73,20 @@ public class ItemManager : MonoBehaviour{
             ifCollision = true;
             //Debug.Log("ItemManager: destroyed Machinegun2");
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<MachineGun>());
+            equippedWeapon=collision.gameObject.name;
+            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
         }
         if (collision.gameObject.name == "ZachPistol")
         {
-            if (playerScript.hasWeapon && playerScript.gun != collision.gameObject)
+            if (playerScript.hasWeapon)
             {
                 Destroy(playerScript.gun);
                 //Debug.Log("ItemManager: destroyed Pistol");
             }
             ifCollision = true;
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Pistol>());
+            equippedWeapon=collision.gameObject.name;
+            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
         }
         //Zach: My code ends here
         StartCoroutine(waiter());
@@ -90,6 +103,7 @@ public class ItemManager : MonoBehaviour{
     //Zach:More code
     private void equipWeapon(GameObject gun, Gun gunScript)
     {
+        gun.transform.parent=gameObject.transform;
         playerScript.gun = gun;
         playerScript.gunBody = gun.GetComponent<Rigidbody2D>();
         playerScript.hasWeapon = true;

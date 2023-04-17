@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
         body.velocity = movement.run(body.velocity, direction);
         if (hasWeapon)
         {
-            gunBody.velocity = movement.run(gunBody.velocity, direction);
+            gun.transform.position = gameObject.transform.position+new Vector3(.6f,.6f);
+            //gunBody.velocity = movement.run(gunBody.velocity, direction);
             gunBody.rotation = shooter.lookAtMouse(gunBody.position);
         }
 
