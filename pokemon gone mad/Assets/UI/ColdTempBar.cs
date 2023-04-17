@@ -14,13 +14,13 @@ public class ColdTempBar : MonoBehaviour
         ice.SetActive(false);
     }
 
-    public void SetMinTemp(int temp)
+    public void SetMinTemp(float temp)
     {
         botSlider.maxValue = (-temp);
         botSlider.value = (-temp);
     }
 
-    public void SetTemp(int temp)
+    public void SetTemp(float temp)
     {
         botSlider.value = (-temp);
         if (botSlider.value == botSlider.maxValue)
