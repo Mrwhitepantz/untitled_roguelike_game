@@ -167,6 +167,7 @@ MonoBehaviour:
   firePoint2: {fileID: 7473529696087891322}
   firePoint3: {fileID: 7473529697881379241}
   fireRate: 0.5
+  animator: {fileID: 0}
 --- !u!114 &7473529696308007423
 MonoBehaviour:
   m_ObjectHideFlags: 0

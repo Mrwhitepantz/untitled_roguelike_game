@@ -8,15 +8,18 @@ public class Shotgun : Gun
     [SerializeField] protected Transform firePoint2;
     [SerializeField] protected Transform firePoint3;
     [SerializeField] protected float fireRate = .5f;
+    public Animator animator;
 
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
+        
     }
 
     private IEnumerator shotDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        animator.SetBool("Shooting",true);
         GameObject projectile1 = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject projectile2 = Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation);
         GameObject projectile3 = Instantiate(bulletPrefab, firePoint3.position, firePoint3.rotation);
@@ -30,6 +33,12 @@ public class Shotgun : Gun
         /*Destroy(projectile1, .15f); // this will destroy the cloned bullet if it doesn't collide with anything
         Destroy(projectile2, .15f);
         Destroy(projectile3, .15f);*/
+        
         StopCoroutine("shotDelay");
+        
+        
+        
+
     }
+    
 }
