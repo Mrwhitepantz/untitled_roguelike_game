@@ -8,14 +8,14 @@ public class playerBullet : MonoBehaviour
     //[SerializeField] protected Rigidbody2D bullet;
     //[SerializeField] public float speed = 20f;
 
-    //Zach: 
+    //Zach: Bullet collision for exceptions
     public void Update()
     {
         if (bulletPrefab.name == "shotgunBullet(Clone)")
         {
             Destroy(this.gameObject, .25f);
         } 
-        else
+        else //Zach: tried to have this in OnTriggerEnter2D, but it never executes
         {
             Destroy(this.gameObject, 1);
         }
