@@ -5,13 +5,11 @@ using UnityEngine;
 public class playerBullet : MonoBehaviour
 {
     [SerializeField] public GameObject bulletPrefab;
-    //[SerializeField] protected Rigidbody2D bullet;
-    //[SerializeField] public float speed = 20f;
 
-    //Zach: Bullet collision for exceptions
+    //Zach: Bullet collision for if bullet doesn't collid with anything
     public void Update()
     {
-        if (bulletPrefab.name == "shotgunBullet(Clone)")
+        if (bulletPrefab.name == "shotgunBullet(Clone)") //simulates shotgun's short range
         {
             Destroy(this.gameObject, .25f);
         } 
@@ -22,24 +20,23 @@ public class playerBullet : MonoBehaviour
         
     }
 
-    // Collision for player bullets
-    public void OnTriggerEnter2D(Collider2D hitInfo)
+    //Zach: Bullet collision logic
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.tag == "BadMen")
         {
             Debug.Log("playerBullet: hit an enemy");
             Destroy(this.gameObject);
-        } 
+        }
         else if (hitInfo.tag == "Player")
         {
             Debug.Log("playerBullet: hit player");
         }
-        else if (hitInfo.tag == "EnvironmentDecorations")
+        else if (hitInfo.tag == "EnvironmentDecorations" ||
+            hitInfo.tag == "EnvironmentObjects")
         {
             Debug.Log("playerBullet: hit an environment");
             Destroy(this.gameObject);
         }
     }
-
-    //private void OnCollisionEnter()
 }

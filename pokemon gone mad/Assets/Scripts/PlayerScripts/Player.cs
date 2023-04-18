@@ -4,35 +4,33 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Using
-    public TopDownController movement;
-    public ShootingController shooter;
-    public CamShake cineCam;
+    private TopDownController movement;
+    private ShootingController shooter;
 
+    //Zach: Fields for weapons
     public GameObject gun;
     public Rigidbody2D gunBody;
     public bool hasWeapon;
+    
+    //Zach: Fields for movement
+    private Vector2 direction;
+    private Rigidbody2D body;
+    public bool Test = false;
+    public Vector2 testDirection;
 
     //Yet to use
     public PlayerHealth health;
     //public ItemManager inventory;
 
-    public Vector2 direction;
-    public Rigidbody2D body;
-    public bool Test = false;
-    public Vector2 testDirection;
-
     void Start()
     {
-        //controller = new TopDownController("Squirtle"); // this unfortunately does not work. Get a NullReference exception
         body = GetComponent<Rigidbody2D>();
-        movement = GetComponent<TopDownController>(); // this is the equivalent of going to inspector tab and providing a game object
+        movement = GetComponent<TopDownController>();
         shooter = GetComponent<ShootingController>();
         health = GetComponent<PlayerHealth>();
-        gun = null; // this will have to involve collision
+        gun = null; 
         hasWeapon = false;
         gunBody = null;
-        //cineCam = GetComponent<CamShake>();
     }
 
     //Zach: Any code that ISN'T updating with rigidbody2D goes here
@@ -48,7 +46,8 @@ public class Player : MonoBehaviour
         movement.animate(direction);
         //Debug.Log("Mouse position: " + shooter.lookAtMouse(body.position));
     }
-    //Zach: Any code that IS updating any rigidBody values  goes here
+
+    //Zach: Any code that IS updating any rigidBody values goes here
     void FixedUpdate()
     {
         if (Input.GetKey("mouse 1") && movement.canDash())
@@ -59,22 +58,21 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(movement.dash(gunBody, direction));
             }
-            //cineCam.shakeCamera(5f, .1f); //causing some null reference exceptions
         }
         body.velocity = movement.run(body.velocity, direction);
         if (hasWeapon)
         {
             gun.transform.position = gameObject.transform.position+new Vector3(.6f,.6f);
-            //gunBody.velocity = movement.run(gunBody.velocity, direction);
+            //gunBody.velocity = movement.run(gunBody.velocity, direction); //Bug: if player collides with wall, gun still moves
             gunBody.rotation = shooter.lookAtMouse(gunBody.position);
         }
 
         //COMMENTED OUT TO DISABLE ROTATION
-
         //gunRotationNoah(body.velocity, gunBody);
         //gunRotationZach(gunBody, body);
     }
 
+    //Zach: Unused, was trying to figure out better way to rotate gun
     public void gunRotationZach(Rigidbody2D target, Rigidbody2D player)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -83,6 +81,8 @@ public class Player : MonoBehaviour
         target.transform.RotateAround(player.position, new Vector3(0, 0, 1), aimAngle);
     }
 
+    /*Zach: Noah's implementation of gun rotation. Has a bug where if player is moving up,
+    gun points down, and if player is moving down, gun points up*/
     public void gunRotationNoah(Vector2 target, Rigidbody2D rb)
     {
         Vector2 dirction = ((Vector2)target - rb.position).normalized;

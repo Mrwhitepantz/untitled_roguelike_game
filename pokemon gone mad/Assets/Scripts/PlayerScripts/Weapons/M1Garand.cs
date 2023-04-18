@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : Gun
+//Shoots 1 fast projectile that can pierce through enemies
+public class M1Garand : Gun
 {
     //Inherits the following from Gun base class
         //Transform firePoint;       //where the bullets will appear
@@ -13,14 +14,25 @@ public class MachineGun : Gun
         //AudioSource sfx;           //master audio component
         //GameObject impactEffect;   //aesthetic effect when bullet hits something
         //LineRenderer lineRenderer; //renders a line from one point to another
-
-    [SerializeField] protected float fireRate = .15f;
-    [SerializeField] protected float bulletSpeed = 25f;
-
+    [SerializeField] protected float fireRate = .5f;
+    [SerializeField] protected float bulletSpeed = 70f;
+    [SerializeField] protected int clipSize = 8;
+    
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
+        //clipSize -= 1;
+        
     }
+
+    /*public void decrementClip()
+    {
+        if (clipSize > 0)
+        {
+            clipSize -= 1;
+        }
+        Debug.Log("M1Garand clipsize = " + clipSize);
+    }*/
 
     private IEnumerator shotDelay(float delay)
     {
@@ -29,6 +41,10 @@ public class MachineGun : Gun
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
         bullet.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
         sfx.PlayOneShot(gunshotSFX, .3f);
+        if (clipSize == 0)
+        {
+            sfx.PlayOneShot(equipSFX, .3f);
+        }
         StopCoroutine("shotDelay");
     }
 }
