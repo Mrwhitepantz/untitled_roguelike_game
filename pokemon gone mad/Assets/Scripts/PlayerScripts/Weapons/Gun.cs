@@ -23,5 +23,8 @@ public abstract class Gun : MonoBehaviour
         return speed;
     }*/
 
+    public abstract void decrementClip();
+    public abstract void reload();
+    public abstract int getAmmoCount();
     public abstract void shoot();
 }

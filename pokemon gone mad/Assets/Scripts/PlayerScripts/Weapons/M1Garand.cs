@@ -21,18 +21,7 @@ public class M1Garand : Gun
     public override void shoot()
     {
         StartCoroutine("shotDelay", fireRate);
-        //clipSize -= 1;
-        
     }
-
-    /*public void decrementClip()
-    {
-        if (clipSize > 0)
-        {
-            clipSize -= 1;
-        }
-        Debug.Log("M1Garand clipsize = " + clipSize);
-    }*/
 
     private IEnumerator shotDelay(float delay)
     {
@@ -43,8 +32,36 @@ public class M1Garand : Gun
         sfx.PlayOneShot(gunshotSFX, .3f);
         if (clipSize == 0)
         {
-            sfx.PlayOneShot(equipSFX, .3f);
+            sfx.Play(1);
         }
         StopCoroutine("shotDelay");
     }
+
+    public override void decrementClip()
+    {
+        if (clipSize > 0)
+        {
+            clipSize = clipSize - 1;
+        }
+        Debug.Log("M1Garand clipsize = " + clipSize);
+    }
+
+    public override void reload()
+    {
+        StartCoroutine("reloadTime", 3f);
+    }
+
+    private IEnumerator reloadTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        clipSize = 8;
+        StopCoroutine("reloadTime");
+    }
+
+    public override int getAmmoCount()
+    {
+        return clipSize;
+    }
+
+    
 }
