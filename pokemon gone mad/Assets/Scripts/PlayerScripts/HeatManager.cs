@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HeatManager : MonoBehaviour
 {
-    public float temperatureLevel = 0;
+    
     public bool overHeated = false;
     public bool frozen = false;
     [SerializeField]
@@ -11,6 +11,7 @@ public class HeatManager : MonoBehaviour
     [SerializeField]
     private Player player;
     private TopDownController playerController;
+    private PlayerTemp playerTemp;
     private float originalSpeed;
     private readonly float maxHeat = 30f;
     private readonly float maxFreeze = -30f;
@@ -20,14 +21,18 @@ public class HeatManager : MonoBehaviour
     private bool heatCoroutine = false;
     private bool freezeCoroutine = false;
     private bool returnToBase = false;
+    public float temperatureLevel = 0;
 
     private void Start()
     {
         playerController = player.GetComponent<TopDownController>();
+        playerTemp = player.GetComponent<PlayerTemp>();
         originalSpeed = playerController.maxSpeed;
     }
     void FixedUpdate()
     {
+
+        playerTemp.PlayerCurTemp(temperatureLevel);
         Biome biome = room.GetRoomBiome();
         if (biome is DesertBiome)
         {

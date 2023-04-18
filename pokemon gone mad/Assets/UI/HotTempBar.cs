@@ -8,9 +8,13 @@ public class HotTempBar : MonoBehaviour
     public Slider topSlider;
     public Image topFill;
     public GameObject flame;
+    public HeatManager heatManager;
+    public GameObject player;
 
     void Start()
     {
+        player = GameObject.Find("Player");
+        heatManager = player.GetComponent<HeatManager>();
         flame.SetActive(false);
     }
 
@@ -23,7 +27,7 @@ public class HotTempBar : MonoBehaviour
     public void SetTemp(float temp)
     {
         topSlider.value = temp;
-        if (topSlider.value == topSlider.maxValue)
+        if (heatManager.overHeated)
         {
             flame.SetActive(true);
         }

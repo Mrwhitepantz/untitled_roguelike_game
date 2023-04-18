@@ -15,6 +15,7 @@ public class AIAttaack : MonoBehaviour
     public float meleeR;
     public float shootR;
     public float force;
+    public EnemyAI EnemyAI;
     int type;
     //private bool canshoot = true;
     // Start is called before the first frame update
@@ -84,6 +85,7 @@ bool LOS(){
         {
             if (type==1)
             {
+                EnemyAI.animator.SetFloat("attack",1);
                 Instantiate(shot, transform.position, Quaternion.identity);
                 cooldownTime = Time.time + shotcooldown;
             }
@@ -92,6 +94,7 @@ bool LOS(){
                 PC.GetComponent<Rigidbody2D>().AddForce(meleeD(gameObject, 1 ) * Target);
             }
         }
+        
             //}
             //else {
                 //Debug.DrawLine(transform.position, lineOfSight.point, Color.blue);

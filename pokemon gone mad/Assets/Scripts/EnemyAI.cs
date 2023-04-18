@@ -125,10 +125,13 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
+            
             hp -= 10;
             if (hp <= 0)
             {
                 Destroy(gameObject);
+            } else {
+                animator.SetTrigger("damage");
             }
         }
 
