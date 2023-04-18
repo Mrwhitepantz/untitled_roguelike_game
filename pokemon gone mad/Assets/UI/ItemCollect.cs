@@ -11,7 +11,7 @@ public class ItemCollect : MonoBehaviour
         inventory = FindObjectOfType<Inventory>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -26,7 +26,7 @@ public class ItemCollect : MonoBehaviour
                     inventory.AddWeapon(gameObject);
 
                     // Deactivate the item object so it's no longer visible in the scene
-                    gameObject.SetActive(false);
+                    
                 }
                 else if (gameObject.CompareTag("InvItem"))
                 {

@@ -51,7 +51,10 @@ public class BulletScript : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "BadMen") {
+        if (collision.tag == "PlayerBullet"){
+            return;
+        }
+        if (collision.tag != "BadMen" ) {
             Debug.Log("hit");
             Destroy(gameObject);
         }

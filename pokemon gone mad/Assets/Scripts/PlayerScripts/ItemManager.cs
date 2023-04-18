@@ -55,7 +55,7 @@ public class ItemManager : MonoBehaviour{
             //If currently have a weapon equipped, replace it
             if (playerScript.hasWeapon)
             {
-                Destroy(playerScript.gun);
+                playerScript.gun.SetActive(false);
                 //Debug.Log("ItemManager: destroyed Shotgun");
             }
             ifCollision = true;
@@ -68,7 +68,7 @@ public class ItemManager : MonoBehaviour{
         {
             if (playerScript.hasWeapon)
             {
-                Destroy(playerScript.gun);
+                playerScript.gun.SetActive(false);
                 //Debug.Log("ItemManager: destroyed Machinegun");
             }
             ifCollision = true;
@@ -81,7 +81,7 @@ public class ItemManager : MonoBehaviour{
         {
             if (playerScript.hasWeapon)
             {
-                Destroy(playerScript.gun);
+               playerScript.gun.SetActive(false);
                 //Debug.Log("ItemManager: destroyed Pistol");
             }
             ifCollision = true;

@@ -8,9 +8,13 @@ public class ColdTempBar : MonoBehaviour
     public Slider botSlider;
     public Image botFill;
     public GameObject ice;
+    public HeatManager heatManager;
+    public GameObject player;
 
     void Start()
     {
+        player = GameObject.Find("Player");
+        heatManager = player.GetComponent<HeatManager>();
         ice.SetActive(false);
     }
 
@@ -23,7 +27,7 @@ public class ColdTempBar : MonoBehaviour
     public void SetTemp(float temp)
     {
         botSlider.value = (-temp);
-        if (botSlider.value == botSlider.maxValue)
+        if (heatManager.frozen)
         {
             ice.SetActive(true);
         }
