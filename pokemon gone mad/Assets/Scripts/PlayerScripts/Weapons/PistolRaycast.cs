@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PistolRaycast : Gun
 {
+    /*protected override float bulletSpeed
+    {
+        get { return 20f; }
+    }*/
+
 
     public override void shoot()
     {

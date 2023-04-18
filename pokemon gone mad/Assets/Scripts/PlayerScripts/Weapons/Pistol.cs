@@ -11,6 +11,7 @@ public class Pistol : Gun
         //public GameObject impactEffect;
         //public LineRenderer lineRenderer;
     [SerializeField] protected float fireRate = .25f;
+    [SerializeField] protected float bulletSpeed = 20f; //2nd slowest
 
     public override void shoot()
     {
@@ -22,8 +23,9 @@ public class Pistol : Gun
         yield return new WaitForSeconds(delay);
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
-        bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
-        sfx.PlayOneShot(gunshotSFX, 1f);
+        //bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
+        bullet.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
+        sfx.PlayOneShot(gunshotSFX, .3f);
         StopCoroutine("shotDelay");
     }
 }

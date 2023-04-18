@@ -60,7 +60,7 @@ public class ItemManager : MonoBehaviour{
             ifCollision = true;
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Shotgun>());
             equippedWeapon=collision.gameObject.name;
-            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
         }
         if (collision.gameObject.name == "ZachMachineGun")
@@ -74,7 +74,7 @@ public class ItemManager : MonoBehaviour{
             //Debug.Log("ItemManager: destroyed Machinegun2");
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<MachineGun>());
             equippedWeapon=collision.gameObject.name;
-            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         if (collision.gameObject.name == "ZachPistol")
         {
@@ -84,9 +84,11 @@ public class ItemManager : MonoBehaviour{
                 //Debug.Log("ItemManager: destroyed Pistol");
             }
             ifCollision = true;
+            //Zach: equips weapon to the player
             equipWeapon(collision.gameObject, collision.gameObject.GetComponent<Pistol>());
             equippedWeapon=collision.gameObject.name;
-            collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+            //Zach: turns off box collider, or else gun can be destroyed by enemy bullet
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         //Zach: My code ends here
         StartCoroutine(waiter());
