@@ -5,9 +5,11 @@ using UnityEngine;
 public class Shotgun : Gun
 {
     //firepoint1 is inherited from Gun
+    //[SerializeField] protected playerBullet bulletScript = GetComponent<shotgunBullet>();
     [SerializeField] protected Transform firePoint2;
     [SerializeField] protected Transform firePoint3;
-    [SerializeField] protected float fireRate = .5f;
+    [SerializeField] protected float fireRate = .65f;
+    [SerializeField] protected float bulletSpeed = 9f;
 
     public override void shoot()
     {
@@ -23,13 +25,13 @@ public class Shotgun : Gun
         Rigidbody2D bullet1 = projectile1.GetComponent<Rigidbody2D>();
         Rigidbody2D bullet2 = projectile2.GetComponent<Rigidbody2D>();
         Rigidbody2D bullet3 = projectile3.GetComponent<Rigidbody2D>();
-        bullet1.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
+        /*bullet1.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
         bullet2.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
-        bullet3.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);
-        sfx.PlayOneShot(gunshotSFX, 1f);
-        /*Destroy(projectile1, .15f); // this will destroy the cloned bullet if it doesn't collide with anything
-        Destroy(projectile2, .15f);
-        Destroy(projectile3, .15f);*/
+        bullet3.AddForce(firePoint2.up * bulletScript.speed, ForceMode2D.Impulse);*/
+        bullet1.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
+        bullet2.AddForce(firePoint2.up * bulletSpeed, ForceMode2D.Impulse);
+        bullet3.AddForce(firePoint2.up * bulletSpeed, ForceMode2D.Impulse);
+        sfx.PlayOneShot(gunshotSFX, .3f);
         StopCoroutine("shotDelay");
     }
 }

@@ -13,7 +13,7 @@ public class MachineGun : Gun
         //public LineRenderer lineRenderer;
 
     [SerializeField] protected float fireRate = .15f;
-
+    [SerializeField] protected float bulletSpeed = 25f;
 
     public override void shoot()
     {
@@ -23,11 +23,11 @@ public class MachineGun : Gun
     private IEnumerator shotDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bullet = projectile.GetComponent<Rigidbody2D>();
-        bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
-        sfx.PlayOneShot(gunshotSFX, 1f);
+        //bullet.AddForce(firePoint.up * bulletScript.speed, ForceMode2D.Impulse);
+        bullet.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
+        sfx.PlayOneShot(gunshotSFX, .3f);
         StopCoroutine("shotDelay");
     }
 }
