@@ -3,25 +3,40 @@ using UnityEngine;
 
 public class HeatManager : MonoBehaviour
 {
-    public float temperatureLevel = 0;
+    
     public bool overHeated = false;
     public bool frozen = false;
     [SerializeField]
     private RoomManager room;
-    private readonly float maxHeat = 60f;
-    private readonly float maxFreeze = -60f;
+    [SerializeField]
+    private Player player;
+    private TopDownController playerController;
+    private PlayerTemp playerTemp;
+    private float originalSpeed;
+    private readonly float maxHeat = 30f;
+    private readonly float maxFreeze = -30f;
     private readonly float baseTemp = 0f;
     private bool heating = false;
     private bool freezing = false;
     private bool heatCoroutine = false;
     private bool freezeCoroutine = false;
     private bool returnToBase = false;
+    public float temperatureLevel = 0;
 
+    private void Start()
+    {
+        playerController = player.GetComponent<TopDownController>();
+        playerTemp = player.GetComponent<PlayerTemp>();
+        originalSpeed = playerController.maxSpeed;
+    }
     void FixedUpdate()
     {
+
+        playerTemp.PlayerCurTemp(temperatureLevel);
         Biome biome = room.GetRoomBiome();
-        if (biome.GetType().ToString().StartsWith("Desert"))
+        if (biome is DesertBiome)
         {
+            Debug.Log("DesertBiome");
             freezing = false;
             heating = true;
             if (!heatCoroutine && !frozen)
@@ -29,7 +44,7 @@ public class HeatManager : MonoBehaviour
                 StartCoroutine(HeatingCoroutine());
             }
         }
-        else if (biome.GetType().ToString().StartsWith("Snowy"))
+        else if (biome is SnowyBiome)
         {
             heating = false;
             freezing = true;
@@ -51,6 +66,7 @@ public class HeatManager : MonoBehaviour
 
     private IEnumerator ReturnToBaseTemperatureLevelCoroutine()
     {
+        // returns the temperature level to 0 at twice the normal speed
         returnToBase = true;
         if (!heating)
         {
@@ -71,8 +87,9 @@ public class HeatManager : MonoBehaviour
         returnToBase = false;
     }
 
-    private IEnumerator HeatingCoroutine()
+    public IEnumerator HeatingCoroutine()
     {
+        // increases temperature level by 1 per second until reaching 60 and then starts the overheat coroutine
         heatCoroutine = true;
         while(temperatureLevel < maxHeat && !overHeated)
         {
@@ -93,6 +110,7 @@ public class HeatManager : MonoBehaviour
 
     private IEnumerator FreezingCoroutine()
     {
+        // decreases temperature level by 1 per second until reaching -60 and then starts the frozen coroutine
         freezeCoroutine = true;
         while (temperatureLevel > maxFreeze && !frozen)
         {
@@ -113,25 +131,35 @@ public class HeatManager : MonoBehaviour
 
     private IEnumerator OverHeatCo()
     {
+        // sets overheat tag and while over half-heat decreases the temperature by 1*s.
+        // at with 60 max heat, it should take 1 minute to overheat and then be overheated for 30 seconds
+        // then start overheating again, only taking 30 seconds this time
         overHeated = true;
+        playerController.maxSpeed = originalSpeed/2;
         while(temperatureLevel >= maxHeat / 2)
         {
-            temperatureLevel -= Time.deltaTime / 2f;
+            temperatureLevel -= Time.deltaTime * 2f;
             yield return null;
         }
         heatCoroutine = false;
         overHeated = false;
+        playerController.maxSpeed = originalSpeed;
     }
 
     private IEnumerator FrozenCo()
     {
+        // sets frozen tag and while below half-freeze increases the temperature by 15*s.
+        // at with -60 max freeze, it should take 1 minute to freeze and then be frozen for 2 seconds
+        // then start freezing again, only taking 30 seconds this time
         frozen = true;
+        playerController.maxSpeed = 0f;
         while (temperatureLevel <= maxFreeze / 2)
         {
-            temperatureLevel += Time.deltaTime / 2f;
+            temperatureLevel += Time.deltaTime * 15f;
             yield return null;
         }
         freezeCoroutine = false;
         frozen = false;
+        playerController.maxSpeed = originalSpeed;
     }
 }

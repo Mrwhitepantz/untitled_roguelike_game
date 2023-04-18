@@ -59,3 +59,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 */UserSettings/*
+*.dwlt
+pokemon gone mad/UserSettings/Layouts/default-2021.dwlt
+*.dwlt

@@ -4,11 +4,42 @@ using UnityEngine;
 
 public class playerBullet : MonoBehaviour
 {
-    //public Rigidbody2D body;
+    [SerializeField] public GameObject bulletPrefab;
+    //[SerializeField] protected Rigidbody2D bullet;
+    //[SerializeField] public float speed = 20f;
 
-    void Start()
+    //Zach: Bullet collision for exceptions
+    public void Update()
     {
-        //Rigidbody2D body = gameObject.AddComponent(typeof(Rigidbody2D)) as Rigidbody2D;
-        Rigidbody2D body = gameObject.AddComponent<Rigidbody2D>();
+        if (bulletPrefab.name == "shotgunBullet(Clone)")
+        {
+            Destroy(this.gameObject, .25f);
+        } 
+        else //Zach: tried to have this in OnTriggerEnter2D, but it never executes
+        {
+            Destroy(this.gameObject, 1);
+        }
+        
     }
+
+    // Collision for player bullets
+    public void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.tag == "BadMen")
+        {
+            Debug.Log("playerBullet: hit an enemy");
+            Destroy(this.gameObject);
+        } 
+        else if (hitInfo.tag == "Player")
+        {
+            Debug.Log("playerBullet: hit player");
+        }
+        else if (hitInfo.tag == "EnvironmentDecorations")
+        {
+            Debug.Log("playerBullet: hit an environment");
+            Destroy(this.gameObject);
+        }
+    }
+
+    //private void OnCollisionEnter()
 }

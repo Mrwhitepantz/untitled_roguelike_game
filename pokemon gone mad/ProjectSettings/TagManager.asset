@@ -6,6 +6,19 @@ TagManager:
   tags:
   - RoomSwitcher
   - BadMen
+  - Items
+  - Squrtal
+  - TestSquare
+  - Boss
+  - GameHazard
+  - Pikachu
+  - Charmander
+  - PlayerBullet
+  - PlayerBullet/pistol
+  - testspawn
+  - Weapons
+  - EnemyBullet
+  - EnvironmentDecorations
   layers:
   - Default
   - TransparentFX
@@ -15,7 +28,7 @@ TagManager:
   - UI
   - map/objects
   - banGuys
-  - 
+  - Weapons
   - 
   - 
   - 

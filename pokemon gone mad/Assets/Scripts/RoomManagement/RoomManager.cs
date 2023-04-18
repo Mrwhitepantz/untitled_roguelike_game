@@ -7,25 +7,26 @@ public class RoomManager : MonoBehaviour
     public Grid worldGrid;
     
     [SerializeField]
-    private GameObject fadeInPanel;
+    private GameObject fadeInPanelPrefab;
     [SerializeField]
-    private GameObject fadeOutPanel;
+    private GameObject fadeOutPanelPrefab;
     [SerializeField]
     private float fadeWaitSeconds = .5f;
     [SerializeField]
-    private RoomBuilder roomContainer;
+    public RoomBuilder roomContainer;
 
-    private FollowPlayer cameraController;
-    private TopDownController playerController;
-    private GameObject playerObject;
+    public FollowPlayer cameraController;
+    public TopDownController playerController;
+    public GameObject playerObject;
     private Vector3 roomOffset, playerOffset;
-    private readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
+    public readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
+    private GameObject fadeInPanel, fadeOutPanel;
 
     // Panel/transition code from Mister Taft Creates https://www.youtube.com/watch?v=JcEJtEWjiZU
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         // Assign scene objects
         cameraController = Camera.main.GetComponent<FollowPlayer>();
@@ -33,6 +34,7 @@ public class RoomManager : MonoBehaviour
         playerController = (TopDownController) playerObject.GetComponent("TopDownController");
 
         // add first room to the roomList
+        
         RoomBuilder firstRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         firstRoom.biome = new ForestBiome();
         roomDictionary.Add(new Vector3(0, 0, 1), firstRoom);
@@ -56,16 +58,22 @@ public class RoomManager : MonoBehaviour
         playerOffset = playerPositionOffset;
 
         // Fade out between rooms
-        if(fadeOutPanel != null)
+        if(fadeOutPanelPrefab != null)
         {
-            GameObject panel = Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, .35f);
+            fadeOutPanel = Instantiate(fadeOutPanelPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         }
 
         // put the player in a pause state so they can't move
         playerController.pauseState = true;
 
         StartCoroutine(TransitionCoroutine());
+    }
+
+    public void CreateAndAddRoom()
+    {
+        RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
+        roomDictionary.Add(this.transform.position, newRoom);
+        newRoom.BuildRoom(noiseSeedArray, worldGrid);
     }
 
     public IEnumerator TransitionCoroutine()
@@ -77,10 +85,7 @@ public class RoomManager : MonoBehaviour
         // if the next room isn't in the roomList, make a new RoomBuilder and add it
         if(!roomDictionary.ContainsKey(this.transform.position))
         {
-            RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
-            roomDictionary.Add(this.transform.position, newRoom);
-            Debug.Log("building new room?");
-            newRoom.BuildRoom(noiseSeedArray, worldGrid);
+            CreateAndAddRoom();
         }
         
         // change camera min/max positions to next room
@@ -90,10 +95,11 @@ public class RoomManager : MonoBehaviour
         playerObject.transform.position += playerOffset;
 
         // fade back in
-        if (fadeInPanel != null)
+        if (fadeInPanelPrefab != null)
         {
-            GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, .35f);
+            Destroy(fadeOutPanel);
+            fadeInPanel = Instantiate(fadeInPanelPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            Destroy(fadeInPanel, .35f);
         }
         yield return new WaitForSeconds(fadeWaitSeconds);
         // take the player out of the pause state
