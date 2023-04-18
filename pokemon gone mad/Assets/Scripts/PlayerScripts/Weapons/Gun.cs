@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Consider making this an abstract class
 public abstract class Gun : MonoBehaviour
 {
     [SerializeField] protected Transform firePoint; //where the bullets will appear
-    [SerializeField] protected GameObject bulletPrefab; //the bullet asset it will shoot, includes sprite, rigidbody2d, and the collider
+    [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected Rigidbody2D weapon;
     [SerializeField] protected AudioClip gunshotSFX;
     [SerializeField] public AudioClip equipSFX;
