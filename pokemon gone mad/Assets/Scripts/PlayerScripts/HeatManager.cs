@@ -8,8 +8,12 @@ public class HeatManager : MonoBehaviour
     public bool frozen = false;
     [SerializeField]
     private RoomManager room;
-    private readonly float maxHeat = 60f;
-    private readonly float maxFreeze = -60f;
+    [SerializeField]
+    private Player player;
+    private TopDownController playerController;
+    private float originalSpeed;
+    private readonly float maxHeat = 30f;
+    private readonly float maxFreeze = -30f;
     private readonly float baseTemp = 0f;
     private bool heating = false;
     private bool freezing = false;
@@ -17,6 +21,11 @@ public class HeatManager : MonoBehaviour
     private bool freezeCoroutine = false;
     private bool returnToBase = false;
 
+    private void Start()
+    {
+        playerController = player.GetComponent<TopDownController>();
+        originalSpeed = playerController.maxSpeed;
+    }
     void FixedUpdate()
     {
         Biome biome = room.GetRoomBiome();
@@ -121,13 +130,15 @@ public class HeatManager : MonoBehaviour
         // at with 60 max heat, it should take 1 minute to overheat and then be overheated for 30 seconds
         // then start overheating again, only taking 30 seconds this time
         overHeated = true;
+        playerController.maxSpeed = originalSpeed/2;
         while(temperatureLevel >= maxHeat / 2)
         {
-            temperatureLevel -= Time.deltaTime;
+            temperatureLevel -= Time.deltaTime * 2f;
             yield return null;
         }
         heatCoroutine = false;
         overHeated = false;
+        playerController.maxSpeed = originalSpeed;
     }
 
     private IEnumerator FrozenCo()
@@ -136,6 +147,7 @@ public class HeatManager : MonoBehaviour
         // at with -60 max freeze, it should take 1 minute to freeze and then be frozen for 2 seconds
         // then start freezing again, only taking 30 seconds this time
         frozen = true;
+        playerController.maxSpeed = 0f;
         while (temperatureLevel <= maxFreeze / 2)
         {
             temperatureLevel += Time.deltaTime * 15f;
@@ -143,5 +155,6 @@ public class HeatManager : MonoBehaviour
         }
         freezeCoroutine = false;
         frozen = false;
+        playerController.maxSpeed = originalSpeed;
     }
 }
