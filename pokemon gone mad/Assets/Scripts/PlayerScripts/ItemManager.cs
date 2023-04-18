@@ -52,6 +52,7 @@ public class ItemManager : MonoBehaviour{
         //Zach: Some code I added for picking up weapons
         if (collision.gameObject.name == "Shotgun")
         {
+            //If currently have a weapon equipped, replace it
             if (playerScript.hasWeapon)
             {
                 playerScript.gun.SetActive(false);
@@ -90,6 +91,20 @@ public class ItemManager : MonoBehaviour{
             //Zach: turns off box collider, or else gun can be destroyed by enemy bullet
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
+        if (collision.gameObject.name == "M1Garand")
+        {
+            if (playerScript.hasWeapon)
+            {
+                Destroy(playerScript.gun);
+                //Debug.Log("ItemManager: destroyed Pistol");
+            }
+            ifCollision = true;
+            //Zach: equips weapon to the player
+            equipWeapon(collision.gameObject, collision.gameObject.GetComponent<M1Garand>());
+            equippedWeapon = collision.gameObject.name;
+            //Zach: turns off box collider, or else gun can be destroyed by enemy bullet
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
         //Zach: My code ends here
         StartCoroutine(waiter());
         //Debug.Log("Item Manager: " + collision.gameObject.name);
@@ -103,6 +118,7 @@ public class ItemManager : MonoBehaviour{
     }
 
     //Zach:More code
+    // Helper function to equip a weapon to the player gameobject
     private void equipWeapon(GameObject gun, Gun gunScript)
     {
         gun.transform.parent=gameObject.transform;
@@ -110,8 +126,8 @@ public class ItemManager : MonoBehaviour{
         playerScript.gunBody = gun.GetComponent<Rigidbody2D>();
         playerScript.hasWeapon = true;
         shootingController.gun = gunScript;
-        //Code snippet citation: https://support.unity.com/hc/en-us/articles/206116386-How-do-I-play-multiple-Audio-Sources-from-one-GameObject-
-        shootingController.gun.sfx.PlayOneShot(gunScript.equipSFX, 1f);
+        //Zach: Code snippet citation - https://support.unity.com/hc/en-us/articles/206116386-How-do-I-play-multiple-Audio-Sources-from-one-GameObject-
+        shootingController.gun.sfx.PlayOneShot(gunScript.equipSFX, .5f);
         shootingController.hasWeapon = true;
     }
     //Zach:My code ends here

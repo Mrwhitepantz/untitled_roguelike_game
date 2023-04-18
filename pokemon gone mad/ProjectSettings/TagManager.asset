@@ -19,6 +19,7 @@ TagManager:
   - Weapons
   - EnemyBullet
   - EnvironmentDecorations
+  - EnvironmentObjects
   layers:
   - Default
   - TransparentFX

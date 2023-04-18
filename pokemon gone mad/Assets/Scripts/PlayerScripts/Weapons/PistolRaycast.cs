@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Zach: [INCOMPLETE] Pistol but it behaves like a hitscan weapon
 public class PistolRaycast : Gun
 {
-    /*protected override float bulletSpeed
-    {
-        get { return 20f; }
-    }*/
-
-
     public override void shoot()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, transform.TransformDirection(Vector2.up), 10f);
         if (hitInfo)
         {
             Debug.Log("Hit something w/ raycast");
-            //Instantiate(impactEffect, hitInfo.point, Quaternion.identity); //not sure what the Quaternion does
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, hitInfo.point);
         }
