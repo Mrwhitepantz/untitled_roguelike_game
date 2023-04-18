@@ -31,4 +31,17 @@ public class MachineGun : Gun
         sfx.PlayOneShot(gunshotSFX, .3f);
         StopCoroutine("shotDelay");
     }
+
+    public override void decrementClip()
+    {
+
+    }
+    public override void reload()
+    {
+
+    }
+    public override int getAmmoCount()
+    {
+        return 0;
+    }
 }

@@ -21,4 +21,17 @@ public class PistolRaycast : Gun
             lineRenderer.SetPosition(1, Input.mousePosition * 10);
         }
     }
+
+    public override void decrementClip()
+    {
+
+    }
+    public override void reload()
+    {
+
+    }
+    public override int getAmmoCount()
+    {
+        return 0;
+    }
 }
