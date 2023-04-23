@@ -34,4 +34,9 @@ public class PistolRaycast : Gun
     {
         return 0;
     }
+
+    public override bool isReloading()
+    {
+        throw new System.NotImplementedException();
+    }
 }
