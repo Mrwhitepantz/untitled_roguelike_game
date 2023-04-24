@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Pathfinding;
 
 
 public class RoomBuilder : MonoBehaviour
@@ -59,6 +60,8 @@ public class RoomBuilder : MonoBehaviour
         }
 
         SpawnLevel(gridMap);
+        //a* update
+        AstarPath.active.Scan();
     }
 
     public GridSpaceType[,] PrepareGrid(int gridW, int gridH)
@@ -125,17 +128,18 @@ public class RoomBuilder : MonoBehaviour
                         else SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
                     case GridSpaceType.floor:
+                        spawn = GameObject.FindGameObjectWithTag("Squrtal");
 
                         pos = SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         //Instantiate(spawn, pos, Quaternion.identity);
-                        //spawn = GameObject.FindGameObjectWithTag("testspawn");
-                        // if( Random.Range(1, 10) ==1 && mobCap > mobcount){
-                        //     //Instantiate(spawn, pos, Quaternion.identity);
+                        
+                        if( Random.Range(1, 10) ==1 && mobCap > mobcount){
+                        Instantiate(spawn, pos, Quaternion.identity);
                         // Debug.Log("i spawned at " + pos);
                         // Debug.Log(spawn.name);
-                        // mobcount=mobcount+1;
+                         mobcount=mobcount+1;
 
-                        // }
+                        }
                         
 
                         break;

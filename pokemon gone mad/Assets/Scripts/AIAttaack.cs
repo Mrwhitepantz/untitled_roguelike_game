@@ -19,6 +19,13 @@ public class AIAttaack : MonoBehaviour
     int type;
     //private bool canshoot = true;
     // Start is called before the first frame update
+    void Start()
+    {
+        
+        PC = (GameObject.Find("Player"));
+        player = (GameObject.Find("Player").transform);
+
+    }
     public static float meleeD(GameObject Badguy, int mod){
         //Debug.Log(mod+" damageMod used From AI ATTACk");
         if (Badguy.tag == "Squrtal"){

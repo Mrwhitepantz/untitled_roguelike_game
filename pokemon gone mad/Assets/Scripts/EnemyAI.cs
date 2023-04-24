@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     public Vector3 Target;
-    public Transform player;
+    private Transform player ;
     public float speed;
     public float nextPointDictance;
     public float sooterRange;
@@ -22,6 +22,21 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+
+    void Start()
+    {
+        findP = (GameObject.Find("Player"));
+        animator = GetComponent<Animator>();
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+        player = findP.transform;
+        seeker.StartPath(rb.position, player.position, OnPathComplete);
+        InvokeRepeating("UpdatePath", 0f, .5f);
+        elte = Random.Range(0,2);
+        
+        Debug.Log(player);
+    
+    }
     // Start is called before the first frame update
    public static float MoveSpeed(GameObject enemyType, int type){
         if (enemyType.tag == "Squrtal"){
@@ -79,6 +94,8 @@ public class EnemyAI : MonoBehaviour
         //bood ret = false;
         Target = ((TargetLock.transform.position)-transform.position).normalized;
         //transform.Rotate(Vector3.forward * lookspeed * Time.deltaTime);
+        //player = (GameObject.Find("Player").transform);
+        player = findP.transform;
         RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, (player.position-transform.position), 1 << LayerMask.NameToLayer("map/objects"));
 
             if (lineOfSight.collider.tag == "Player"){
@@ -96,18 +113,11 @@ public class EnemyAI : MonoBehaviour
         //return false;
 
     }
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
-        seeker.StartPath(rb.position, player.position, OnPathComplete);
-        InvokeRepeating("UpdatePath", 0f, .5f);
-        elte = Random.Range(0,2);
-
-    }
+    
     void UpdatePath() {
         if (seeker.IsDone()) {
+            //player = (GameObject.Find("Player").transform);
+            player = findP.transform;
             seeker.StartPath(rb.position, player.position, OnPathComplete);
 
         }
@@ -140,6 +150,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //player = (GameObject.Find("Player").transform);
         if (path == null)
         {
             return;
@@ -158,8 +169,10 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log(dirction);
         animate(dirction);
         Vector2 force = dirction * speed * Time.deltaTime;
+        //player = (GameObject.Find("Player").transform);
+        player = findP.transform;
         float range = Vector3.Distance(player.position, transform.position);
-        findP = (GameObject.Find("Player"));
+        //findP = (GameObject.Find("Player"));
         bool LineOS = LOS(findP);
         if (range < sooterRange && LineOS)
         {
