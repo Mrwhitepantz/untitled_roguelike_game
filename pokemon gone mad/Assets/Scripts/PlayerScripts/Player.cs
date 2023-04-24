@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     public PlayerHealth health;
     //public ItemManager inventory;
 
+    public float aimDirection;
+    public float aimDirection2;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -62,9 +65,12 @@ public class Player : MonoBehaviour
         body.velocity = movement.run(body.velocity, direction);
         if (hasWeapon)
         {
-            gun.transform.position = gameObject.transform.position+new Vector3(.6f,.6f);
             //gunBody.velocity = movement.run(gunBody.velocity, direction); //Bug: if player collides with wall, gun still moves
-            gunBody.rotation = shooter.lookAtMouse(gunBody.position);
+            aimDirection = shooter.lookAtMouse(body.position);
+            aimDirection2 = (aimDirection2) * Mathf.Deg2Rad;
+            gunBody.rotation = aimDirection;
+            aimDirection = (aimDirection + 180) * Mathf.Deg2Rad;
+            gun.transform.position = gameObject.transform.position + new Vector3(Mathf.Cos(aimDirection), Mathf.Sin(aimDirection));
         }
 
         //COMMENTED OUT TO DISABLE ROTATION
