@@ -1,0 +1,38 @@
+{
+    "BulletDodge": {
+        "checkpoints": [
+            {
+                "steps": 499951,
+                "file_path": "results\\BD5\\BulletDodge\\BulletDodge-499951.onnx",
+                "reward": 48.371428571428574,
+                "creation_time": 1682315775.8512838,
+                "auxillary_file_paths": [
+                    "results\\BD5\\BulletDodge\\BulletDodge-499951.pt"
+                ]
+            },
+            {
+                "steps": 500015,
+                "file_path": "results\\BD5\\BulletDodge\\BulletDodge-500015.onnx",
+                "reward": 48.371428571428574,
+                "creation_time": 1682315775.9179106,
+                "auxillary_file_paths": [
+                    "results\\BD5\\BulletDodge\\BulletDodge-500015.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500015,
+            "file_path": "results\\BD5\\BulletDodge.onnx",
+            "reward": 48.371428571428574,
+            "creation_time": 1682315775.9179106,
+            "auxillary_file_paths": [
+                "results\\BD5\\BulletDodge\\BulletDodge-500015.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "2.0.0+cu118"
+    }
+}

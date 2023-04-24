@@ -85,7 +85,7 @@ bool LOS(){
         {
             if (type==1)
             {
-                EnemyAI.animator.SetFloat("attack",1);
+                //EnemyAI.animator.SetFloat("attack",1);
                 Instantiate(shot, transform.position, Quaternion.identity);
                 cooldownTime = Time.time + shotcooldown;
             }
