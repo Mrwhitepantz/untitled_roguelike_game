@@ -20,6 +20,7 @@ public class RoomManager : MonoBehaviour
     public TopDownController playerController;
     public GameObject playerObject;
     public GameObject spawn;
+    public GameObject charmander;
     private Vector3 roomOffset, playerOffset;
     public readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
@@ -75,7 +76,7 @@ public class RoomManager : MonoBehaviour
     {
         RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         roomDictionary.Add(this.transform.position, newRoom);
-        newRoom.BuildRoom(noiseSeedArray, worldGrid,spawn);
+        newRoom.BuildRoom(noiseSeedArray, worldGrid,spawn,charmander,1);
         AstarPath.active.Scan();
 
     }
