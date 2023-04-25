@@ -114,7 +114,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -157,12 +157,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 154299525712039152, guid: c724f7651d5530f4db36390c2dc549c3, type: 3}
   weapon: {fileID: 8972632914650784453}
   gunshotSFX: {fileID: 8300000, guid: 804616d11c36a934c8233e22862aea1e, type: 3}
+  reloadSFX: {fileID: 0}
   equipSFX: {fileID: 8300000, guid: da890d6dcc06db246889c4c4684f5886, type: 3}
   sfx: {fileID: 0}
   lineRenderer: {fileID: 0}
   fireRate: 0.5
   bulletSpeed: 50
   clipSize: 8
+  is_Reloading: 0
 --- !u!82 &8972632914650784451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -277,7 +279,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

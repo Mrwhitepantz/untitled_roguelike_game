@@ -160,6 +160,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 154299525712039152, guid: 342680f9cb807f14ba22bbbcade45e71, type: 3}
   weapon: {fileID: 7473529696308007421}
   gunshotSFX: {fileID: 8300000, guid: 4c3cf7519b50ab749a363ffa75691a23, type: 3}
+  reloadSFX: {fileID: 0}
   equipSFX: {fileID: 8300000, guid: da890d6dcc06db246889c4c4684f5886, type: 3}
   sfx: {fileID: 0}
   lineRenderer: {fileID: 0}
