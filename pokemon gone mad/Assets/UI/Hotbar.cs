@@ -7,12 +7,71 @@ public class Hotbar : MonoBehaviour
 {
     public GameObject select;
     public int currentWeapon;
-    public List<Item> itemList = new List<Item>();
+    public Inventory inventory;
+    private GameObject activeItem;
+    public ItemManager itemManager;
+    public GameObject pistol;
+    public GameObject shotgun;
+    //public GameObject m1garand;
+    public GameObject machinegun;
 
     void Start()
     {
         currentWeapon = 1;
         CurrentSlot(1);
+    }
+
+    void UseSelected (int slot)
+    {
+        int curSlot = slot - 1;
+        activeItem= inventory.weaponList[curSlot];
+        if (inventory.weaponList[curSlot] != null)
+        {
+            if (activeItem.name == "ZachMachineGun")
+            {
+                if (itemManager.playerScript.hasWeapon)
+                {
+                    itemManager.playerScript.gun.SetActive(false);
+                }
+                itemManager.equipWeapon(machinegun, machinegun.GetComponent<MachineGun>());
+                itemManager.equippedWeapon = machinegun.name;
+                machinegun.SetActive(true);
+            }
+            else if (activeItem.name == "Shotgun")
+            {
+                if (itemManager.playerScript.hasWeapon)
+                {
+                    itemManager.playerScript.gun.SetActive(false);
+                }
+                itemManager.equipWeapon(shotgun, shotgun.GetComponent<Shotgun>());
+                itemManager.equippedWeapon = shotgun.name;
+                shotgun.SetActive(true);
+            }
+            else if (activeItem.name == "ZachPistol")
+            {
+                if (itemManager.playerScript.hasWeapon)
+                {
+                    itemManager.playerScript.gun.SetActive(false);
+                }
+                itemManager.equipWeapon(pistol, pistol.GetComponent<Pistol>());
+                itemManager.equippedWeapon = pistol.name;
+                pistol.SetActive(true);
+            }
+            /*else if (activeItem.name == "M1Garand")
+            {
+                if (itemManager.playerScript.hasWeapon)
+                {
+                    itemManager.playerScript.gun.SetActive(false);
+                }
+                itemManager.equipWeapon(m1garand, m1garand.GetComponent<M1Garand>());
+                itemManager.equippedWeapon = m1garand.name;
+                m1garand.SetActive(true);
+            }*/
+        }
+        else
+        {
+            return;
+        }
     }
 
     void CurrentSlot(int slot)
@@ -21,22 +80,27 @@ public class Hotbar : MonoBehaviour
         if (currentWeapon == 1) 
         {
             select.GetComponent<RectTransform>().anchoredPosition = new Vector2(-180, 0);
+            UseSelected(slot);
         }
         else if (currentWeapon == 2)
         {
             select.GetComponent<RectTransform>().anchoredPosition = new Vector2(-90, 0);
+            UseSelected(slot);
         }
         else if (currentWeapon == 3)
         {
             select.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            UseSelected(slot);
         }
         else if (currentWeapon == 4)
         {
             select.GetComponent<RectTransform>().anchoredPosition = new Vector2(90, 0);
+            UseSelected(slot);
         }
         else if (currentWeapon == 5)
         {
             select.GetComponent<RectTransform>().anchoredPosition = new Vector2(180, 0);
+            UseSelected(slot);
         }
     }
     void Update()
