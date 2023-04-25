@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3104278853928093166}
   m_Layer: 2
   m_Name: Square
-  m_TagString: BadMen
+  m_TagString: Squrtal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
   speed: 200
   nextPointDictance: 1
   sooterRange: 5

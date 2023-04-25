@@ -6,27 +6,45 @@ using UnityEngine;
 public class ShootingController : MonoBehaviour
 {
     [SerializeField] public Gun gun; //script of the current weapon
+    //[SerializeField] public GameObject gun;
     [SerializeField] public bool hasWeapon;
     [SerializeField] protected Camera sceneCam;
+    [SerializeField] protected bool canShoot;
 
     void Start()
     {
         sceneCam = Camera.main;
         hasWeapon = false;
         gun = null;
+        canShoot = true;
+    }
+
+    public bool couldShoot()
+    {
+        return canShoot;
     }
 
     //Checks if user presses left click, if yes then shoot bullets
     void Update()
     {
-        //Zach: Citation - https://www.youtube.com/watch?v=wkKsl1Mfp5M&t=123s
-        if (Input.GetButton("Fire1") && hasWeapon)
+        /*Zach: Citation for setting up weapons
+         * https://www.youtube.com/watch?v=wkKsl1Mfp5M&t=123s*/
+        if (gun is M1Garand && hasWeapon) //single action weapons
         {
-            gun.shoot();
-            /*if (gun.Equals("M1Garand"))
+            if (Input.GetMouseButtonDown(0) && hasWeapon && !gun.isReloading())
             {
-                gun.decrementClip(); //doesn't work
-            }*/
+                gun.shoot();
+            }
+            if (gun.getAmmoCount() == 0)
+            {
+                gun.reload();
+            }
+        } 
+        else //automatic weapons
+        {
+            if (Input.GetMouseButton(0) && hasWeapon) {
+                gun.shoot();
+            }
         }
         //Debug.Log("mouse position" + Input.mousePosition);
     }

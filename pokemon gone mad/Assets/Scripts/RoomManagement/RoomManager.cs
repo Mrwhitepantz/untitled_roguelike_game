@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class RoomManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class RoomManager : MonoBehaviour
     public FollowPlayer cameraController;
     public TopDownController playerController;
     public GameObject playerObject;
+    public GameObject spawn;
     private Vector3 roomOffset, playerOffset;
     public readonly Dictionary<Vector3, RoomBuilder> roomDictionary = new();
     private readonly float[] noiseSeedArray = new float[4];
@@ -73,11 +75,14 @@ public class RoomManager : MonoBehaviour
     {
         RoomBuilder newRoom = Instantiate(roomContainer, this.transform.position, Quaternion.identity);
         roomDictionary.Add(this.transform.position, newRoom);
-        newRoom.BuildRoom(noiseSeedArray, worldGrid);
+        newRoom.BuildRoom(noiseSeedArray, worldGrid,spawn);
+        AstarPath.active.Scan();
+
     }
 
     public IEnumerator TransitionCoroutine()
     {
+        
         yield return new WaitForSeconds(fadeWaitSeconds);
 
         // move room switchers to next room
@@ -86,6 +91,7 @@ public class RoomManager : MonoBehaviour
         if(!roomDictionary.ContainsKey(this.transform.position))
         {
             CreateAndAddRoom();
+            AstarPath.active.Scan();
         }
         
         // change camera min/max positions to next room
@@ -102,6 +108,7 @@ public class RoomManager : MonoBehaviour
             Destroy(fadeInPanel, .35f);
         }
         yield return new WaitForSeconds(fadeWaitSeconds);
+        AstarPath.active.Scan();
         // take the player out of the pause state
         playerController.pauseState = false;
 

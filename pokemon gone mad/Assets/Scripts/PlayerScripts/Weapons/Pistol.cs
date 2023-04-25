@@ -31,4 +31,21 @@ public class Pistol : Gun
         sfx.PlayOneShot(gunshotSFX, .3f);
         StopCoroutine("shotDelay");
     }
+
+    public override void decrementClip()
+    {
+
+    }
+    public override void reload()
+    {
+
+    }
+    public override int getAmmoCount()
+    {
+        return 0;
+    }
+    public override bool isReloading()
+    {
+        throw new System.NotImplementedException();
+    }
 }
