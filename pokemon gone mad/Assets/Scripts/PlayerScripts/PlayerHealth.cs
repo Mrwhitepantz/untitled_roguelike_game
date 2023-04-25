@@ -45,7 +45,22 @@ public class PlayerHealth : MonoBehaviour
             HealthToPlayer(20);
             Destroy(other.gameObject);
         }
+        
     }
+    public void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.name.ToString().Contains("PotionRed")){
+            HealthToPlayer(20);
+            
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.name == "Leek"){
+            DamageToPlayer(100);
+            
+            Destroy(collision.gameObject);
+        }
+
+    }
+
 
     void DamageToPlayer(int damage)
     {

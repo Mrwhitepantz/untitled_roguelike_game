@@ -13,8 +13,8 @@ public class HeatManager : MonoBehaviour
     private TopDownController playerController;
     private PlayerTemp playerTemp;
     private float originalSpeed;
-    private readonly float maxHeat = 30f;
-    private readonly float maxFreeze = -30f;
+    private readonly float maxHeat = 15f;
+    private readonly float maxFreeze = -15f;
     private readonly float baseTemp = 0f;
     private bool heating = false;
     private bool freezing = false;
@@ -155,7 +155,7 @@ public class HeatManager : MonoBehaviour
         playerController.maxSpeed = 0f;
         while (temperatureLevel <= maxFreeze / 2)
         {
-            temperatureLevel += Time.deltaTime * 15f;
+            temperatureLevel += Time.deltaTime * 5f;
             yield return null;
         }
         freezeCoroutine = false;

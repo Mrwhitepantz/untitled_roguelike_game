@@ -72,9 +72,9 @@ public class TopDownController : MonoBehaviour
         directionTemp = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         //Debug.Log(directionTemp);
         return directionTemp; //needs to be normalized or else diagonal movement will go further
-        //return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
+    //Noah's code
     public void animate(Vector2 inputDir)
     {
         
