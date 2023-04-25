@@ -23,7 +23,7 @@ public class playerBullet : MonoBehaviour
     //Zach: Bullet collision logic
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag == "BadMen")
+        if (hitInfo.tag == "Squrtal")
         {
             Debug.Log("playerBullet: hit an enemy");
             Destroy(this.gameObject);
