@@ -54,9 +54,16 @@ public class BulletScript : MonoBehaviour
         if (collision.tag == "PlayerBullet"){
             return;
         }
-        if (collision.tag != "BadMen" ) {
-            Debug.Log("hit");
-            Destroy(gameObject);
+        if (collision.tag != "Squrtal" ) {
+            if (collision.tag !="EnemyBullet"){
+                if (collision.tag !="EnvironmentDecorations"){
+                //Debug.Log("hit");
+            //Destroy(gameObject);
+
+            }
+
+            }
+            
         }
         
     }
