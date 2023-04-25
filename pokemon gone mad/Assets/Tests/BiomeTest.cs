@@ -25,6 +25,11 @@ public class BiomeTest : MonoBehaviour
             {
                 for (int y = -radius; y <= radius; y++)
                 {
+                    if(x==0 && y == 0)
+                    {
+                        continue;
+                    }
+
                     Vector3 pos = new(x * roomSize, y * roomSize, 0);
                     RoomBuilder room = Instantiate(roomContainer, pos, Quaternion.identity);
 
