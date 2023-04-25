@@ -10,6 +10,7 @@ public class BiomeTest : MonoBehaviour
     public bool active = false;
     public Grid worldGrid;
     public GameObject spawn;
+    public GameObject charmander;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class BiomeTest : MonoBehaviour
                     RoomBuilder room = Instantiate(roomContainer, pos, Quaternion.identity);
 
                     float[] manNoise = new float[] { .35f, .59f, .72f, .42f };
-                    room.BuildRoom(noiseList, worldGrid,spawn);
+                    room.BuildRoom(noiseList, worldGrid,spawn,charmander,0);
                 }
             }
         }

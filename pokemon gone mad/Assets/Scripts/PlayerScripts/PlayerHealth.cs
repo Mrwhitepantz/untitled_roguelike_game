@@ -48,9 +48,13 @@ public class PlayerHealth : MonoBehaviour
         
     }
     public void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.name == "PotionRed"){
-            currentHealth+=25;
+        if (collision.gameObject.name.ToString().Contains("PotionRed")){
             HealthToPlayer(20);
+            
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.name == "Leek"){
+            DamageToPlayer(100);
             
             Destroy(collision.gameObject);
         }

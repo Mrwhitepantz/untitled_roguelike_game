@@ -44,11 +44,11 @@ public class ItemManager : MonoBehaviour{
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.name == "PotionBlue"){
+        if (collision.gameObject.name.ToString().Contains("PotionBlue") ){
             ifCollision = true;
             topDownController.ifCollision = true;
             topDownController.animator.SetBool("PotionBlueItem",true);
-            topDownController.maxSpeed = 4f;
+            topDownController.maxSpeed = 12f;
             Destroy(collision.gameObject);
         }
         

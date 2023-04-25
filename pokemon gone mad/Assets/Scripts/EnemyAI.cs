@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public float hp = 100;
+    public GameObject health;
+    public GameObject zoom;
 
     Path path;
     int currentPoint;
@@ -136,9 +138,18 @@ public class EnemyAI : MonoBehaviour
         if (collision.tag == "PlayerBullet")
         {
             
+            
             hp -= 10;
             if (hp <= 0)
             {
+                Vector3 position = transform.position;
+                int temp = Random.Range(1,5);
+                if (temp == 1){
+                    Instantiate(health, transform.position, Quaternion.identity);
+                } 
+                if (temp == 2){
+                    Instantiate(zoom, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             } else {
                 animator.SetTrigger("damage");
