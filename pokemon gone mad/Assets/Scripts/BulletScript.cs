@@ -54,15 +54,12 @@ public class BulletScript : MonoBehaviour
         if (collision.tag == "PlayerBullet"){
             return;
         }
-        if (collision.tag != "Squrtal" ) {
-            if (collision.tag !="EnemyBullet"){
-                if (collision.tag !="EnvironmentDecorations"){
+        if (collision.tag == "Player" ) {
+            
                 //Debug.Log("hit");
-            //Destroy(gameObject);
+            Destroy(gameObject);
 
-            }
-
-            }
+            
             
         }
         

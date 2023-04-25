@@ -33,9 +33,10 @@ public class RoomBuilder : MonoBehaviour
         //spawn = GameObject.FindGameObjectWithTag("testspawn");
     }
 
-    public void BuildRoom(float[] noiseSeedArray, Grid grid)
+    public void BuildRoom(float[] noiseSeedArray, Grid grid, GameObject prefab)
     {
         // build a new room here
+        spawn = prefab;
         GridSpaceType[,] gridMap = PrepareGrid(gridWidth, gridHeight);
         roomOrigin = this.transform.position;
 
@@ -128,7 +129,7 @@ public class RoomBuilder : MonoBehaviour
                         else SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         break;
                     case GridSpaceType.floor:
-                        spawn = GameObject.FindGameObjectWithTag("Squrtal");
+                        //spawn = GameObject.FindGameObjectWithTag("Squrtal");
 
                         pos = SpawnTile(col, row, groundTile, tileMapsArray[1]);
                         //Instantiate(spawn, pos, Quaternion.identity);
