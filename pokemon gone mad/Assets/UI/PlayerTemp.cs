@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerTemp : MonoBehaviour
 {
-    public float minTemp = -30;
-    public float maxTemp = 30;
+    public float minTemp = -15;
+    public float maxTemp = 15;
     public float currentTemp;
     public bool freezing = false;
     public bool overheat = false;
