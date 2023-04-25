@@ -14,6 +14,8 @@ public class ItemManager : MonoBehaviour{
     private TopDownController topDownController;
     public bool ifCollision = false;
     public string equippedWeapon;
+    public PlayerHealth health;
+    
 
     //Zach: added some fields for picking up weapons
     [SerializeField] protected ShootingController shootingController;
@@ -26,6 +28,7 @@ public class ItemManager : MonoBehaviour{
         shootingController = player.GetComponent<ShootingController>();
         playerScript = player.GetComponent<Player>();
         Physics.IgnoreLayerCollision(2,8);
+        health = playerScript.GetComponent<PlayerHealth>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision){
@@ -48,6 +51,7 @@ public class ItemManager : MonoBehaviour{
             topDownController.maxSpeed = 4f;
             Destroy(collision.gameObject);
         }
+        
         
         //Zach: Some code I added for picking up weapons
         if (collision.gameObject.name == "Shotgun")

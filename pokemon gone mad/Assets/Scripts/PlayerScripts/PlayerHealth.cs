@@ -45,7 +45,18 @@ public class PlayerHealth : MonoBehaviour
             HealthToPlayer(20);
             Destroy(other.gameObject);
         }
+        
     }
+    public void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.name == "PotionRed"){
+            currentHealth+=25;
+            HealthToPlayer(20);
+            
+            Destroy(collision.gameObject);
+        }
+
+    }
+
 
     void DamageToPlayer(int damage)
     {
