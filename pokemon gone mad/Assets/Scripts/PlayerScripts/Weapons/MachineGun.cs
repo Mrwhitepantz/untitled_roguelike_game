@@ -44,4 +44,9 @@ public class MachineGun : Gun
     {
         return 0;
     }
+
+    public override bool isReloading()
+    {
+        throw new System.NotImplementedException();
+    }
 }
