@@ -9,12 +9,19 @@ public class ShootingController : MonoBehaviour
     //[SerializeField] public GameObject gun;
     [SerializeField] public bool hasWeapon;
     [SerializeField] protected Camera sceneCam;
+    [SerializeField] protected bool canShoot;
 
     void Start()
     {
         sceneCam = Camera.main;
         hasWeapon = false;
         gun = null;
+        canShoot = true;
+    }
+
+    public bool couldShoot()
+    {
+        return canShoot;
     }
 
     //Checks if user presses left click, if yes then shoot bullets
@@ -24,10 +31,9 @@ public class ShootingController : MonoBehaviour
          * https://www.youtube.com/watch?v=wkKsl1Mfp5M&t=123s*/
         if (gun is M1Garand && hasWeapon) //single action weapons
         {
-            if (Input.GetMouseButtonDown(0) && hasWeapon)
+            if (Input.GetMouseButtonDown(0) && hasWeapon && !gun.isReloading())
             {
                 gun.shoot();
-                gun.decrementClip();
             }
             if (gun.getAmmoCount() == 0)
             {
