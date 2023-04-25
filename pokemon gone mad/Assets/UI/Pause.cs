@@ -12,6 +12,7 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         gameIsPaused = false;
         invMenu.SetActive(false);
         statMenu.SetActive(false);

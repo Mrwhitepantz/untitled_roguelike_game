@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour{
 
     //Zach: added some fields for picking up weapons
     [SerializeField] protected ShootingController shootingController;
-    [SerializeField] protected Player playerScript;
+    [SerializeField] public Player playerScript;
     //Zach: added fields ends here
 
     void Start()
@@ -123,7 +123,7 @@ public class ItemManager : MonoBehaviour{
 
     //Zach:More code
     // Helper function to equip a weapon to the player gameobject
-    private void equipWeapon(GameObject gun, Gun gunScript)
+    public void equipWeapon(GameObject gun, Gun gunScript)
     {
         gun.transform.parent=gameObject.transform;
         playerScript.gun = gun;
