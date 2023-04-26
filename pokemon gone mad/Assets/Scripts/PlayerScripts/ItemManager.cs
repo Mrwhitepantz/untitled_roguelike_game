@@ -99,7 +99,7 @@ public class ItemManager : MonoBehaviour{
         {
             if (playerScript.hasWeapon)
             {
-                Destroy(playerScript.gun);
+                playerScript.gun.SetActive(false);
                 //Debug.Log("ItemManager: destroyed Pistol");
             }
             ifCollision = true;

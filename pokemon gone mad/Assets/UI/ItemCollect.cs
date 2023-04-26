@@ -19,20 +19,14 @@ public class ItemCollect : MonoBehaviour
             if (inventory != null)
             {
                 Debug.Log("Item collided with " + collision.gameObject.name);
-
-                // Check if the collected item has the "Item" tag before adding it to inventory
                 if (gameObject.CompareTag("Weapon"))
                 {
-                    inventory.AddWeapon(gameObject);
-
-                    // Deactivate the item object so it's no longer visible in the scene
-                    
+                    inventory.AddWeapon(gameObject);       
                 }
                 else if (gameObject.CompareTag("InvItem"))
                 {
                     inventory.AddItem(gameObject);
 
-                    // Deactivate the item object so it's no longer visible in the scene
                     gameObject.SetActive(false);
                 }
                 else

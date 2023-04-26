@@ -12,7 +12,7 @@ public class Hotbar : MonoBehaviour
     public ItemManager itemManager;
     public GameObject pistol;
     public GameObject shotgun;
-    //public GameObject m1garand;
+    public GameObject garand;
     public GameObject machinegun;
 
     void Start()
@@ -57,16 +57,16 @@ public class Hotbar : MonoBehaviour
                 itemManager.equippedWeapon = pistol.name;
                 pistol.SetActive(true);
             }
-            /*else if (activeItem.name == "M1Garand")
+            else if (activeItem.name == "M1Garand")
             {
                 if (itemManager.playerScript.hasWeapon)
                 {
                     itemManager.playerScript.gun.SetActive(false);
                 }
-                itemManager.equipWeapon(m1garand, m1garand.GetComponent<M1Garand>());
-                itemManager.equippedWeapon = m1garand.name;
-                m1garand.SetActive(true);
-            }*/
+                itemManager.equipWeapon(garand, garand.GetComponent<M1Garand>());
+                itemManager.equippedWeapon = garand.name;
+                garand.SetActive(true);
+            }
         }
         else
         {
