@@ -20,14 +20,14 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             DamageToPlayer(10);
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
             HealthToPlayer(10);
-        }
+        }*/
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -36,9 +36,17 @@ public class PlayerHealth : MonoBehaviour
         {
             DamageToPlayer(20);
         }
+        if (other.gameObject.name == "Charmander")
+        {
+            DamageToPlayer(25);
+        }
         else if (other.gameObject.name == "testBullet 1(Clone)")
         {
             DamageToPlayer(5);
+        }
+        else if (other.gameObject.name == "testBullet 2(Clone)")
+        {
+            DamageToPlayer(10);
         }
         else if (other.gameObject.name == "HealthPot")
         {
