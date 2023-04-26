@@ -25,14 +25,14 @@ public class PlayerTemp : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             TempToPlayer(10);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             TempToPlayer(-10);
-        }
+        }*/
     }
 
     public void PlayerCurTemp(float temp)
